@@ -13,10 +13,27 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
+            $table->string('name')->nullable();
+            $table->string('username')->unique();
             $table->string('password');
+            $table->string('show_password');
+            $table->string('balance')->default(0);
+            $table->string('bonus')->default(0);
+            $table->string('deposit')->default(0);
+            $table->string('refbalance')->default(0);
+            $table->string('usercode');
+            $table->string('account')->nullable();
+            $table->string('ifsc')->nullable();
+            $table->string('upi')->nullable();
+            $table->string('refcode1')->nullable();
+            $table->string('refcode2')->nullable();
+            $table->string('email')->nullable();
+            $table->string('status')->default(0);
+            $table->string('agent')->default(0);
+            $table->string('Address')->nullable();
+            $table->string('ip');
+            $table->string('otp_verified')->nullable();
+            $table->string('withdrawal_enable')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });
