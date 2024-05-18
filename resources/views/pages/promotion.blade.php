@@ -18,7 +18,7 @@
             </div>
         </div>
         <div data-v-ab64ca5b="" data-v-1159d77b="" class="container" style="--36a344b0: 'Roboto', 'Inter', sans-serif;">
-            <div data-v-ab64ca5b="" class="amount">₹bonus + bonus2></div>
+            <div data-v-ab64ca5b="" class="amount">₹ {{auth()->user()->bonus}}</div>
             <div data-v-ab64ca5b="" class="amount_txt">Yesterday's total commission</div>
             <div data-v-ab64ca5b="" class="tip">6 level commission income is available</div>
             <div data-v-ab64ca5b="" class="info_content">
@@ -52,7 +52,7 @@
         <div data-v-1159d77b="" class="content" style="--36a344b0: 'Roboto', 'Inter', sans-serif;">
             <div data-v-1159d77b="" class="shareBtnContainer">
                 <div class="col-12 mt-2" id="mylink" style="display:none;">
-                    https://91-club.rf.gd/register?r_code=_SESSION['usercode']</div><button onclick="copyToClipboard()"
+                    {{url('/')}}/register?r_code={{auth()->user()->usercode}}</div><button onclick="copyToClipboard()"
                     data-v-1159d77b="" class="shareBtn">COPY INVITATION LINK</button>
             </div>
             <div data-v-1159d77b="" class="promote__cell">
@@ -60,10 +60,10 @@
                     <div data-v-1159d77b="" class="label"><img data-v-1159d77b=""
                             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAMAAAANIilAAAAAZlBMVEUAAAD6Wlr6WVn5WFj5WVn7WVn/Vlb6Wlr7W1v3Wlr5WVn6WFj8W1v5WVn5WVn4WVn6Wlr6Wlr4Wlr3WFj/VVX4WFj6WVn6Wlr6WVn5WVn5WVn5WVn6WVn4WVn5WFj6W1v/UVH5WVkYbn5UAAAAIXRSTlMAZrKf7XkNn3lA4L5MYM+BWTMmIAaWU/XPxqmOcHA5qRZw9CxiAAABJklEQVRIx+3T3XKCMBCG4SzkpyTyIyit2tru/d9kT6xdCJF8dXrgjO8xz+xOSNSze9r157GjRN2m6m2S2qqmtaoE31JW26WNN5TZZhdhYVd1emd8c0tQdoIrDFfoYFktz6wnsB7dWna+/Z+M5kvaUNQocEdRga8dKKoTmOKOv9hR3G1MrrjkCMWyx8FGs0gbCAeeVEDYTbGDMLlCdHqU00bwe3ltbyjR5COBPYsOi9w0LPIC8yRtlp+3LInZx1hzLmYXX5p8/PoxHwxgLqLBAJ6N1gCejz4yhvmzffmpYBTL/hF71GqBGxQ3ApcoLgSuUVwLbDWIB/X3vUslG+DBshaxrZoV8u2bmmdDtrWCgZuf1GJDuU5DpVJ9jfvgU843ZW3Vszv6BlTHjeSB3A++AAAAAElFTkSuQmCC"
                             alt="">
-                        <div class="col-12 mt-2" id="mycode" style="display:none;">_SESSION['usercode']</div><span
+                        <div class="col-12 mt-2" id="mycode" style="display:none;">{{auth()->user()->usercode}}</div><span
                             data-v-1159d77b="">Copy invitation code</span>
                     </div>
-                    <div data-v-1159d77b="" class="arrow"><span data-v-1159d77b="">_SESSION['usercode']</span><img
+                    <div data-v-1159d77b="" class="arrow"><span data-v-1159d77b="">{{auth()->user()->usercode}}</span><img
                             data-v-1159d77b=""
                             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwAgMAAAAqbBEUAAAADFBMVEUAAABmZmZkZGRmZmZ0zVwQAAAAA3RSTlMA3yDHuD3GAAAANUlEQVQoz2MYhIC1AYnDnoDE4byBxGEqQ9Y0F1mTOk01YXAQyjANQBiNsJRGWtgTUANxMAIAk88RuZxQh1MAAAAASUVORK5CYII="
                             alt=""></div>

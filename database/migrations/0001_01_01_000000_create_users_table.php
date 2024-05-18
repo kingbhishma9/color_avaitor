@@ -34,6 +34,7 @@ return new class extends Migration
             $table->string('ip');
             $table->string('otp_verified')->nullable();
             $table->string('withdrawal_enable')->default(0);
+            $table->string('last_login')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
