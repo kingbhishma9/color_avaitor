@@ -59,8 +59,8 @@
                                     </div>
                                 </div>
 
-                                <input id="email" type="email" data-v-5f6a9e3a="" name="email" required
-                                    autocomplete="email">
+                                <input id="email" type="number" data-v-5f6a9e3a="" name="username" required
+                                    autocomplete="number">
 
 
 
