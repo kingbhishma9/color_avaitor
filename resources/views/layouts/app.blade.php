@@ -22,9 +22,9 @@
 
     <link rel="stylesheet" href="https://91clubin.in/assets/css/modules-96f5a6e8.css">
     
-    {{-- <link rel="stylesheet" href="https://91clubin.in/assets/css/index-08abe1f5.css"> --}}
+    <link rel="stylesheet" href="https://91clubin.in/assets/css/index-08abe1f5.css">
     <link rel="stylesheet" href="https://91clubin.in/assets/css/page-test-b38d710a.css">
-    {{-- <link rel="stylesheet" href="https://91clubin.in/assets/css/page-main-8cf260fb.css"> --}}
+    <link rel="stylesheet" href="https://91clubin.in/assets/css/page-main-8cf260fb.css">
     <link rel="stylesheet" href="https://91clubin.in/assets/css/page-promotion-24bf6ab6.css">
     <link rel="stylesheet" href="https://91clubin.in/assets/css/page-wallet-24fc13b6.css">
     <link rel="stylesheet" href="https://colorprediction.bhishmadhakal.com.np/win_files/index.e18c94d4.css">

@@ -59,16 +59,10 @@
                                     </div>
                                 </div>
 
-
-                                <input id="email" type="email" data-v-5f6a9e3a=""
-                                    class=" @error('email') is-invalid @enderror" name="email" required
+                                <input id="email" type="email" data-v-5f6a9e3a="" name="email" required
                                     autocomplete="email">
 
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+
 
 
 
@@ -83,15 +77,10 @@
                             </div>
                             <div data-v-f1cfbd6f="" class="passwordInput__container-input">
 
-                                <input data-v-f1cfbd6f="" id="password" type="password"
-                                    class="@error('password') is-invalid @enderror" name="password" required
+                                <input data-v-f1cfbd6f="" id="password" type="password" name="password" required
                                     autocomplete="current-password">
 
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+
 
 
 
