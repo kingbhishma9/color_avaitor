@@ -71,6 +71,8 @@ class RegisterController extends Controller
             'show_password' => $data['password'],
             'usercode' => generate_referral_number(),
             'ip' => request()->ip(),
+            'ip' => request()->ip(),
+            'last_login' => now(),
 
         ]);
     }
