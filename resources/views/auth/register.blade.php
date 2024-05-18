@@ -825,7 +825,7 @@
                         <div class="van-hairline--top van-dialog__footer"></div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
         <div class="customer" id="customerId"
@@ -1088,4 +1088,14 @@
                             </script>
 
     <foreignobject></foreignobject>
+
+<script>
+    $(document).ready(function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const rCode = urlParams.get('r_code');
+        console.log(rCode)
+        $('#code').val(rCode);
+
+    });
+</script>
 @endsection
