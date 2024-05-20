@@ -1,10 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <noscript>
-        <strong>We're sorry but colorShopGame doesn't work properly without JavaScript enabled. Please enable it to
-            continue.</strong>
-    </noscript>
     <div id="app">
         <div data-v-4ab5abd9="" class="mian">
             <div data-v-c2022cca="" data-v-4ab5abd9=""
@@ -12,16 +8,18 @@
                 <div data-v-c2022cca="" class="navbar-left"></div>
                 <div data-v-c2022cca="" class="navbar-title"> My Team </div>
                 <div data-v-c2022cca="" class="navbar-right">
-                    <div data-v-4ab5abd9="" data-v-c2022cca="" class="c-row"><i data-v-4ab5abd9="" data-v-c2022cca=""
-                            class="" style="font-size: 25px;"><!----></i></div>
+                    <div data-v-4ab5abd9="" data-v-c2022cca="" class="c-row">
+                        <img src="{{ asset('assets/png/back.png') }}" width="24" height="24"
+                            onclick="window.location.href='{{ route('promotion') }}'" />
+                    </div>
                 </div>
             </div>
             <div data-v-4ab5abd9="" class="promotion">
                 <div data-v-4ab5abd9="" class="tab">
                     <ul data-v-4ab5abd9="" class="c-row c-row-between">
                         <li data-v-4ab5abd9="" onclick="window.location.href='promotion#'">Data Overview</li>
-                        <li data-v-4ab5abd9="" onclick="window.location.href='/myTeam?user=username'"
-                            class="action" style="color:#f95959;">My Team</li>
+                        <li data-v-4ab5abd9="" onclick="window.location.href='/myTeam?user=username'" class="action"
+                            style="color:#f95959;">My Team</li>
                     </ul>
                 </div>
                 <div data-v-4ab5abd9="" class="box">

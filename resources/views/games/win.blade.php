@@ -2190,7 +2190,7 @@
                 sDom: 'lrtip',
                 // dom: 't',
                 dom: 'rtip',
-                bJQueryUI: true,
+                bJQueryUI: false,
                 sDom: 'lfrtip'
             });
         });

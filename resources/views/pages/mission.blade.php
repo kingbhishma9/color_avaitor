@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div id="app" data-v-app=""><!----><!---->
+    <div id="app" data-v-app="">
         <div data-v-c1c74264="" class="jackpot-rule" style="--36a344b0: 'Roboto', 'Inter', sans-serif;">
             <div data-v-4c21fa9e="" data-v-c1c74264="" class="navbar" onclick="window.location.href='{{ route('account') }}'">
                 <div data-v-4c21fa9e="" class="navbar-fixed" style="background: rgb(247, 248, 255);">
@@ -11,7 +11,7 @@
 
                             <img src="{{ asset('assets/png/back.png') }}"width="24" height="24" />
                         </div>
-                        <div data-v-4c21fa9e="" class="navbar__content-center"><!---->
+                        <div data-v-4c21fa9e="" class="navbar__content-center">
                             <div data-v-4c21fa9e="" class="navbar__content-title">Rule</div>
                         </div>
                         <div data-v-4c21fa9e="" class="navbar__content-right"></div>
@@ -184,7 +184,7 @@
             style="--36a344b0: 'Roboto', 'Inter', sans-serif; --17a7a9f6: bahnschrift;">
             <img class="" data-origin="https://91clubin.in/assets/png/icon_sevice-9f0c8455.png"
                 src="https://91clubin.in/assets/png/icon_sevice-9f0c8455.png" style="display:none;">
-        </div><!----><!---->
+        </div>
     </div>
     <foreignobject></foreignobject>
 @endsection
