@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FrontendController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
@@ -10,6 +11,8 @@ Route::get('/keFuMenu', [App\Http\Controllers\FrontendController::class, 'suppor
 
 
 Auth::routes();
+
+Route::any('get-gameId', [FrontendController::class, 'getGameId'])->name('get.gameId');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/activity', [App\Http\Controllers\HomeController::class, 'activity'])->name('activity');

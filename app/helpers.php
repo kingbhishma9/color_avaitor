@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Win3minBet;
+
 
 if (!function_exists('generate_referral_number')) {
     function generate_referral_number()
@@ -10,4 +12,13 @@ if (!function_exists('generate_referral_number')) {
 
         return $referralNumber;
     }
+}
+if(!function_exists('renderGameId')){
+
+function renderGameId(){
+
+ return Win3minBet::latest('created_at')->first()->id;
+
+}
+
 }
