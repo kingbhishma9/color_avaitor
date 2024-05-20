@@ -1,15 +1,16 @@
 <?php
 
+use App\Http\Controllers\FrontendController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
 
-
 Route::get('/', [App\Http\Controllers\FrontendController::class, 'welcome'])->name('welcome');
 Route::get('/keFuMenu', [App\Http\Controllers\FrontendController::class, 'support'])->name('support');
 
-
 Auth::routes();
+
+Route::any('get-gameId', [FrontendController::class, 'getGameId'])->name('get.gameId');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/activity', [App\Http\Controllers\HomeController::class, 'activity'])->name('activity');
@@ -43,8 +44,6 @@ Route::post('change_name', [App\Http\Controllers\HomeController::class, 'change_
 Route::post('recive_gift', [App\Http\Controllers\HomeController::class, 'recive_gift'])->name('recive_gift');
 Route::post('withdrawalBlc', [App\Http\Controllers\HomeController::class, 'withdrawalBlc'])->name('withdrawalBlc');
 Route::post('saveBank', [App\Http\Controllers\HomeController::class, 'saveBank'])->name('saveBank');
-
-
 
 Route::get('/clear', function () {
     Artisan::call('cache:clear');

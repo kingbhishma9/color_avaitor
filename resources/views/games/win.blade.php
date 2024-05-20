@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="{{ asset('assets/colorprediction/css/style.css') }}">
 
     <!-- Datatable plugin CSS file -->
-    <link rel="stylesheet" href= "https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" />
 
     <!-- jQuery library file -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -691,24 +691,19 @@
 <body>
     <div id="app" data-v-app="">`
         <div data-v-f31474c6="" class="WinGo__C" style="--36a344b0: 'Roboto', 'Inter', sans-serif;">
-            <div data-v-4c21fa9e="" data-v-f31474c6=""
-                style="height: 0.5rem; z-index: 100;-webkit-box-flex: 0;-webkit-flex: none;">
-                <div data-v-4c21fa9e="" class="navbar-fixed wc"
-                    style="background: linear-gradient(90deg, rgb(222, 35, 37) 0%, rgb(255, 80, 74) 100%);">
+            <div data-v-4c21fa9e="" data-v-f31474c6="" style="height: 0.5rem; z-index: 100;-webkit-box-flex: 0;-webkit-flex: none;">
+                <div data-v-4c21fa9e="" class="navbar-fixed wc" style="background: linear-gradient(90deg, rgb(222, 35, 37) 0%, rgb(255, 80, 74) 100%);">
                     <div data-v-4c21fa9e="" class="navbar__content">
-                        <div data-v-4c21fa9e="" onclick="window.location.href='{{ route('home') }}'"
-                            class="navbar__content-left">
+                        <div data-v-4c21fa9e="" onclick="window.location.href='{{ route('home') }}'" class="navbar__content-left">
                             <img src="{{ asset('assets/png/back.png') }}" width="12" height="12" />
                         </div>
                         <div data-v-4c21fa9e="" class="navbar__content-center">
-                            <div data-v-4c21fa9e="" class="headLogo"
-                                style="background-image: url(&quot;Wlogo.png&quot;);">
+                            <div data-v-4c21fa9e="" class="headLogo" style="background-image: url(&quot;Wlogo.png&quot;);">
                             </div>
                             <div data-v-4c21fa9e="" class="navbar__content-title"></div>
                         </div>
                         <div data-v-4c21fa9e="" class="navbar__content-right">
-                            <div data-v-f31474c6="" onclick="window.location.href='/keFuMenu#/'"
-                                class="WinGo__C-head-more">
+                            <div data-v-f31474c6="" onclick="window.location.href='/keFuMenu#/'" class="WinGo__C-head-more">
                                 <div data-v-f31474c6=""></div>
                                 <div>
                                 </div>
@@ -720,8 +715,7 @@
             <div data-v-ed6673b8="" data-v-f31474c6="" class="Wallet__C">
                 <div data-v-ed6673b8="" class="Wallet__C-balance">
                     <div data-v-ed6673b8="" class="Wallet__C-balance-l1">
-                        <div onclick="location.reload()" data-v-ed6673b8="">₹<span
-                                id="saprebalancetop">{{ auth()->user()->balance }}</span>
+                        <div onclick="location.reload()" data-v-ed6673b8="">₹<span id="saprebalancetop">{{ auth()->user()->balance }}</span>
                         </div>
                     </div>
                     <div data-v-ed6673b8="" class="Wallet__C-balance-l2">
@@ -734,33 +728,22 @@
                 </div>
             </div>
             <div data-v-b4633b52="" data-v-f31474c6="" class="noticeBar__container">
-                <svg data-v-b4633b52="" width="32" height="32" viewBox="0 0 32 32" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
+                <svg data-v-b4633b52="" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_589_37747)">
-                        <path
-                            d="M15.9993 4V28C11.3327 28 7.86502 21.8927 7.86502 21.8927H3.99935C3.26297 21.8927 2.66602 21.2958 2.66602 20.5594V11.3405C2.66602 10.6041 3.26297 10.0072 3.99935 10.0072H7.86502C7.86502 10.0072 11.3327 4 15.9993 4Z"
-                            fill="url(#paint0_linear_589_37747)"></path>
-                        <path
-                            d="M21.334 10C21.7495 10.371 22.1261 10.7865 22.4567 11.2392C23.4265 12.5669 24.0007 14.2149 24.0007 16C24.0007 17.7697 23.4363 19.4045 22.4819 20.7262C22.1452 21.1923 21.7601 21.6195 21.334 22"
-                            stroke="url(#paint1_linear_589_37747)" stroke-width="1.8" stroke-linecap="round"
-                            stroke-linejoin="round"></path>
-                        <path
-                            d="M22.8242 27.4571C26.7227 25.1302 29.3336 20.87 29.3336 16C29.3336 11.2057 26.8031 7.00234 23.005 4.65271"
-                            stroke="url(#paint2_linear_589_37747)" stroke-width="1.8" stroke-linecap="round"></path>
+                        <path d="M15.9993 4V28C11.3327 28 7.86502 21.8927 7.86502 21.8927H3.99935C3.26297 21.8927 2.66602 21.2958 2.66602 20.5594V11.3405C2.66602 10.6041 3.26297 10.0072 3.99935 10.0072H7.86502C7.86502 10.0072 11.3327 4 15.9993 4Z" fill="url(#paint0_linear_589_37747)"></path>
+                        <path d="M21.334 10C21.7495 10.371 22.1261 10.7865 22.4567 11.2392C23.4265 12.5669 24.0007 14.2149 24.0007 16C24.0007 17.7697 23.4363 19.4045 22.4819 20.7262C22.1452 21.1923 21.7601 21.6195 21.334 22" stroke="url(#paint1_linear_589_37747)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M22.8242 27.4571C26.7227 25.1302 29.3336 20.87 29.3336 16C29.3336 11.2057 26.8031 7.00234 23.005 4.65271" stroke="url(#paint2_linear_589_37747)" stroke-width="1.8" stroke-linecap="round"></path>
                     </g>
                     <defs>
-                        <linearGradient id="paint0_linear_589_37747" x1="9.33268" y1="4" x2="9.33268"
-                            y2="28" gradientUnits="userSpaceOnUse">
+                        <linearGradient id="paint0_linear_589_37747" x1="9.33268" y1="4" x2="9.33268" y2="28" gradientUnits="userSpaceOnUse">
                             <stop stop-color="#FF7C7C"></stop>
                             <stop offset="0.74876" stop-color="#F54545"></stop>
                         </linearGradient>
-                        <linearGradient id="paint1_linear_589_37747" x1="22.6673" y1="10" x2="22.6673"
-                            y2="22" gradientUnits="userSpaceOnUse">
+                        <linearGradient id="paint1_linear_589_37747" x1="22.6673" y1="10" x2="22.6673" y2="22" gradientUnits="userSpaceOnUse">
                             <stop stop-color="#FF7C7C"></stop>
                             <stop offset="0.74876" stop-color="#F54545"></stop>
                         </linearGradient>
-                        <linearGradient id="paint2_linear_589_37747" x1="26.0789" y1="4.65271" x2="26.0789"
-                            y2="27.4571" gradientUnits="userSpaceOnUse">
+                        <linearGradient id="paint2_linear_589_37747" x1="26.0789" y1="4.65271" x2="26.0789" y2="27.4571" gradientUnits="userSpaceOnUse">
                             <stop stop-color="#FF7C7C"></stop>
                             <stop offset="0.74876" stop-color="#F54545"></stop>
                         </linearGradient>
@@ -773,13 +756,10 @@
                     <div data-v-b4633b52="" class="noticeBar__container-body-text">
                         {{ $Setting->welcome_node }}
                     </div>
-                </div><button data-v-b4633b52=""><svg data-v-b4633b52="" width="24" height="24"
-                        viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                </div><button data-v-b4633b52=""><svg data-v-b4633b52="" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_589_37755)">
                             <path d="M24 0H0V24H24V0Z" fill="white" fill-opacity="0.01"></path>
-                            <path
-                                d="M12 22C16.1173 22 19.4999 18.7371 19.4999 14.5491C19.4999 13.5209 19.4476 12.4187 18.8778 10.7058C18.3079 8.9929 18.1931 8.7718 17.5905 7.71395C17.333 9.8727 15.9555 10.7724 15.6055 11.0413C15.6055 10.7615 14.7722 7.66795 13.5088 5.81695C12.2685 4 10.5817 2.80796 9.59265 2C9.59265 3.53489 9.16095 5.81695 8.5427 6.9797C7.92445 8.14245 7.80835 8.1848 7.0361 9.0501C6.2639 9.9154 5.90945 10.1826 5.2637 11.2325C4.61798 12.2825 4.5 13.6809 4.5 14.7091C4.5 18.8971 7.88265 22 12 22Z"
-                                fill="white"></path>
+                            <path d="M12 22C16.1173 22 19.4999 18.7371 19.4999 14.5491C19.4999 13.5209 19.4476 12.4187 18.8778 10.7058C18.3079 8.9929 18.1931 8.7718 17.5905 7.71395C17.333 9.8727 15.9555 10.7724 15.6055 11.0413C15.6055 10.7615 14.7722 7.66795 13.5088 5.81695C12.2685 4 10.5817 2.80796 9.59265 2C9.59265 3.53489 9.16095 5.81695 8.5427 6.9797C7.92445 8.14245 7.80835 8.1848 7.0361 9.0501C6.2639 9.9154 5.90945 10.1826 5.2637 11.2325C4.61798 12.2825 4.5 13.6809 4.5 14.7091C4.5 18.8971 7.88265 22 12 22Z" fill="white"></path>
                         </g>
                         <defs>
                             <clipPath id="clip0_589_37755">
@@ -788,17 +768,10 @@
                         </defs>
                     </svg> Detail</button>
             </div>
-            <div data-v-78027f36=""
-                style="width: 100%;height: 4.375rem;padding: 0 0.3rem;margin-bottom: 0.375rem;position: relative;z-index: 1;"
-                class="bonus-box">
-                <div style="width: 100%; height: 100%; background: url({{ asset('assets/png/UBanner.png') }}) no-repeat 50%; border-radius: 0.36667rem; background-size: cover;"
-                    data-v-78027f36="" class="bonus-bg" style="">
-                    <div data-v-78027f36=""
-                        style="font-family: MulticoloreFont; color: #d37116; font-size: .75rem; line-height: .5rem; position: absolute; width: 100%; text-align: center; font-weight: 600; top: 0.60rem; left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%);"
-                        class="inner">
-                        <span
-                            style="font-family: MulticoloreFont; color: #d37116; font-size: .75rem; line-height: .5rem; position: absolute; width: 100%; text-align: center; font-weight: 600; top: 0.60rem; left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%);"
-                            data-v-78027f36="">₹
+            <div data-v-78027f36="" style="width: 100%;height: 4.375rem;padding: 0 0.3rem;margin-bottom: 0.375rem;position: relative;z-index: 1;" class="bonus-box">
+                <div style="width: 100%; height: 100%; background: url({{ asset('assets/png/UBanner.png') }}) no-repeat 50%; border-radius: 0.36667rem; background-size: cover;" data-v-78027f36="" class="bonus-bg" style="">
+                    <div data-v-78027f36="" style="font-family: MulticoloreFont; color: #d37116; font-size: .75rem; line-height: .5rem; position: absolute; width: 100%; text-align: center; font-weight: 600; top: 0.60rem; left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%);" class="inner">
+                        <span style="font-family: MulticoloreFont; color: #d37116; font-size: .75rem; line-height: .5rem; position: absolute; width: 100%; text-align: center; font-weight: 600; top: 0.60rem; left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%);" data-v-78027f36="">₹
                             {{ auth()->user()->balance + auth()->user()->deposit + auth()->user()->bonus }}</span>
                     </div>
                 </div>
@@ -814,7 +787,7 @@
                     <div data-v-c0d1aac6="" class="n6"></div>
                 </div>
                 <div data-v-c0d1aac6="" class="TimeLeft__C-id" style="font-size:0.52667rem;">
-                    <span id="period">20220474440</span>
+                    <span id="period">{{renderGameId()}}</span>
                 </div>
                 <div data-v-c0d1aac6="" class="TimeLeft__C-text">Time remaining</div>
                 <div data-v-c0d1aac6="" class="TimeLeft__C-time">
@@ -831,26 +804,16 @@
                     <div data-v-43251c11="" class="Betting__C-head-r" id="sapreredbutton" onclick="red()">Red</div>
                 </div>
                 <div data-v-43251c11="" class="Betting__C-numC">
-                    <div data-num="0" id="saprenum0" onclick="saprenum0()" data-v-43251c11=""
-                        class="Betting__C-numC-item0"></div>
-                    <div data-v-43251c11="" data-num="1" id="saprenum1" onclick="saprenum1()"
-                        class="Betting__C-numC-item1"></div>
-                    <div data-num="2" id="saprenum2" onclick="saprenum2()" data-v-43251c11=""
-                        class="Betting__C-numC-item2"></div>
-                    <div data-v-43251c11="" data-num="3" id="saprenum3" onclick="saprenum3()"
-                        class="Betting__C-numC-item3"></div>
-                    <div data-num="4" id="saprenum4" onclick="saprenum4()" data-v-43251c11=""
-                        class="Betting__C-numC-item4"></div>
-                    <div data-v-43251c11="" data-num="5" id="saprenum5" onclick="saprenum5()"
-                        class="Betting__C-numC-item5"></div>
-                    <div data-num="6" id="saprenum6" onclick="saprenum6()" data-v-43251c11=""
-                        class="Betting__C-numC-item6"></div>
-                    <div data-v-43251c11="" data-num="7" id="saprenum7" onclick="saprenum7()"
-                        class="Betting__C-numC-item7"></div>
-                    <div data-num="8" id="saprenum8" onclick="saprenum8()" data-v-43251c11=""
-                        class="Betting__C-numC-item8"></div>
-                    <div data-v-43251c11="" data-num="9" id="saprenum9" onclick="saprenum9()"
-                        class="Betting__C-numC-item9"></div>
+                    <div data-num="0" id="saprenum0" onclick="saprenum0()" data-v-43251c11="" class="Betting__C-numC-item0"></div>
+                    <div data-v-43251c11="" data-num="1" id="saprenum1" onclick="saprenum1()" class="Betting__C-numC-item1"></div>
+                    <div data-num="2" id="saprenum2" onclick="saprenum2()" data-v-43251c11="" class="Betting__C-numC-item2"></div>
+                    <div data-v-43251c11="" data-num="3" id="saprenum3" onclick="saprenum3()" class="Betting__C-numC-item3"></div>
+                    <div data-num="4" id="saprenum4" onclick="saprenum4()" data-v-43251c11="" class="Betting__C-numC-item4"></div>
+                    <div data-v-43251c11="" data-num="5" id="saprenum5" onclick="saprenum5()" class="Betting__C-numC-item5"></div>
+                    <div data-num="6" id="saprenum6" onclick="saprenum6()" data-v-43251c11="" class="Betting__C-numC-item6"></div>
+                    <div data-v-43251c11="" data-num="7" id="saprenum7" onclick="saprenum7()" class="Betting__C-numC-item7"></div>
+                    <div data-num="8" id="saprenum8" onclick="saprenum8()" data-v-43251c11="" class="Betting__C-numC-item8"></div>
+                    <div data-v-43251c11="" data-num="9" id="saprenum9" onclick="saprenum9()" class="Betting__C-numC-item9"></div>
                 </div>
 
 
@@ -889,7 +852,7 @@
                 <div data-v-4e271e20="" class="">My history</div>
             </div>
             <div data-v-c74f4bba="" data-v-f31474c6="" class="GameRecord__C">
-               
+
 
 
                 <table id="tableID" class="display" style="width:100%">
@@ -904,39 +867,33 @@
                     <tbody>
 
                         @foreach ($game_record as $item)
-                            <tr>
-                                <td>{{ $item->period }}</td>
-                                <td>{{ $item->ans }}</td>
-                                <td>{{ $item->num }}</td>
-                                
-                                    <td>
+                        <tr>
+                            <td>{{ $item->period }}</td>
+                            <td>{{ $item->ans }}</td>
+                            <td>{{ $item->num }}</td>
 
-                                        @if ($item->clo == 'R')
-                                            <div
-                                                style=" margin: auto; background-color:rgb(255, 0, 0);  border-radius: 20px 20px 20px 20px; height: 15px; width: 15px; ">
-                                            </div>
-                                        @elseif($item->clo == 'G')
-                                            <div
-                                                style="margin: auto;  background-color:rgb(0, 255, 0);  border-radius: 20px 20px 20px 20px; height: 15px; width: 15px; ">
-                                            </div>
-                                        @elseif($item->clo == 'GV')
-                                            <div
-                                                style="margin: auto;  background-color:rgb(0, 255, 0);  border-radius: 20px 20px 20px 20px; height: 15px; width: 15px; display: inline-block; *display: inline;  ">
-                                            </div>
-                                            <div
-                                                style="margin: auto;  background-color:rgb(143, 0, 255);  border-radius: 20px 20px 20px 20px; height: 15px; width: 15px; display: inline-block; *display: inline;  ">
-                                            </div>
-                                        @elseif($item->clo == 'RV')
-                                            <div
-                                                style="margin: auto;  background-color:rgb(255, 0, 0);  border-radius: 20px 20px 20px 20px; height: 15px; width: 15px; display: inline-block; *display: inline;  ">
-                                            </div>
-                                            <div
-                                                style="margin: auto;  background-color:rgb(143, 0, 255);  border-radius: 20px 20px 20px 20px; height: 15px; width: 15px; display: inline-block; *display: inline;  ">
-                                            </div>
-                                        @endif
-                                    </td>
-                              
-                            </tr>
+                            <td>
+
+                                @if ($item->clo == 'R')
+                                <div style=" margin: auto; background-color:rgb(255, 0, 0);  border-radius: 20px 20px 20px 20px; height: 15px; width: 15px; ">
+                                </div>
+                                @elseif($item->clo == 'G')
+                                <div style="margin: auto;  background-color:rgb(0, 255, 0);  border-radius: 20px 20px 20px 20px; height: 15px; width: 15px; ">
+                                </div>
+                                @elseif($item->clo == 'GV')
+                                <div style="margin: auto;  background-color:rgb(0, 255, 0);  border-radius: 20px 20px 20px 20px; height: 15px; width: 15px; display: inline-block; *display: inline;  ">
+                                </div>
+                                <div style="margin: auto;  background-color:rgb(143, 0, 255);  border-radius: 20px 20px 20px 20px; height: 15px; width: 15px; display: inline-block; *display: inline;  ">
+                                </div>
+                                @elseif($item->clo == 'RV')
+                                <div style="margin: auto;  background-color:rgb(255, 0, 0);  border-radius: 20px 20px 20px 20px; height: 15px; width: 15px; display: inline-block; *display: inline;  ">
+                                </div>
+                                <div style="margin: auto;  background-color:rgb(143, 0, 255);  border-radius: 20px 20px 20px 20px; height: 15px; width: 15px; display: inline-block; *display: inline;  ">
+                                </div>
+                                @endif
+                            </td>
+
+                        </tr>
                         @endforeach
 
 
@@ -954,8 +911,7 @@
             </div>
 
             <uni-view data-v-6d17f23c="" data-v-91f724d0="" id="rule" class="cu-modal">
-                <div role="dialog" tabindex="0" class="van-popup van-popup--round van-popup--center"
-                    style="z-index: 2003;">
+                <div role="dialog" tabindex="0" class="van-popup van-popup--round van-popup--center" style="z-index: 2003;">
                     <div data-v-a7a14dc2="" class="TimeLeft__C-PreSale">
                         <div data-v-a7a14dc2="" class="TimeLeft__C-PreSale-head">How to play</div>
                         <div data-v-a7a14dc2="" class="TimeLeft__C-PreSale-body">
@@ -973,24 +929,21 @@
                                 </p>
                                 <p>
                                     <font face="Arial, Microsoft YaHei,  Malgun Gothic, Meiryo, sans-serif">
-                                        1.&nbsp;</font><span
-                                        style="font-family: Arial, &quot;Microsoft YaHei&quot;, , &quot;Malgun Gothic&quot;, Meiryo, sans-serif;">Select</span>
+                                        1.&nbsp;</font><span style="font-family: Arial, &quot;Microsoft YaHei&quot;, , &quot;Malgun Gothic&quot;, Meiryo, sans-serif;">Select</span>
                                     <font face="Arial, Microsoft YaHei,  Malgun Gothic, Meiryo, sans-serif">
                                         &nbsp;green: if the result shows 1,3,7,9 you will get (98*2) 196;If the result
                                         shows 5, you will get (98*1.5) 147</font>
                                 </p>
                                 <p>
                                     <font face="Arial, Microsoft YaHei,  Malgun Gothic, Meiryo, sans-serif">
-                                        2.&nbsp;</font><span
-                                        style="font-family: Arial, &quot;Microsoft YaHei&quot;,  &quot;Malgun Gothic&quot;, Meiryo, sans-serif;">Select</span>
+                                        2.&nbsp;</font><span style="font-family: Arial, &quot;Microsoft YaHei&quot;,  &quot;Malgun Gothic&quot;, Meiryo, sans-serif;">Select</span>
                                     <font face="Arial, Microsoft YaHei,  Malgun Gothic, Meiryo, sans-serif">
                                         &nbsp;red:&nbsp; &nbsp;if the result shows 2,4,6,8 you will get (98*2) 196;If
                                         the result shows 0, you will get (98*1.5) 147</font>
                                 </p>
                                 <p>
                                     <font face="Arial, Microsoft YaHei,  Malgun Gothic, Meiryo, sans-serif">
-                                        3.&nbsp;</font><span
-                                        style="font-family: Arial, &quot;Microsoft YaHei&quot;,  &quot;Malgun Gothic&quot;, Meiryo, sans-serif;">Select</span>
+                                        3.&nbsp;</font><span style="font-family: Arial, &quot;Microsoft YaHei&quot;,  &quot;Malgun Gothic&quot;, Meiryo, sans-serif;">Select</span>
                                     <font face="Arial, Microsoft YaHei,  Malgun Gothic, Meiryo, sans-serif">
                                         &nbsp;violet:if the result shows 0 or 5, you will get (98*4.5) 441</font>
                                 </p>
@@ -1037,40 +990,29 @@
     </div>
     <uni-view data-v-1a01b218="" data-v-91f724d0="" id="sapregreenbox" class="cu-modal">
         <uni-view data-v-1a01b218="" class="cu-dialog bg-white">
-            <uni-view data-v-1a01b218="" class="cu-bar justify-end bg-green"
-                style="background:linear-gradient(90deg,#3faa70 0%,#47ba7c 100%);height: 2.53333rem;position: relative;padding-top: 0.4rem;">
-                <uni-view data-v-1a01b218="" class="content"
-                    style="height: 0.58667rem; font-weight: 700; font-size: .48rem; text-align: center; color: #fff;">Win
-                    Go 3Min<div data-v-15f0cefa=""
-                        style="width: 7.46667rem; height: 0.66667rem; margin: 0.21333rem auto 0; background: #fff; border-radius: 0.13333rem; text-align: center; font-weight: 500; color:#000; font-size: .34667rem;"
-                        class="Betting__Popup-head-selectName"><span data-v-15f0cefa="">Select</span><span
-                            data-v-15f0cefa="">Green</span></div>
+            <uni-view data-v-1a01b218="" class="cu-bar justify-end bg-green" style="background:linear-gradient(90deg,#3faa70 0%,#47ba7c 100%);height: 2.53333rem;position: relative;padding-top: 0.4rem;">
+                <uni-view data-v-1a01b218="" class="content" style="height: 0.58667rem; font-weight: 700; font-size: .48rem; text-align: center; color: #fff;">Win
+                    Go 3Min<div data-v-15f0cefa="" style="width: 7.46667rem; height: 0.66667rem; margin: 0.21333rem auto 0; background: #fff; border-radius: 0.13333rem; text-align: center; font-weight: 500; color:#000; font-size: .34667rem;" class="Betting__Popup-head-selectName"><span data-v-15f0cefa="">Select</span><span data-v-15f0cefa="">Green</span></div>
                 </uni-view>
             </uni-view>
             <uni-view data-v-1a01b218="">
                 <uni-view data-v-1a01b218="" class="cu-bar padding-xl">
                     <uni-text data-v-1a01b218=""><span>Contract Money</span></uni-text>
                 </uni-view>
-                <uni-scroll-view data-v-1a01b218="" class="bg-white nav text-left"
-                    style="margin-left: 10px; margin-top: -20px;">
+                <uni-scroll-view data-v-1a01b218="" class="bg-white nav text-left" style="margin-left: 10px; margin-top: -20px;">
                     <div class="uni-scroll-view">
                         <div class="uni-scroll-view" style="overflow: auto hidden;">
                             <div class="uni-scroll-view-content">
 
-                                <uni-view data-v-1a01b218="" data-id="69" id="sapre69" onclick="sapresel(69)"
-                                    class="cu-item text-blue cur">1
+                                <uni-view data-v-1a01b218="" data-id="69" id="sapre69" onclick="sapresel(69)" class="cu-item text-blue cur">1
                                 </uni-view>
-                                <uni-view data-v-1a01b218="" data-id="0" id="sapre1" onclick="sapresel(1)"
-                                    class="cu-item">10
+                                <uni-view data-v-1a01b218="" data-id="0" id="sapre1" onclick="sapresel(1)" class="cu-item">10
                                 </uni-view>
-                                <uni-view data-v-1a01b218="" data-id="1" id="sapre2" onclick="sapresel(2)"
-                                    class="cu-item">100
+                                <uni-view data-v-1a01b218="" data-id="1" id="sapre2" onclick="sapresel(2)" class="cu-item">100
                                 </uni-view>
-                                <uni-view data-v-1a01b218="" data-id="2" id="sapre3" onclick="sapresel(3)"
-                                    class="cu-item">1000
+                                <uni-view data-v-1a01b218="" data-id="2" id="sapre3" onclick="sapresel(3)" class="cu-item">1000
                                 </uni-view>
-                                <uni-view data-v-1a01b218="" data-id="3" id="sapre4" onclick="sapresel(4)"
-                                    class="cu-item">10000
+                                <uni-view data-v-1a01b218="" data-id="3" id="sapre4" onclick="sapresel(4)" class="cu-item">10000
                                 </uni-view>
                             </div>
                         </div>
@@ -1085,11 +1027,8 @@
                         </uni-view>
                         <uni-input data-v-9d9b8ed0="" class="uni-numbox__value">
                             <div class="uni-input-wrapper">
-                                <div class="uni-input-placeholder input-placeholder" data-v-9d9b8ed0=""
-                                    data-v-1a01b218="" data-v-91f724d0="" data-v-5d7012ef="" style="display: none;">
-                                </div><input maxlength="140" step="0.000000000000000001" id="sapregin"
-                                    value="1" enterkeyhint="done" autocomplete="off" type="number"
-                                    class="uni-input-input">
+                                <div class="uni-input-placeholder input-placeholder" data-v-9d9b8ed0="" data-v-1a01b218="" data-v-91f724d0="" data-v-5d7012ef="" style="display: none;">
+                                </div><input maxlength="140" step="0.000000000000000001" id="sapregin" value="1" enterkeyhint="done" autocomplete="off" type="number" class="uni-input-input">
 
                             </div>
                         </uni-input>
@@ -1112,11 +1051,9 @@
             </uni-view>
             <uni-view data-v-1a01b218="" class="cu-bar justify-end solids-top margin-top">
                 <uni-view data-v-1a01b218="" class="action">
-                    <uni-button style="background: #25253c;color: #7d7d9d;" data-v-1a01b218="" id="sapreclose"
-                        class="cu-btn text-gray border">CLOSE
+                    <uni-button style="background: #25253c;color: #7d7d9d;" data-v-1a01b218="" id="sapreclose" class="cu-btn text-gray border">CLOSE
                     </uni-button>
-                    <uni-button style="background-color: #40ad72;color:#fff;" data-v-1a01b218=""
-                        onclick="gsapreproceed()" class="cu-btn text-blue border margin-left">
+                    <uni-button style="background-color: #40ad72;color:#fff;" data-v-1a01b218="" onclick="gsapreproceed()" class="cu-btn text-blue border margin-left">
                         Total amount ₹<span id="sapregtotal">1</span></span>.00</uni-button>
                 </uni-view>
             </uni-view>
@@ -1125,40 +1062,28 @@
 
     <uni-view data-v-1a01b218="" data-v-91f724d0="" id="saprered" class="cu-modal ">
         <uni-view data-v-1a01b218="" class="cu-dialog bg-white">
-            <uni-view data-v-1a01b218="" class="cu-bar justify-end bg-red"
-                style="background:linear-gradient(90deg,#fd565c 0%,#fd565c 100%);height: 2.53333rem;position: relative;padding-top: 0.4rem;">
-                <uni-view data-v-1a01b218="" class="content"
-                    style="height: 0.58667rem;font-weight: 700;font-size: .48rem;text-align: center;color: #fff;"
-                    style="font-weight: bold;">Win Go 3Min<div data-v-15f0cefa=""
-                        style="width: 7.46667rem; height: 0.66667rem; margin: 0.21333rem auto 0; background: #fff; border-radius: 0.13333rem; text-align: center; font-weight: 500; color:#000; font-size: .34667rem;"
-                        class="Betting__Popup-head-selectName"><span data-v-15f0cefa="">Select</span><span
-                            data-v-15f0cefa="">Red</span></div>
+            <uni-view data-v-1a01b218="" class="cu-bar justify-end bg-red" style="background:linear-gradient(90deg,#fd565c 0%,#fd565c 100%);height: 2.53333rem;position: relative;padding-top: 0.4rem;">
+                <uni-view data-v-1a01b218="" class="content" style="height: 0.58667rem;font-weight: 700;font-size: .48rem;text-align: center;color: #fff;" style="font-weight: bold;">Win Go 3Min<div data-v-15f0cefa="" style="width: 7.46667rem; height: 0.66667rem; margin: 0.21333rem auto 0; background: #fff; border-radius: 0.13333rem; text-align: center; font-weight: 500; color:#000; font-size: .34667rem;" class="Betting__Popup-head-selectName"><span data-v-15f0cefa="">Select</span><span data-v-15f0cefa="">Red</span></div>
                 </uni-view>
             </uni-view>
             <uni-view data-v-1a01b218="">
                 <uni-view data-v-1a01b218="" class="cu-bar padding-xl">
                     <uni-text data-v-1a01b218=""><span>Contract Money</span></uni-text>
                 </uni-view>
-                <uni-scroll-view data-v-1a01b218="" class="bg-white nav text-left"
-                    style="margin-left: 10px; margin-top: -20px;">
+                <uni-scroll-view data-v-1a01b218="" class="bg-white nav text-left" style="margin-left: 10px; margin-top: -20px;">
                     <div class="uni-scroll-view">
                         <div class="uni-scroll-view" style="overflow: auto hidden;">
                             <div class="uni-scroll-view-content">
 
-                                <uni-view data-v-1a01b218="" data-id="59" id="sapre59" onclick="sapreselr(59)"
-                                    class="cu-item text-blue cur">1
+                                <uni-view data-v-1a01b218="" data-id="59" id="sapre59" onclick="sapreselr(59)" class="cu-item text-blue cur">1
                                 </uni-view>
-                                <uni-view data-v-1a01b218="" data-id="0" id="sapre5" onclick="sapreselr(5)"
-                                    class="cu-item">10
+                                <uni-view data-v-1a01b218="" data-id="0" id="sapre5" onclick="sapreselr(5)" class="cu-item">10
                                 </uni-view>
-                                <uni-view data-v-1a01b218="" data-id="1" id="sapre6" onclick="sapreselr(6)"
-                                    class="cu-item">100
+                                <uni-view data-v-1a01b218="" data-id="1" id="sapre6" onclick="sapreselr(6)" class="cu-item">100
                                 </uni-view>
-                                <uni-view data-v-1a01b218="" data-id="2" id="sapre7" onclick="sapreselr(7)"
-                                    class="cu-item">1000
+                                <uni-view data-v-1a01b218="" data-id="2" id="sapre7" onclick="sapreselr(7)" class="cu-item">1000
                                 </uni-view>
-                                <uni-view data-v-1a01b218="" data-id="3" id="sapre8" onclick="sapreselr(8)"
-                                    class="cu-item">10000
+                                <uni-view data-v-1a01b218="" data-id="3" id="sapre8" onclick="sapreselr(8)" class="cu-item">10000
                                 </uni-view>
                             </div>
                         </div>
@@ -1173,11 +1098,8 @@
                         </uni-view>
                         <uni-input data-v-9d9b8ed0="" class="uni-numbox__value">
                             <div class="uni-input-wrapper">
-                                <div class="uni-input-placeholder input-placeholder" data-v-9d9b8ed0=""
-                                    data-v-1a01b218="" data-v-91f724d0="" data-v-5d7012ef="" style="display: none;">
-                                </div><input maxlength="140" step="0.000000000000000001" id="saprerin"
-                                    value="1" enterkeyhint="done" autocomplete="off" type="number"
-                                    class="uni-input-input">
+                                <div class="uni-input-placeholder input-placeholder" data-v-9d9b8ed0="" data-v-1a01b218="" data-v-91f724d0="" data-v-5d7012ef="" style="display: none;">
+                                </div><input maxlength="140" step="0.000000000000000001" id="saprerin" value="1" enterkeyhint="done" autocomplete="off" type="number" class="uni-input-input">
 
                             </div>
                         </uni-input>
@@ -1200,11 +1122,9 @@
             </uni-view>
             <uni-view data-v-1a01b218="" class="cu-bar justify-end solids-top margin-top">
                 <uni-view data-v-1a01b218="" class="action">
-                    <uni-button style="background: #25253c;color: #7d7d9d;" data-v-1a01b218="" id="sapreclose3"
-                        class="cu-btn text-gray border">CLOSE
+                    <uni-button style="background: #25253c;color: #7d7d9d;" data-v-1a01b218="" id="sapreclose3" class="cu-btn text-gray border">CLOSE
                     </uni-button>
-                    <uni-button style="background-color: #fd565c;color:#fff;" data-v-1a01b218=""
-                        onclick="rsapreproceed()" class="cu-btn text-blue border margin-left">
+                    <uni-button style="background-color: #fd565c;color:#fff;" data-v-1a01b218="" onclick="rsapreproceed()" class="cu-btn text-blue border margin-left">
                         Total amount ₹<span id="saprertotal">1</span></span>.00</uni-button>
                 </uni-view>
             </uni-view>
@@ -1213,41 +1133,28 @@
 
     <uni-view data-v-1a01b218="" data-v-91f724d0="" id="sapreviobox" class="cu-modal ">
         <uni-view data-v-1a01b218="" class="cu-dialog bg-white">
-            <uni-view data-v-1a01b218=""
-                style="background:linear-gradient(90deg,#b658fe 0%,#b658fe 100%);height: 2.53333rem;position: relative;padding-top: 0.4rem;"
-                class="cu-bar justify-end bg-purple">
-                <uni-view data-v-1a01b218="" class="content"
-                    style="height: 0.58667rem;font-weight: 700;font-size: .48rem;text-align: center;color: #fff;"
-                    style="font-weight: bold;">Win Go 3Min<div data-v-15f0cefa=""
-                        style="width: 7.46667rem;height: 0.66667rem;margin: 0.21333rem auto 0;background: #fff;border-radius: 0.13333rem;text-align: center;font-weight: 500;color:#000;font-size: .34667rem;"
-                        class="Betting__Popup-head-selectName"><span data-v-15f0cefa="">Select</span><span
-                            data-v-15f0cefa="">Violet</span></div>
+            <uni-view data-v-1a01b218="" style="background:linear-gradient(90deg,#b658fe 0%,#b658fe 100%);height: 2.53333rem;position: relative;padding-top: 0.4rem;" class="cu-bar justify-end bg-purple">
+                <uni-view data-v-1a01b218="" class="content" style="height: 0.58667rem;font-weight: 700;font-size: .48rem;text-align: center;color: #fff;" style="font-weight: bold;">Win Go 3Min<div data-v-15f0cefa="" style="width: 7.46667rem;height: 0.66667rem;margin: 0.21333rem auto 0;background: #fff;border-radius: 0.13333rem;text-align: center;font-weight: 500;color:#000;font-size: .34667rem;" class="Betting__Popup-head-selectName"><span data-v-15f0cefa="">Select</span><span data-v-15f0cefa="">Violet</span></div>
                 </uni-view>
             </uni-view>
             <uni-view data-v-1a01b218="">
                 <uni-view data-v-1a01b218="" class="cu-bar padding-xl">
                     <uni-text data-v-1a01b218=""><span>Contract Money</span></uni-text>
                 </uni-view>
-                <uni-scroll-view data-v-1a01b218="" class="bg-white nav text-left"
-                    style="margin-left: 10px; margin-top: -20px;">
+                <uni-scroll-view data-v-1a01b218="" class="bg-white nav text-left" style="margin-left: 10px; margin-top: -20px;">
                     <div class="uni-scroll-view">
                         <div class="uni-scroll-view" style="overflow: auto hidden;">
                             <div class="uni-scroll-view-content">
 
-                                <uni-view data-v-1a01b218="" data-id="79" id="sapre79" onclick="sapreselv(79)"
-                                    class="cu-item text-blue cur">1
+                                <uni-view data-v-1a01b218="" data-id="79" id="sapre79" onclick="sapreselv(79)" class="cu-item text-blue cur">1
                                 </uni-view>
-                                <uni-view data-v-1a01b218="" data-id="0" id="sapre9" onclick="sapreselv(9)"
-                                    class="cu-item">10
+                                <uni-view data-v-1a01b218="" data-id="0" id="sapre9" onclick="sapreselv(9)" class="cu-item">10
                                 </uni-view>
-                                <uni-view data-v-1a01b218="" data-id="1" id="sapre10" onclick="sapreselv(10)"
-                                    class="cu-item">100
+                                <uni-view data-v-1a01b218="" data-id="1" id="sapre10" onclick="sapreselv(10)" class="cu-item">100
                                 </uni-view>
-                                <uni-view data-v-1a01b218="" data-id="2" id="sapre11" onclick="sapreselv(11)"
-                                    class="cu-item">1000
+                                <uni-view data-v-1a01b218="" data-id="2" id="sapre11" onclick="sapreselv(11)" class="cu-item">1000
                                 </uni-view>
-                                <uni-view data-v-1a01b218="" data-id="3" id="sapre12" onclick="sapreselv(12)"
-                                    class="cu-item">10000
+                                <uni-view data-v-1a01b218="" data-id="3" id="sapre12" onclick="sapreselv(12)" class="cu-item">10000
                                 </uni-view>
                             </div>
                         </div>
@@ -1262,11 +1169,8 @@
                         </uni-view>
                         <uni-input data-v-9d9b8ed0="" class="uni-numbox__value">
                             <div class="uni-input-wrapper">
-                                <div class="uni-input-placeholder input-placeholder" data-v-9d9b8ed0=""
-                                    data-v-1a01b218="" data-v-91f724d0="" data-v-5d7012ef="" style="display: none;">
-                                </div><input maxlength="140" step="0.000000000000000001" id="saprevin"
-                                    value="1" enterkeyhint="done" autocomplete="off" type="number"
-                                    class="uni-input-input">
+                                <div class="uni-input-placeholder input-placeholder" data-v-9d9b8ed0="" data-v-1a01b218="" data-v-91f724d0="" data-v-5d7012ef="" style="display: none;">
+                                </div><input maxlength="140" step="0.000000000000000001" id="saprevin" value="1" enterkeyhint="done" autocomplete="off" type="number" class="uni-input-input">
 
                             </div>
                         </uni-input>
@@ -1289,11 +1193,9 @@
             </uni-view>
             <uni-view data-v-1a01b218="" class="cu-bar justify-end solids-top margin-top">
                 <uni-view data-v-1a01b218="" class="action">
-                    <uni-button style="background: #25253c;color: #7d7d9d;" data-v-1a01b218="" id="sapreclose1"
-                        class="cu-btn text-gray border">CLOSE
+                    <uni-button style="background: #25253c;color: #7d7d9d;" data-v-1a01b218="" id="sapreclose1" class="cu-btn text-gray border">CLOSE
                     </uni-button>
-                    <uni-button style="background-color: #b658fe;color:#fff;" data-v-1a01b218=""
-                        onclick="vsapreproceed()" class="cu-btn text-blue border margin-left">
+                    <uni-button style="background-color: #b658fe;color:#fff;" data-v-1a01b218="" onclick="vsapreproceed()" class="cu-btn text-blue border margin-left">
                         Total amount ₹<span id="saprevtotal">1</span></span>.00</uni-button>
                 </uni-view>
             </uni-view>
@@ -1311,23 +1213,18 @@
                 <uni-view data-v-1a01b218="" class="cu-bar padding-xl">
                     <uni-text data-v-1a01b218=""><span>Contract Money</span></uni-text>
                 </uni-view>
-                <uni-scroll-view data-v-1a01b218="" class="bg-white nav text-left"
-                    style="margin-left: 10px; margin-top: -20px;">
+                <uni-scroll-view data-v-1a01b218="" class="bg-white nav text-left" style="margin-left: 10px; margin-top: -20px;">
                     <div class="uni-scroll-view">
                         <div class="uni-scroll-view" style="overflow: auto hidden;">
                             <div class="uni-scroll-view-content">
 
-                                <uni-view data-v-1a01b218="" data-id="0" id="sapre13" onclick="sapresel0(13)"
-                                    class="cu-item text-blue cur">10
+                                <uni-view data-v-1a01b218="" data-id="0" id="sapre13" onclick="sapresel0(13)" class="cu-item text-blue cur">10
                                 </uni-view>
-                                <uni-view data-v-1a01b218="" data-id="1" id="sapre14" onclick="sapresel0(14)"
-                                    class="cu-item">100
+                                <uni-view data-v-1a01b218="" data-id="1" id="sapre14" onclick="sapresel0(14)" class="cu-item">100
                                 </uni-view>
-                                <uni-view data-v-1a01b218="" data-id="2" id="sapre15" onclick="sapresel0(15)"
-                                    class="cu-item">1000
+                                <uni-view data-v-1a01b218="" data-id="2" id="sapre15" onclick="sapresel0(15)" class="cu-item">1000
                                 </uni-view>
-                                <uni-view data-v-1a01b218="" data-id="3" id="sapre16" onclick="sapresel0(16)"
-                                    class="cu-item">10000
+                                <uni-view data-v-1a01b218="" data-id="3" id="sapre16" onclick="sapresel0(16)" class="cu-item">10000
                                 </uni-view>
                             </div>
                         </div>
@@ -1342,11 +1239,8 @@
                         </uni-view>
                         <uni-input data-v-9d9b8ed0="" class="uni-numbox__value">
                             <div class="uni-input-wrapper">
-                                <div class="uni-input-placeholder input-placeholder" data-v-9d9b8ed0=""
-                                    data-v-1a01b218="" data-v-91f724d0="" data-v-5d7012ef="" style="display: none;">
-                                </div><input maxlength="140" step="0.000000000000000001" id="saprein0"
-                                    value="1" enterkeyhint="done" autocomplete="off" type="number"
-                                    class="uni-input-input">
+                                <div class="uni-input-placeholder input-placeholder" data-v-9d9b8ed0="" data-v-1a01b218="" data-v-91f724d0="" data-v-5d7012ef="" style="display: none;">
+                                </div><input maxlength="140" step="0.000000000000000001" id="saprein0" value="1" enterkeyhint="done" autocomplete="off" type="number" class="uni-input-input">
 
                             </div>
                         </uni-input>
@@ -1376,8 +1270,7 @@
                 <uni-view data-v-1a01b218="" class="action">
                     <uni-button data-v-1a01b218="" class="cu-btn text-gray border" onclick="saprec0()">CLOSE
                     </uni-button>
-                    <uni-button data-v-1a01b218="" class="cu-btn text-blue border margin-left"
-                        onclick="sapreproceed0()">
+                    <uni-button data-v-1a01b218="" class="cu-btn text-blue border margin-left" onclick="sapreproceed0()">
                         CONFIRM</uni-button>
                 </uni-view>
             </uni-view>
@@ -1394,23 +1287,18 @@
                 <uni-view data-v-1a01b218="" class="cu-bar padding-xl">
                     <uni-text data-v-1a01b218=""><span>Contract Money</span></uni-text>
                 </uni-view>
-                <uni-scroll-view data-v-1a01b218="" class="bg-white nav text-left"
-                    style="margin-left: 10px; margin-top: -20px;">
+                <uni-scroll-view data-v-1a01b218="" class="bg-white nav text-left" style="margin-left: 10px; margin-top: -20px;">
                     <div class="uni-scroll-view">
                         <div class="uni-scroll-view" style="overflow: auto hidden;">
                             <div class="uni-scroll-view-content">
 
-                                <uni-view data-v-1a01b218="" data-id="0" id="sapre17" onclick="sapresel1(17)"
-                                    class="cu-item text-blue cur">10
+                                <uni-view data-v-1a01b218="" data-id="0" id="sapre17" onclick="sapresel1(17)" class="cu-item text-blue cur">10
                                 </uni-view>
-                                <uni-view data-v-1a01b218="" data-id="1" id="sapre18" onclick="sapresel1(18)"
-                                    class="cu-item">100
+                                <uni-view data-v-1a01b218="" data-id="1" id="sapre18" onclick="sapresel1(18)" class="cu-item">100
                                 </uni-view>
-                                <uni-view data-v-1a01b218="" data-id="2" id="sapre19" onclick="sapresel1(19)"
-                                    class="cu-item">1000
+                                <uni-view data-v-1a01b218="" data-id="2" id="sapre19" onclick="sapresel1(19)" class="cu-item">1000
                                 </uni-view>
-                                <uni-view data-v-1a01b218="" data-id="3" id="sapre20" onclick="sapresel1(20)"
-                                    class="cu-item">10000
+                                <uni-view data-v-1a01b218="" data-id="3" id="sapre20" onclick="sapresel1(20)" class="cu-item">10000
                                 </uni-view>
                             </div>
                         </div>
@@ -1425,11 +1313,8 @@
                         </uni-view>
                         <uni-input data-v-9d9b8ed0="" class="uni-numbox__value">
                             <div class="uni-input-wrapper">
-                                <div class="uni-input-placeholder input-placeholder" data-v-9d9b8ed0=""
-                                    data-v-1a01b218="" data-v-91f724d0="" data-v-5d7012ef="" style="display: none;">
-                                </div><input maxlength="140" step="0.000000000000000001" id="saprein1"
-                                    value="1" enterkeyhint="done" autocomplete="off" type="number"
-                                    class="uni-input-input">
+                                <div class="uni-input-placeholder input-placeholder" data-v-9d9b8ed0="" data-v-1a01b218="" data-v-91f724d0="" data-v-5d7012ef="" style="display: none;">
+                                </div><input maxlength="140" step="0.000000000000000001" id="saprein1" value="1" enterkeyhint="done" autocomplete="off" type="number" class="uni-input-input">
 
                             </div>
                         </uni-input>
@@ -1459,8 +1344,7 @@
                 <uni-view data-v-1a01b218="" class="action">
                     <uni-button data-v-1a01b218="" class="cu-btn text-gray border" onclick="saprec1()">CLOSE
                     </uni-button>
-                    <uni-button data-v-1a01b218="" class="cu-btn text-blue border margin-left"
-                        onclick="sapreproceed1()">
+                    <uni-button data-v-1a01b218="" class="cu-btn text-blue border margin-left" onclick="sapreproceed1()">
                         CONFIRM</uni-button>
                 </uni-view>
             </uni-view>
@@ -1477,23 +1361,18 @@
                 <uni-view data-v-1a01b218="" class="cu-bar padding-xl">
                     <uni-text data-v-1a01b218=""><span>Contract Money</span></uni-text>
                 </uni-view>
-                <uni-scroll-view data-v-1a01b218="" class="bg-white nav text-left"
-                    style="margin-left: 10px; margin-top: -20px;">
+                <uni-scroll-view data-v-1a01b218="" class="bg-white nav text-left" style="margin-left: 10px; margin-top: -20px;">
                     <div class="uni-scroll-view">
                         <div class="uni-scroll-view" style="overflow: auto hidden;">
                             <div class="uni-scroll-view-content">
 
-                                <uni-view data-v-1a01b218="" data-id="0" id="sapre21" onclick="sapresel2(21)"
-                                    class="cu-item text-blue cur">10
+                                <uni-view data-v-1a01b218="" data-id="0" id="sapre21" onclick="sapresel2(21)" class="cu-item text-blue cur">10
                                 </uni-view>
-                                <uni-view data-v-1a01b218="" data-id="1" id="sapre22" onclick="sapresel2(22)"
-                                    class="cu-item">100
+                                <uni-view data-v-1a01b218="" data-id="1" id="sapre22" onclick="sapresel2(22)" class="cu-item">100
                                 </uni-view>
-                                <uni-view data-v-1a01b218="" data-id="2" id="sapre23" onclick="sapresel2(23)"
-                                    class="cu-item">1000
+                                <uni-view data-v-1a01b218="" data-id="2" id="sapre23" onclick="sapresel2(23)" class="cu-item">1000
                                 </uni-view>
-                                <uni-view data-v-1a01b218="" data-id="3" id="sapre24" onclick="sapresel2(24)"
-                                    class="cu-item">10000
+                                <uni-view data-v-1a01b218="" data-id="3" id="sapre24" onclick="sapresel2(24)" class="cu-item">10000
                                 </uni-view>
                             </div>
                         </div>
@@ -1508,11 +1387,8 @@
                         </uni-view>
                         <uni-input data-v-9d9b8ed0="" class="uni-numbox__value">
                             <div class="uni-input-wrapper">
-                                <div class="uni-input-placeholder input-placeholder" data-v-9d9b8ed0=""
-                                    data-v-1a01b218="" data-v-91f724d0="" data-v-5d7012ef="" style="display: none;">
-                                </div><input maxlength="140" step="0.000000000000000001" id="saprein2"
-                                    value="1" enterkeyhint="done" autocomplete="off" type="number"
-                                    class="uni-input-input">
+                                <div class="uni-input-placeholder input-placeholder" data-v-9d9b8ed0="" data-v-1a01b218="" data-v-91f724d0="" data-v-5d7012ef="" style="display: none;">
+                                </div><input maxlength="140" step="0.000000000000000001" id="saprein2" value="1" enterkeyhint="done" autocomplete="off" type="number" class="uni-input-input">
 
                             </div>
                         </uni-input>
@@ -1528,8 +1404,7 @@
                     <input type="hidden" type="text" id="saprefamount2" name="amount" value="10">
                 </form>
                 <uni-view data-v-1a01b218="" class=" margin-bottom">
-                    <uni-text data-v-1a01b218=""><span>Total contract money is <span
-                                id="sapre2total">10</span></span>
+                    <uni-text data-v-1a01b218=""><span>Total contract money is <span id="sapre2total">10</span></span>
                     </uni-text>
                 </uni-view>
 
@@ -1543,8 +1418,7 @@
                 <uni-view data-v-1a01b218="" class="action">
                     <uni-button data-v-1a01b218="" class="cu-btn text-gray border" onclick="saprec2()">CLOSE
                     </uni-button>
-                    <uni-button data-v-1a01b218="" class="cu-btn text-blue border margin-left"
-                        onclick="sapreproceed2()">
+                    <uni-button data-v-1a01b218="" class="cu-btn text-blue border margin-left" onclick="sapreproceed2()">
                         CONFIRM</uni-button>
                 </uni-view>
             </uni-view>
@@ -1561,23 +1435,18 @@
                 <uni-view data-v-1a01b218="" class="cu-bar padding-xl">
                     <uni-text data-v-1a01b218=""><span>Contract Money</span></uni-text>
                 </uni-view>
-                <uni-scroll-view data-v-1a01b218="" class="bg-white nav text-left"
-                    style="margin-left: 10px; margin-top: -20px;">
+                <uni-scroll-view data-v-1a01b218="" class="bg-white nav text-left" style="margin-left: 10px; margin-top: -20px;">
                     <div class="uni-scroll-view">
                         <div class="uni-scroll-view" style="overflow: auto hidden;">
                             <div class="uni-scroll-view-content">
 
-                                <uni-view data-v-1a01b218="" data-id="0" id="sapre25"
-                                    onclick="sapresel3(25)" class="cu-item text-blue cur">10
+                                <uni-view data-v-1a01b218="" data-id="0" id="sapre25" onclick="sapresel3(25)" class="cu-item text-blue cur">10
                                 </uni-view>
-                                <uni-view data-v-1a01b218="" data-id="1" id="sapre26"
-                                    onclick="sapresel3(26)" class="cu-item">100
+                                <uni-view data-v-1a01b218="" data-id="1" id="sapre26" onclick="sapresel3(26)" class="cu-item">100
                                 </uni-view>
-                                <uni-view data-v-1a01b218="" data-id="2" id="sapre27"
-                                    onclick="sapresel3(27)" class="cu-item">1000
+                                <uni-view data-v-1a01b218="" data-id="2" id="sapre27" onclick="sapresel3(27)" class="cu-item">1000
                                 </uni-view>
-                                <uni-view data-v-1a01b218="" data-id="3" id="sapre28"
-                                    onclick="sapresel3(28)" class="cu-item">10000
+                                <uni-view data-v-1a01b218="" data-id="3" id="sapre28" onclick="sapresel3(28)" class="cu-item">10000
                                 </uni-view>
                             </div>
                         </div>
@@ -1585,20 +1454,14 @@
                 </uni-scroll-view>
                 <uni-view data-v-1a01b218="" class="cu-bar  padding-xl justify-start">
                     <uni-text data-v-1a01b218=""><span>Number</span></uni-text>
-                    <uni-view data-v-9d9b8ed0="" data-v-1a01b218="" class="uni-numbox"
-                        style="margin-left: 10px;">
+                    <uni-view data-v-9d9b8ed0="" data-v-1a01b218="" class="uni-numbox" style="margin-left: 10px;">
                         <uni-view data-v-9d9b8ed0="" class="uni-numbox__minus" onclick="minus(saprein3)">
                             <uni-text data-v-9d9b8ed0="" class="uni-numbox--text"><span>-</span>
                             </uni-text>
                         </uni-view>
                         <uni-input data-v-9d9b8ed0="" class="uni-numbox__value">
                             <div class="uni-input-wrapper">
-                                <div class="uni-input-placeholder input-placeholder" data-v-9d9b8ed0=""
-                                    data-v-1a01b218="" data-v-91f724d0="" data-v-5d7012ef=""
-                                    style="display: none;"></div><input maxlength="140"
-                                    step="0.000000000000000001" id="saprein3" value="1"
-                                    enterkeyhint="done" autocomplete="off" type="number"
-                                    class="uni-input-input">
+                                <div class="uni-input-placeholder input-placeholder" data-v-9d9b8ed0="" data-v-1a01b218="" data-v-91f724d0="" data-v-5d7012ef="" style="display: none;"></div><input maxlength="140" step="0.000000000000000001" id="saprein3" value="1" enterkeyhint="done" autocomplete="off" type="number" class="uni-input-input">
 
                             </div>
                         </uni-input>
@@ -1614,8 +1477,7 @@
                     <input type="hidden" type="text" id="saprefamount3" name="amount" value="10">
                 </form>
                 <uni-view data-v-1a01b218="" class=" margin-bottom">
-                    <uni-text data-v-1a01b218=""><span>Total contract money is <span
-                                id="sapre3total">10</span></span>
+                    <uni-text data-v-1a01b218=""><span>Total contract money is <span id="sapre3total">10</span></span>
                     </uni-text>
                 </uni-view>
 
@@ -1629,8 +1491,7 @@
                 <uni-view data-v-1a01b218="" class="action">
                     <uni-button data-v-1a01b218="" class="cu-btn text-gray border" onclick="saprec3()">CLOSE
                     </uni-button>
-                    <uni-button data-v-1a01b218="" class="cu-btn text-blue border margin-left"
-                        onclick="sapreproceed3()">
+                    <uni-button data-v-1a01b218="" class="cu-btn text-blue border margin-left" onclick="sapreproceed3()">
                         CONFIRM</uni-button>
                 </uni-view>
             </uni-view>
@@ -1647,23 +1508,18 @@
                 <uni-view data-v-1a01b218="" class="cu-bar padding-xl">
                     <uni-text data-v-1a01b218=""><span>Contract Money</span></uni-text>
                 </uni-view>
-                <uni-scroll-view data-v-1a01b218="" class="bg-white nav text-left"
-                    style="margin-left: 10px; margin-top: -20px;">
+                <uni-scroll-view data-v-1a01b218="" class="bg-white nav text-left" style="margin-left: 10px; margin-top: -20px;">
                     <div class="uni-scroll-view">
                         <div class="uni-scroll-view" style="overflow: auto hidden;">
                             <div class="uni-scroll-view-content">
 
-                                <uni-view data-v-1a01b218="" data-id="0" id="sapre29"
-                                    onclick="sapresel4(29)" class="cu-item text-blue cur">10
+                                <uni-view data-v-1a01b218="" data-id="0" id="sapre29" onclick="sapresel4(29)" class="cu-item text-blue cur">10
                                 </uni-view>
-                                <uni-view data-v-1a01b218="" data-id="1" id="sapre30"
-                                    onclick="sapresel4(30)" class="cu-item">100
+                                <uni-view data-v-1a01b218="" data-id="1" id="sapre30" onclick="sapresel4(30)" class="cu-item">100
                                 </uni-view>
-                                <uni-view data-v-1a01b218="" data-id="2" id="sapre31"
-                                    onclick="sapresel4(31)" class="cu-item">1000
+                                <uni-view data-v-1a01b218="" data-id="2" id="sapre31" onclick="sapresel4(31)" class="cu-item">1000
                                 </uni-view>
-                                <uni-view data-v-1a01b218="" data-id="3" id="sapre32"
-                                    onclick="sapresel4(32)" class="cu-item">10000
+                                <uni-view data-v-1a01b218="" data-id="3" id="sapre32" onclick="sapresel4(32)" class="cu-item">10000
                                 </uni-view>
                             </div>
                         </div>
@@ -1671,20 +1527,14 @@
                 </uni-scroll-view>
                 <uni-view data-v-1a01b218="" class="cu-bar  padding-xl justify-start">
                     <uni-text data-v-1a01b218=""><span>Number</span></uni-text>
-                    <uni-view data-v-9d9b8ed0="" data-v-1a01b218="" class="uni-numbox"
-                        style="margin-left: 10px;">
+                    <uni-view data-v-9d9b8ed0="" data-v-1a01b218="" class="uni-numbox" style="margin-left: 10px;">
                         <uni-view data-v-9d9b8ed0="" class="uni-numbox__minus" onclick="minus(saprein4)">
                             <uni-text data-v-9d9b8ed0="" class="uni-numbox--text"><span>-</span>
                             </uni-text>
                         </uni-view>
                         <uni-input data-v-9d9b8ed0="" class="uni-numbox__value">
                             <div class="uni-input-wrapper">
-                                <div class="uni-input-placeholder input-placeholder" data-v-9d9b8ed0=""
-                                    data-v-1a01b218="" data-v-91f724d0="" data-v-5d7012ef=""
-                                    style="display: none;"></div><input maxlength="140"
-                                    step="0.000000000000000001" id="saprein4" value="1"
-                                    enterkeyhint="done" autocomplete="off" type="number"
-                                    class="uni-input-input">
+                                <div class="uni-input-placeholder input-placeholder" data-v-9d9b8ed0="" data-v-1a01b218="" data-v-91f724d0="" data-v-5d7012ef="" style="display: none;"></div><input maxlength="140" step="0.000000000000000001" id="saprein4" value="1" enterkeyhint="done" autocomplete="off" type="number" class="uni-input-input">
 
                             </div>
                         </uni-input>
@@ -1700,8 +1550,7 @@
                     <input type="hidden" type="text" id="saprefamount4" name="amount" value="10">
                 </form>
                 <uni-view data-v-1a01b218="" class=" margin-bottom">
-                    <uni-text data-v-1a01b218=""><span>Total contract money is <span
-                                id="sapre4total">10</span></span>
+                    <uni-text data-v-1a01b218=""><span>Total contract money is <span id="sapre4total">10</span></span>
                     </uni-text>
                 </uni-view>
 
@@ -1715,8 +1564,7 @@
                 <uni-view data-v-1a01b218="" class="action">
                     <uni-button data-v-1a01b218="" class="cu-btn text-gray border" onclick="saprec4()">CLOSE
                     </uni-button>
-                    <uni-button data-v-1a01b218="" class="cu-btn text-blue border margin-left"
-                        onclick="sapreproceed4()">
+                    <uni-button data-v-1a01b218="" class="cu-btn text-blue border margin-left" onclick="sapreproceed4()">
                         CONFIRM</uni-button>
                 </uni-view>
             </uni-view>
@@ -1734,23 +1582,18 @@
                 <uni-view data-v-1a01b218="" class="cu-bar padding-xl">
                     <uni-text data-v-1a01b218=""><span>Contract Money</span></uni-text>
                 </uni-view>
-                <uni-scroll-view data-v-1a01b218="" class="bg-white nav text-left"
-                    style="margin-left: 10px; margin-top: -20px;">
+                <uni-scroll-view data-v-1a01b218="" class="bg-white nav text-left" style="margin-left: 10px; margin-top: -20px;">
                     <div class="uni-scroll-view">
                         <div class="uni-scroll-view" style="overflow: auto hidden;">
                             <div class="uni-scroll-view-content">
 
-                                <uni-view data-v-1a01b218="" data-id="0" id="sapre33"
-                                    onclick="sapresel5(33)" class="cu-item text-blue cur">10
+                                <uni-view data-v-1a01b218="" data-id="0" id="sapre33" onclick="sapresel5(33)" class="cu-item text-blue cur">10
                                 </uni-view>
-                                <uni-view data-v-1a01b218="" data-id="1" id="sapre34"
-                                    onclick="sapresel5(34)" class="cu-item">100
+                                <uni-view data-v-1a01b218="" data-id="1" id="sapre34" onclick="sapresel5(34)" class="cu-item">100
                                 </uni-view>
-                                <uni-view data-v-1a01b218="" data-id="2" id="sapre35"
-                                    onclick="sapresel5(35)" class="cu-item">1000
+                                <uni-view data-v-1a01b218="" data-id="2" id="sapre35" onclick="sapresel5(35)" class="cu-item">1000
                                 </uni-view>
-                                <uni-view data-v-1a01b218="" data-id="3" id="sapre36"
-                                    onclick="sapresel5(36)" class="cu-item">10000
+                                <uni-view data-v-1a01b218="" data-id="3" id="sapre36" onclick="sapresel5(36)" class="cu-item">10000
                                 </uni-view>
                             </div>
                         </div>
@@ -1758,8 +1601,7 @@
                 </uni-scroll-view>
                 <uni-view data-v-1a01b218="" class="cu-bar  padding-xl justify-start">
                     <uni-text data-v-1a01b218=""><span>Number</span></uni-text>
-                    <uni-view data-v-9d9b8ed0="" data-v-1a01b218="" class="uni-numbox"
-                        style="margin-left: 10px;">
+                    <uni-view data-v-9d9b8ed0="" data-v-1a01b218="" class="uni-numbox" style="margin-left: 10px;">
                         <uni-view data-v-9d9b8ed0="" class="uni-numbox__minus" onclick="minus(saprein5)">
                             <uni-text data-v-9d9b8ed0="" class="uni-numbox--text">
                                 <span>-</span>
@@ -1767,12 +1609,7 @@
                         </uni-view>
                         <uni-input data-v-9d9b8ed0="" class="uni-numbox__value">
                             <div class="uni-input-wrapper">
-                                <div class="uni-input-placeholder input-placeholder" data-v-9d9b8ed0=""
-                                    data-v-1a01b218="" data-v-91f724d0="" data-v-5d7012ef=""
-                                    style="display: none;"></div><input maxlength="140"
-                                    step="0.000000000000000001" id="saprein5" value="1"
-                                    enterkeyhint="done" autocomplete="off" type="number"
-                                    class="uni-input-input">
+                                <div class="uni-input-placeholder input-placeholder" data-v-9d9b8ed0="" data-v-1a01b218="" data-v-91f724d0="" data-v-5d7012ef="" style="display: none;"></div><input maxlength="140" step="0.000000000000000001" id="saprein5" value="1" enterkeyhint="done" autocomplete="off" type="number" class="uni-input-input">
 
                             </div>
                         </uni-input>
@@ -1789,8 +1626,7 @@
                     <input type="hidden" type="text" id="saprefamount5" name="amount" value="10">
                 </form>
                 <uni-view data-v-1a01b218="" class=" margin-bottom">
-                    <uni-text data-v-1a01b218=""><span>Total contract money is <span
-                                id="sapre5total">10</span></span>
+                    <uni-text data-v-1a01b218=""><span>Total contract money is <span id="sapre5total">10</span></span>
                     </uni-text>
                 </uni-view>
 
@@ -1805,8 +1641,7 @@
                 <uni-view data-v-1a01b218="" class="action">
                     <uni-button data-v-1a01b218="" class="cu-btn text-gray border" onclick="saprec5()">CLOSE
                     </uni-button>
-                    <uni-button data-v-1a01b218="" class="cu-btn text-blue border margin-left"
-                        onclick="sapreproceed5()">
+                    <uni-button data-v-1a01b218="" class="cu-btn text-blue border margin-left" onclick="sapreproceed5()">
                         CONFIRM</uni-button>
                 </uni-view>
             </uni-view>
@@ -1824,23 +1659,18 @@
                 <uni-view data-v-1a01b218="" class="cu-bar padding-xl">
                     <uni-text data-v-1a01b218=""><span>Contract Money</span></uni-text>
                 </uni-view>
-                <uni-scroll-view data-v-1a01b218="" class="bg-white nav text-left"
-                    style="margin-left: 10px; margin-top: -20px;">
+                <uni-scroll-view data-v-1a01b218="" class="bg-white nav text-left" style="margin-left: 10px; margin-top: -20px;">
                     <div class="uni-scroll-view">
                         <div class="uni-scroll-view" style="overflow: auto hidden;">
                             <div class="uni-scroll-view-content">
 
-                                <uni-view data-v-1a01b218="" data-id="0" id="sapre37"
-                                    onclick="sapresel6(37)" class="cu-item text-blue cur">10
+                                <uni-view data-v-1a01b218="" data-id="0" id="sapre37" onclick="sapresel6(37)" class="cu-item text-blue cur">10
                                 </uni-view>
-                                <uni-view data-v-1a01b218="" data-id="1" id="sapre38"
-                                    onclick="sapresel6(38)" class="cu-item">100
+                                <uni-view data-v-1a01b218="" data-id="1" id="sapre38" onclick="sapresel6(38)" class="cu-item">100
                                 </uni-view>
-                                <uni-view data-v-1a01b218="" data-id="2" id="sapre39"
-                                    onclick="sapresel6(39)" class="cu-item">1000
+                                <uni-view data-v-1a01b218="" data-id="2" id="sapre39" onclick="sapresel6(39)" class="cu-item">1000
                                 </uni-view>
-                                <uni-view data-v-1a01b218="" data-id="3" id="sapre40"
-                                    onclick="sapresel6(40)" class="cu-item">10000
+                                <uni-view data-v-1a01b218="" data-id="3" id="sapre40" onclick="sapresel6(40)" class="cu-item">10000
                                 </uni-view>
                             </div>
                         </div>
@@ -1848,8 +1678,7 @@
                 </uni-scroll-view>
                 <uni-view data-v-1a01b218="" class="cu-bar  padding-xl justify-start">
                     <uni-text data-v-1a01b218=""><span>Number</span></uni-text>
-                    <uni-view data-v-9d9b8ed0="" data-v-1a01b218="" class="uni-numbox"
-                        style="margin-left: 10px;">
+                    <uni-view data-v-9d9b8ed0="" data-v-1a01b218="" class="uni-numbox" style="margin-left: 10px;">
                         <uni-view data-v-9d9b8ed0="" class="uni-numbox__minus" onclick="minus(saprein6)">
                             <uni-text data-v-9d9b8ed0="" class="uni-numbox--text">
                                 <span>-</span>
@@ -1857,12 +1686,7 @@
                         </uni-view>
                         <uni-input data-v-9d9b8ed0="" class="uni-numbox__value">
                             <div class="uni-input-wrapper">
-                                <div class="uni-input-placeholder input-placeholder" data-v-9d9b8ed0=""
-                                    data-v-1a01b218="" data-v-91f724d0="" data-v-5d7012ef=""
-                                    style="display: none;"></div><input maxlength="140"
-                                    step="0.000000000000000001" id="saprein6" value="1"
-                                    enterkeyhint="done" autocomplete="off" type="number"
-                                    class="uni-input-input">
+                                <div class="uni-input-placeholder input-placeholder" data-v-9d9b8ed0="" data-v-1a01b218="" data-v-91f724d0="" data-v-5d7012ef="" style="display: none;"></div><input maxlength="140" step="0.000000000000000001" id="saprein6" value="1" enterkeyhint="done" autocomplete="off" type="number" class="uni-input-input">
 
                             </div>
                         </uni-input>
@@ -1879,8 +1703,7 @@
                     <input type="hidden" type="text" id="saprefamount6" name="amount" value="10">
                 </form>
                 <uni-view data-v-1a01b218="" class=" margin-bottom">
-                    <uni-text data-v-1a01b218=""><span>Total contract money is <span
-                                id="sapre6total">10</span></span>
+                    <uni-text data-v-1a01b218=""><span>Total contract money is <span id="sapre6total">10</span></span>
                     </uni-text>
                 </uni-view>
 
@@ -1895,8 +1718,7 @@
                 <uni-view data-v-1a01b218="" class="action">
                     <uni-button data-v-1a01b218="" class="cu-btn text-gray border" onclick="saprec6()">CLOSE
                     </uni-button>
-                    <uni-button data-v-1a01b218="" class="cu-btn text-blue border margin-left"
-                        onclick="sapreproceed6()">
+                    <uni-button data-v-1a01b218="" class="cu-btn text-blue border margin-left" onclick="sapreproceed6()">
                         CONFIRM</uni-button>
                 </uni-view>
             </uni-view>
@@ -1914,23 +1736,18 @@
                 <uni-view data-v-1a01b218="" class="cu-bar padding-xl">
                     <uni-text data-v-1a01b218=""><span>Contract Money</span></uni-text>
                 </uni-view>
-                <uni-scroll-view data-v-1a01b218="" class="bg-white nav text-left"
-                    style="margin-left: 10px; margin-top: -20px;">
+                <uni-scroll-view data-v-1a01b218="" class="bg-white nav text-left" style="margin-left: 10px; margin-top: -20px;">
                     <div class="uni-scroll-view">
                         <div class="uni-scroll-view" style="overflow: auto hidden;">
                             <div class="uni-scroll-view-content">
 
-                                <uni-view data-v-1a01b218="" data-id="0" id="sapre41"
-                                    onclick="sapresel7(41)" class="cu-item text-blue cur">10
+                                <uni-view data-v-1a01b218="" data-id="0" id="sapre41" onclick="sapresel7(41)" class="cu-item text-blue cur">10
                                 </uni-view>
-                                <uni-view data-v-1a01b218="" data-id="1" id="sapre42"
-                                    onclick="sapresel7(42)" class="cu-item">100
+                                <uni-view data-v-1a01b218="" data-id="1" id="sapre42" onclick="sapresel7(42)" class="cu-item">100
                                 </uni-view>
-                                <uni-view data-v-1a01b218="" data-id="2" id="sapre43"
-                                    onclick="sapresel7(43)" class="cu-item">1000
+                                <uni-view data-v-1a01b218="" data-id="2" id="sapre43" onclick="sapresel7(43)" class="cu-item">1000
                                 </uni-view>
-                                <uni-view data-v-1a01b218="" data-id="3" id="sapre44"
-                                    onclick="sapresel7(44)" class="cu-item">10000
+                                <uni-view data-v-1a01b218="" data-id="3" id="sapre44" onclick="sapresel7(44)" class="cu-item">10000
                                 </uni-view>
                             </div>
                         </div>
@@ -1938,8 +1755,7 @@
                 </uni-scroll-view>
                 <uni-view data-v-1a01b218="" class="cu-bar  padding-xl justify-start">
                     <uni-text data-v-1a01b218=""><span>Number</span></uni-text>
-                    <uni-view data-v-9d9b8ed0="" data-v-1a01b218="" class="uni-numbox"
-                        style="margin-left: 10px;">
+                    <uni-view data-v-9d9b8ed0="" data-v-1a01b218="" class="uni-numbox" style="margin-left: 10px;">
                         <uni-view data-v-9d9b8ed0="" class="uni-numbox__minus" onclick="minus(saprein7)">
                             <uni-text data-v-9d9b8ed0="" class="uni-numbox--text">
                                 <span>-</span>
@@ -1947,12 +1763,7 @@
                         </uni-view>
                         <uni-input data-v-9d9b8ed0="" class="uni-numbox__value">
                             <div class="uni-input-wrapper">
-                                <div class="uni-input-placeholder input-placeholder" data-v-9d9b8ed0=""
-                                    data-v-1a01b218="" data-v-91f724d0="" data-v-5d7012ef=""
-                                    style="display: none;"></div><input maxlength="140"
-                                    step="0.000000000000000001" id="saprein7" value="1"
-                                    enterkeyhint="done" autocomplete="off" type="number"
-                                    class="uni-input-input">
+                                <div class="uni-input-placeholder input-placeholder" data-v-9d9b8ed0="" data-v-1a01b218="" data-v-91f724d0="" data-v-5d7012ef="" style="display: none;"></div><input maxlength="140" step="0.000000000000000001" id="saprein7" value="1" enterkeyhint="done" autocomplete="off" type="number" class="uni-input-input">
 
                             </div>
                         </uni-input>
@@ -1969,8 +1780,7 @@
                     <input type="hidden" type="text" id="saprefamount7" name="amount" value="10">
                 </form>
                 <uni-view data-v-1a01b218="" class=" margin-bottom">
-                    <uni-text data-v-1a01b218=""><span>Total contract money is <span
-                                id="sapre7total">10</span></span>
+                    <uni-text data-v-1a01b218=""><span>Total contract money is <span id="sapre7total">10</span></span>
                     </uni-text>
                 </uni-view>
 
@@ -1985,8 +1795,7 @@
                 <uni-view data-v-1a01b218="" class="action">
                     <uni-button data-v-1a01b218="" class="cu-btn text-gray border" onclick="saprec7()">CLOSE
                     </uni-button>
-                    <uni-button data-v-1a01b218="" class="cu-btn text-blue border margin-left"
-                        onclick="sapreproceed7()">
+                    <uni-button data-v-1a01b218="" class="cu-btn text-blue border margin-left" onclick="sapreproceed7()">
                         CONFIRM</uni-button>
                 </uni-view>
             </uni-view>
@@ -2004,23 +1813,18 @@
                 <uni-view data-v-1a01b218="" class="cu-bar padding-xl">
                     <uni-text data-v-1a01b218=""><span>Contract Money</span></uni-text>
                 </uni-view>
-                <uni-scroll-view data-v-1a01b218="" class="bg-white nav text-left"
-                    style="margin-left: 10px; margin-top: -20px;">
+                <uni-scroll-view data-v-1a01b218="" class="bg-white nav text-left" style="margin-left: 10px; margin-top: -20px;">
                     <div class="uni-scroll-view">
                         <div class="uni-scroll-view" style="overflow: auto hidden;">
                             <div class="uni-scroll-view-content">
 
-                                <uni-view data-v-1a01b218="" data-id="0" id="sapre45"
-                                    onclick="sapresel8(45)" class="cu-item text-blue cur">10
+                                <uni-view data-v-1a01b218="" data-id="0" id="sapre45" onclick="sapresel8(45)" class="cu-item text-blue cur">10
                                 </uni-view>
-                                <uni-view data-v-1a01b218="" data-id="1" id="sapre46"
-                                    onclick="sapresel8(46)" class="cu-item">100
+                                <uni-view data-v-1a01b218="" data-id="1" id="sapre46" onclick="sapresel8(46)" class="cu-item">100
                                 </uni-view>
-                                <uni-view data-v-1a01b218="" data-id="2" id="sapre47"
-                                    onclick="sapresel8(47)" class="cu-item">1000
+                                <uni-view data-v-1a01b218="" data-id="2" id="sapre47" onclick="sapresel8(47)" class="cu-item">1000
                                 </uni-view>
-                                <uni-view data-v-1a01b218="" data-id="3" id="sapre48"
-                                    onclick="sapresel8(48)" class="cu-item">10000
+                                <uni-view data-v-1a01b218="" data-id="3" id="sapre48" onclick="sapresel8(48)" class="cu-item">10000
                                 </uni-view>
                             </div>
                         </div>
@@ -2028,8 +1832,7 @@
                 </uni-scroll-view>
                 <uni-view data-v-1a01b218="" class="cu-bar  padding-xl justify-start">
                     <uni-text data-v-1a01b218=""><span>Number</span></uni-text>
-                    <uni-view data-v-9d9b8ed0="" data-v-1a01b218="" class="uni-numbox"
-                        style="margin-left: 10px;">
+                    <uni-view data-v-9d9b8ed0="" data-v-1a01b218="" class="uni-numbox" style="margin-left: 10px;">
                         <uni-view data-v-9d9b8ed0="" class="uni-numbox__minus" onclick="minus(saprein8)">
                             <uni-text data-v-9d9b8ed0="" class="uni-numbox--text">
                                 <span>-</span>
@@ -2037,12 +1840,7 @@
                         </uni-view>
                         <uni-input data-v-9d9b8ed0="" class="uni-numbox__value">
                             <div class="uni-input-wrapper">
-                                <div class="uni-input-placeholder input-placeholder" data-v-9d9b8ed0=""
-                                    data-v-1a01b218="" data-v-91f724d0="" data-v-5d7012ef=""
-                                    style="display: none;"></div><input maxlength="140"
-                                    step="0.000000000000000001" id="saprein8" value="1"
-                                    enterkeyhint="done" autocomplete="off" type="number"
-                                    class="uni-input-input">
+                                <div class="uni-input-placeholder input-placeholder" data-v-9d9b8ed0="" data-v-1a01b218="" data-v-91f724d0="" data-v-5d7012ef="" style="display: none;"></div><input maxlength="140" step="0.000000000000000001" id="saprein8" value="1" enterkeyhint="done" autocomplete="off" type="number" class="uni-input-input">
 
                             </div>
                         </uni-input>
@@ -2059,8 +1857,7 @@
                     <input type="hidden" type="text" id="saprefamount8" name="amount" value="10">
                 </form>
                 <uni-view data-v-1a01b218="" class=" margin-bottom">
-                    <uni-text data-v-1a01b218=""><span>Total contract money is <span
-                                id="sapre8total">10</span></span>
+                    <uni-text data-v-1a01b218=""><span>Total contract money is <span id="sapre8total">10</span></span>
                     </uni-text>
                 </uni-view>
 
@@ -2075,8 +1872,7 @@
                 <uni-view data-v-1a01b218="" class="action">
                     <uni-button data-v-1a01b218="" class="cu-btn text-gray border" onclick="saprec8()">CLOSE
                     </uni-button>
-                    <uni-button data-v-1a01b218="" class="cu-btn text-blue border margin-left"
-                        onclick="sapreproceed8()">
+                    <uni-button data-v-1a01b218="" class="cu-btn text-blue border margin-left" onclick="sapreproceed8()">
                         CONFIRM</uni-button>
                 </uni-view>
             </uni-view>
@@ -2094,23 +1890,18 @@
                 <uni-view data-v-1a01b218="" class="cu-bar padding-xl">
                     <uni-text data-v-1a01b218=""><span>Contract Money</span></uni-text>
                 </uni-view>
-                <uni-scroll-view data-v-1a01b218="" class="bg-white nav text-left"
-                    style="margin-left: 10px; margin-top: -20px;">
+                <uni-scroll-view data-v-1a01b218="" class="bg-white nav text-left" style="margin-left: 10px; margin-top: -20px;">
                     <div class="uni-scroll-view">
                         <div class="uni-scroll-view" style="overflow: auto hidden;">
                             <div class="uni-scroll-view-content">
 
-                                <uni-view data-v-1a01b218="" data-id="0" id="sapre49"
-                                    onclick="sapresel9(49)" class="cu-item text-blue cur">10
+                                <uni-view data-v-1a01b218="" data-id="0" id="sapre49" onclick="sapresel9(49)" class="cu-item text-blue cur">10
                                 </uni-view>
-                                <uni-view data-v-1a01b218="" data-id="1" id="sapre50"
-                                    onclick="sapresel9(50)" class="cu-item">100
+                                <uni-view data-v-1a01b218="" data-id="1" id="sapre50" onclick="sapresel9(50)" class="cu-item">100
                                 </uni-view>
-                                <uni-view data-v-1a01b218="" data-id="2" id="sapre51"
-                                    onclick="sapresel9(51)" class="cu-item">1000
+                                <uni-view data-v-1a01b218="" data-id="2" id="sapre51" onclick="sapresel9(51)" class="cu-item">1000
                                 </uni-view>
-                                <uni-view data-v-1a01b218="" data-id="3" id="sapre52"
-                                    onclick="sapresel9(52)" class="cu-item">10000
+                                <uni-view data-v-1a01b218="" data-id="3" id="sapre52" onclick="sapresel9(52)" class="cu-item">10000
                                 </uni-view>
                             </div>
                         </div>
@@ -2118,8 +1909,7 @@
                 </uni-scroll-view>
                 <uni-view data-v-1a01b218="" class="cu-bar  padding-xl justify-start">
                     <uni-text data-v-1a01b218=""><span>Number</span></uni-text>
-                    <uni-view data-v-9d9b8ed0="" data-v-1a01b218="" class="uni-numbox"
-                        style="margin-left: 10px;">
+                    <uni-view data-v-9d9b8ed0="" data-v-1a01b218="" class="uni-numbox" style="margin-left: 10px;">
                         <uni-view data-v-9d9b8ed0="" class="uni-numbox__minus" onclick="minus(saprein9)">
                             <uni-text data-v-9d9b8ed0="" class="uni-numbox--text">
                                 <span>-</span>
@@ -2127,12 +1917,7 @@
                         </uni-view>
                         <uni-input data-v-9d9b8ed0="" class="uni-numbox__value">
                             <div class="uni-input-wrapper">
-                                <div class="uni-input-placeholder input-placeholder" data-v-9d9b8ed0=""
-                                    data-v-1a01b218="" data-v-91f724d0="" data-v-5d7012ef=""
-                                    style="display: none;"></div><input maxlength="140"
-                                    step="0.000000000000000001" id="saprein9" value="1"
-                                    enterkeyhint="done" autocomplete="off" type="number"
-                                    class="uni-input-input">
+                                <div class="uni-input-placeholder input-placeholder" data-v-9d9b8ed0="" data-v-1a01b218="" data-v-91f724d0="" data-v-5d7012ef="" style="display: none;"></div><input maxlength="140" step="0.000000000000000001" id="saprein9" value="1" enterkeyhint="done" autocomplete="off" type="number" class="uni-input-input">
 
                             </div>
                         </uni-input>
@@ -2149,8 +1934,7 @@
                     <input type="hidden" type="text" id="saprefamount9" name="amount" value="10">
                 </form>
                 <uni-view data-v-1a01b218="" class=" margin-bottom">
-                    <uni-text data-v-1a01b218=""><span>Total contract money is <span
-                                id="sapre9total">10</span></span>
+                    <uni-text data-v-1a01b218=""><span>Total contract money is <span id="sapre9total">10</span></span>
                     </uni-text>
                 </uni-view>
 
@@ -2165,8 +1949,7 @@
                 <uni-view data-v-1a01b218="" class="action">
                     <uni-button data-v-1a01b218="" class="cu-btn text-gray border" onclick="saprec9()">CLOSE
                     </uni-button>
-                    <uni-button data-v-1a01b218="" class="cu-btn text-blue border margin-left"
-                        onclick="sapreproceed9()">
+                    <uni-button data-v-1a01b218="" class="cu-btn text-blue border margin-left" onclick="sapreproceed9()">
                         CONFIRM</uni-button>
                 </uni-view>
             </uni-view>
@@ -2176,8 +1959,8 @@
 
 
 
-    
-    
+
+
     <script>
         $(document).ready(function() {
             $('#tableID').DataTable({
@@ -2190,7 +1973,7 @@
                 sDom: 'lrtip',
                 // dom: 't',
                 dom: 'rtip',
-                bJQueryUI: false,
+                bJQueryUI: true,
                 sDom: 'lfrtip'
             });
         });
@@ -2229,10 +2012,15 @@
             console.log(distance);
 
             $("#period").load('sapreperiod.php');
-            if (diff < 6) {
+            if (diff < 2 || diff < 3) {
+                setTimeout(function() {
+
+                    triggerAjaxCall()
+                }, 1000);
+
+            }
+            if (diff < 30) {
                 console.log("Timeout");
-
-
                 document.getElementById("saprered").className = "cu-modal";
                 document.getElementById("sapregreenbox").className = "cu-modal";
                 document.getElementById("sapreviobox").className = "cu-modal";
@@ -2292,12 +2080,7 @@
                 document.getElementById("sapregreen").removeAttribute('disabled');
 
                 document.getElementById("saprevoilet").removeAttribute('disabled');
-
-
-
-
                 document.getElementById("sapreredbutton").removeAttribute('disabled');
-
 
 
                 document.getElementById("saprenum0").removeAttribute('disabled');
@@ -2315,6 +2098,101 @@
                 document.getElementById("saprenum6").removeAttribute('disabled');
 
                 document.getElementById("saprenum7").removeAttribute('disabled');
+
+                document.getElementById("saprenum8").removeAttribute('disabled');
+
+                document.getElementById("saprenum9").removeAttribute('disabled');
+            }
+            if (diff == 178) {
+
+                $("#sapremybet").load('saprerec.php?srpage=1');
+
+            }
+
+
+
+
+            document.getElementById("sapreper").value = 20220474440;
+            document.getElementById("saprerper").value = 20220474440;
+            document.getElementById("saprevper").value = 20220474440;
+            document.getElementById("sapreper1").value = 20220474440;
+            document.getElementById("sapreper2").value = 20220474440;
+            document.getElementById("sapreper3").value = 20220474440;
+            document.getElementById("sapreper4").value = 20220474440;
+            document.getElementById("sapreper5").value = 20220474440;
+            document.getElementById("sapreper6").value = 20220474440;
+            document.getElementById("sapreper7").value = 20220474440;
+            document.getElementById("sapreper8").value = 20220474440;
+            document.getElementById("sapreper9").value = 20220474440;
+            document.getElementById("sapreper0").value = 20220474440;
+
+        }
+
+
+        function triggerAjaxCall() {
+            $.ajax({
+                url: "{{route('get.gameId')}}",
+                method: 'GET',
+                success: function(response) {
+                    console.log("AJAX response:", response);
+                    $('#period').text(response.id);
+                },
+                error: function(error) {
+                    console.error("AJAX error:", error);
+                }
+            });
+        }
+
+        func();
+        var interval = setInterval(func, 1000);
+
+
+
+
+        // Get the button that opens the modal
+
+
+
+
+
+
+
+        var sapremodal = document.getElementById("sapregreenbox");
+        var saprespan = document.getElementById("sapreclose");
+
+
+
+        var saprespan3 = document.getElementById("sapreclose3");
+        var saprespan1 = document.getElementById("sapreclose1");
+
+        saprespan3.onclick = function() {
+            document.getElementById("saprered").className = "cu-modal";
+        }
+        saprespan1.onclick = function() {
+            document.getElementById("sapreviobox").className = "cu-modal";
+        }
+
+
+
+
+        saprespan.onclick = function() {
+            sapremodal.className = "cu-modal";
+        }
+
+
+
+
+        document.getElementById("readrule").onclick = function() {
+            document.getElementById("rule").className = "cu-modal show";
+        }
+    Z    document.getElementById("ruleclose").onclick = function() {
+            document.getElementById("rule").className = "cu-modal";
+        }
+    </script>
+
+</body>
+
+</html>bled');
 
                 document.getElementById("saprenum8").removeAttribute('disabled');
 

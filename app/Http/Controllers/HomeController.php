@@ -201,10 +201,15 @@ class HomeController extends Controller
     }
 
 
-    public function win()
+    public function win(Request $request)
     {
         $Setting = AppSetting::where('id', 1)->first();
         $game_record = Win3minBetRecord::orderBy('id', 'desc')->get();
+
+        if ($request->ajax()) {
+
+            return response()->json($game_record);
+        }
         return view('games.win', compact('Setting', 'game_record'));
     }
 
@@ -334,7 +339,7 @@ class HomeController extends Controller
                 // $res =$emailvalue;
 
                 //           //  $gamestatusdataend = Setting::where('category', 'game_between_time_end')->first();
-                //   $res =  $randomresult[rand(0,2)]; //$emailvalue; 
+                //   $res =  $randomresult[rand(0,2)]; //$emailvalue;
 
             }
 
