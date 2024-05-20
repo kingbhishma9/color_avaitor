@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-  
+
     <div id="app" data-v-app="">
         <div data-v-94f8731b="" class="content" style="--36a344b0: 'Roboto', 'Inter', sans-serif;">
             <div data-v-4c21fa9e="" data-v-94f8731b="" class="navbar">
@@ -219,7 +219,7 @@
                 </svg>
                 <div data-v-b4633b52="" class="noticeBar__container-body">
                     <div data-v-b4633b52="" class="noticeBar__container-body-text" style="font-weight:500;">
-                        {{ $Setting->welcome_node }}</div>
+                        {{ $Setting->welcome_node ?? '' }}</div>
                 </div><button data-v-b4633b52=""><svg data-v-b4633b52="" width="24" height="24"
                         viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_589_37755)">
