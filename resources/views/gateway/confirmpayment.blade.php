@@ -1,41 +1,7 @@
 <html lang="en">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
-    <meta http-equiv="pragma" content="no-cache">
-    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
-    <meta http-equiv="expires" content="1">
-    <meta name="google" value="notranslate">
-    <meta name="msapplication-TileColor" content="#0093ff">
-    <meta name="theme-color" content="#0093ff">
-    <meta name="msapplication-navbutton-color" content="#0093ff">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#0093ff">
-    <meta name="description" content="Make money with Fairwin">
-    <link rel="shortcut icon" href="fevicon.png" type="image/x-icon">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Fairwin">
-    <meta name="twitter:site" content="Fairwin">
-    <meta name="twitter:description" content="Make money with Fairwin">
-    <meta name="twitter:image" content="logo.jpg">
-    <meta property="og:title" content="Fairwin">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Fairwin">
-    <meta property="og:url" content="">
-    <meta name="msapplication-TileImage" content="logo.jpg">
-    <meta property="og:image" content="logo.jpg">
-    <meta property="og:description" content="Make money with Fairwin">
-    <meta property="url" content="">
-    <meta property="type" content="website">
-    <meta property="title" content="Fairwin">
-    <meta property="description" content="Make money with Fairwin">
-    <meta property="image" content="logo.jpg">
-    <meta itemprop="image" content="logo.jpg">
-
-
-
-
+    
     <link rel="stylesheet" href="https://fiewin.bhishmadhakal.com.np/payment/bootstrap.min.css">
     <link rel="stylesheet" href="https://fiewin.bhishmadhakal.com.np/payment/light.css?23.2.21.6">
     <link rel="stylesheet" href="https://fiewin.bhishmadhakal.com.np/payment/dropzone.css?23.2.21.6">
@@ -66,7 +32,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
     </style>
-    <title>98 Club</title>
+    <title>{{config('app.name')}}</title>
     <style id="aby-style"></style>
 </head>
 

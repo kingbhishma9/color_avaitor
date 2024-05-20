@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class WithdrawalRecord extends Model
 {
     use HasFactory;
+    protected $guarded = ['id'];
+
 }

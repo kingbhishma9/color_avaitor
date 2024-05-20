@@ -1,47 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <div data-v-d95bbc7e="" class="sysMessage__container" style="--36a344b0: 'Roboto', 'Inter', sans-serif;">
-        <div data-v-4c21fa9e="" data-v-d95bbc7e="" class="navbar">
-            <div data-v-4c21fa9e="" class="navbar-fixed" style="background: rgb(247, 248, 255);">
-                <div data-v-4c21fa9e="" class="navbar__content">
-                    <div onclick="window.location.href='{{route('account')}}'" data-v-4c21fa9e="" class="navbar__content-left"><i
-                            data-v-4c21fa9e=""
-                            class="van-badge__wrapper van-icon van-icon-arrow-left"><!----><!----><!----></i></div>
-                    <div data-v-4c21fa9e="" class="navbar__content-center"><!---->
-                        <div data-v-4c21fa9e="" class="navbar__content-title">Notification</div>
-                    </div>
-                    <div data-v-4c21fa9e="" class="navbar__content-right"></div>
-                </div>
-            </div>
-        </div>
-        <div data-v-b43bdd3f="" data-v-d95bbc7e="" class="infiniteScroll" id="refresh83b01cdb487b4dde857406597d030fcc">
-            <div data-v-d95bbc7e="" class="sysMessage__container-msgWrapper__item">
-                <div data-v-d95bbc7e="" class="sysMessage__container-msgWrapper__item-title"><svg data-v-d95bbc7e=""
-                        width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M34 41H14C8 41 4 38 4 31V17C4 10 8 7 14 7H34C40 7 44 10 44 17V31C44 38 40 41 34 41Z"
-                            fill="#F95959" fill-opacity="0.5"></path>
-                        <path
-                            d="M23.9981 25.744C22.3181 25.744 20.6181 25.224 19.3181 24.164L13.0581 19.164C12.767 18.9112 12.5848 18.5558 12.5493 18.1719C12.5139 17.788 12.628 17.4053 12.8679 17.1035C13.1078 16.8017 13.4549 16.6042 13.8369 16.5521C14.2189 16.5 14.6062 16.5974 14.9181 16.824L21.1781 21.824C22.6981 23.044 25.2781 23.044 26.7981 21.824L33.0581 16.824C33.6981 16.304 34.6581 16.404 35.1581 17.064C35.6781 17.704 35.5781 18.664 34.9181 19.164L28.6581 24.164C27.3781 25.224 25.6781 25.744 23.9981 25.744Z"
-                            fill="white"></path>
-                    </svg><span data-v-d95bbc7e="">LOGIN NOTIFICATION</span>
-                    <div class="box"><a href="#popup1"
-                            style="width: 2.5rem; height: 0.6rem; color: #fff; font-size: .35rem; font-weight: 700; right:30px; letter-spacing: .05333rem; border-radius: 1.06667rem; border: none; background: linear-gradient(180deg,#ff867a 0%,#f95959 100%); display: -webkit-box; display: -webkit-flex; display: flex; -webkit-box-align: center; -webkit-align-items: center; align-items: center; -webkit-box-pack: center; -webkit-justify-content: center; justify-content: center; }"
-                            onclick="myFunction()">Delete</a>
-                    </div>
-                </div>
-                <div data-v-d95bbc7e="" class="sysMessage__container-msgWrapper__item-time">date</div>
-                <div data-v-d95bbc7e="" class="sysMessage__container-msgWrapper__item-content">Your account is logged in
-                    date</div>
-            </div>
-            <div data-v-b43bdd3f="" class="infiniteScroll__loading"><!---->
-                <div data-v-b43bdd3f="">No more</div>
-            </div>
-        </div>
-    </div>
-    <div class="customer" id="customerId" style="--36a344b0: 'Roboto', 'Inter', sans-serif; --17a7a9f6: bahnschrift;">
-    </div>
-    <foreignobject></foreignobject>
     <style>
         .box {
             width: 40%;
@@ -132,6 +91,50 @@
             transition: all 5s ease-in-out;
         }
     </style>
+    <div data-v-d95bbc7e="" class="sysMessage__container" style="--36a344b0: 'Roboto', 'Inter', sans-serif;">
+        <div data-v-4c21fa9e="" data-v-d95bbc7e="" class="navbar">
+            <div data-v-4c21fa9e="" class="navbar-fixed" style="background: rgb(247, 248, 255);">
+                <div data-v-4c21fa9e="" class="navbar__content">
+                    <div onclick="window.location.href='{{ route('account') }}'" data-v-4c21fa9e=""
+                        class="navbar__content-left">
+                       <img src="{{asset('assets/png/back.png')}}" width="24" height="24"/>
+                        </div>
+                    <div data-v-4c21fa9e="" class="navbar__content-center">
+                        <div data-v-4c21fa9e="" class="navbar__content-title">Notification</div>
+                    </div>
+                    <div data-v-4c21fa9e="" class="navbar__content-right"></div>
+                </div>
+            </div>
+        </div>
+
+        <div data-v-b43bdd3f="" data-v-d95bbc7e="" class="infiniteScroll" id="refresh83b01cdb487b4dde857406597d030fcc">
+
+            @foreach ($notification as $data)
+                <div data-v-d95bbc7e="" class="sysMessage__container-msgWrapper__item">
+                    <div data-v-d95bbc7e="" class="sysMessage__container-msgWrapper__item-title">
+                        <img src="{{ asset('assets/svg/messagebox.svg') }}" width="24" height="24" />
+                        <span data-v-d95bbc7e="">{{ $data->title }}</span>
+                        <div class="box">
+                            <a style="width: 2.5rem; height: 0.6rem; color: #fff; font-size: .35rem; font-weight: 700; right:30px; letter-spacing: .05333rem; border-radius: 1.06667rem; border: none; background: linear-gradient(180deg,#ff867a 0%,#f95959 100%); display: -webkit-box; display: -webkit-flex; display: flex; -webkit-box-align: center; -webkit-align-items: center; align-items: center; -webkit-box-pack: center; -webkit-justify-content: center; justify-content: center; }"
+                                onclick="window.location.href='{{ route($data->route) }}'">{{ $data->action }}</a>
+                        </div>
+                    </div>
+                    <div data-v-d95bbc7e="" class="sysMessage__container-msgWrapper__item-time">{{ $data->created_at }}
+                    </div>
+                    <div data-v-d95bbc7e="" class="sysMessage__container-msgWrapper__item-content">{{ $data->description }}
+                    </div>
+                </div>
+            @endforeach
+
+            <div data-v-b43bdd3f="" class="infiniteScroll__loading">
+                <div data-v-b43bdd3f="">No more</div>
+            </div>
+        </div>
+    </div>
+    <div class="customer" id="customerId" style="--36a344b0: 'Roboto', 'Inter', sans-serif; --17a7a9f6: bahnschrift;">
+    </div>
+    <foreignobject></foreignobject>
+
     <div id="popup1" class="overlay">
         <div class="popup">
             <h2></h2>
@@ -145,13 +148,13 @@
                     </div>
                     <div class="van-hairline--top van-dialog__footer"><button onclick="window.location.href='/Messages#/'"
                             type="button" class="van-button van-button--default van-button--large van-dialog__cancel">
-                            <div class="van-button__content"><!----><span class="van-button__text">Cancel</span><!---->
+                            <div class="van-button__content"><span class="van-button__text">Cancel</span>
                             </div>
                         </button><button onclick="window.location.href='/logout#/'" type="button"
                             class="van-button van-button--default van-button--large van-dialog__confirm van-hairline--left">
-                            <div class="van-button__content"><!----><span class="van-button__text">Confirm</span><!---->
+                            <div class="van-button__content"><span class="van-button__text">Confirm</span>
                             </div>
-                        </button></div><!---->
+                        </button></div>
                 </div>
             </div>
         </div>

@@ -5,31 +5,39 @@
             <div class="col-md-6 col-lg-4 main">
                 <div class="row" id="warea">
                     <div class="col-12 m-record" id="moreRcd">
-                        <div style="background: linear-gradient(180deg,#fe6868 0%,#ff8e8a 100%);" class="row nav-top">
-                            <div class="col-12">
-                                <div class="row">
-                                    <div class="col-2 xtl">
-                                        <span class="nav-back wt" id="backF"
-                                            onclick="window.location.href='{{route('account')}}';">
-                                           
-                                        </span></div>
-                                    <div class="col-10 pl-0 xtl"><span class="tf-18 tfs-w" id="MoreRCT">Deposit
-                                            Record</span></div>
+                        <div data-v-4c21fa9e="" data-v-c32a0642="" class="navbar">
+                            <div data-v-4c21fa9e="" class="navbar-fixed" style="background: rgb(247, 248, 255);">
+                                <div data-v-4c21fa9e="" class="navbar__content">
+                                    <div data-v-4c21fa9e="" onclick="window.location.href='{{ route('account') }}';"
+                                        class="navbar__content-left">
+                                        <i data-v-4c21fa9e="" class="van-badge__wrapper van-icon van-icon-arrow-left"></i>
+                                    </div>
+
+                                    <div data-v-4c21fa9e="" class="navbar__content-center">
+                                        <div data-v-c32a0642="" class="title">Deposit history</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-12 pt-0" id="dtaod">
-                                data row
+                        
+                                @foreach ($rechargeRecord as $item)
+                                    <div data-v-785ec202="" class="lotterySlotItem">
+                                        <span data-v-785ec202="">{{ $item->amount }}</span>
+                                        <h4 data-v-785ec202="" style="text-align: right">{{ $item->created_at }}</h4>
+
+                                        <h5 data-v-785ec202="">{{ $item->orderid }}</h5>
+
+                                        {{-- <span style="color: white; margin-top: 205px;">{{ $item->orderid }}</span> --}}
+
+
+                                    </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row" id="odrea"></div>
-                <div class="row" id="footer"></div>
-                <div class="row" id="opffp"></div>
-                <div class="row" id="anof"></div>
-                <div class="row" id="dta_ref"></div>
             </div>
         </div>
         <style>
@@ -42,8 +50,7 @@
             .py-0 {
                 background-color: #f7f8ff;
             }
-        </style>
-        <style>
+
             G {
                 color: #fff;
                 font-size: 14px;
@@ -97,11 +104,6 @@
                 cursor: pointer;
             }
         </style>
-        <script>
-            function myFunction() {
-                alert(
-                    "We've received your complaint. We are currently working on a resolution to your issue, for more info you can contact our official customer care team via telegram for fastest support : SoumyaGamers");
-            }
-        </script>
+
     </section>
 @endsection

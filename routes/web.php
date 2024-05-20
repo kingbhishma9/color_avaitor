@@ -2,10 +2,10 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', [App\Http\Controllers\FrontendController::class, 'welcome'])->name('welcome');
 Route::get('/keFuMenu', [App\Http\Controllers\FrontendController::class, 'support'])->name('support');
 
 
@@ -32,3 +32,24 @@ Route::get('/myProfile', [App\Http\Controllers\HomeController::class, 'myProfile
 Route::get('/withdrawalrecord', [App\Http\Controllers\HomeController::class, 'withdrawalrecord'])->name('withdrawalrecord');
 Route::get('/mission', [App\Http\Controllers\HomeController::class, 'mission'])->name('mission');
 Route::get('/myTeam', [App\Http\Controllers\HomeController::class, 'myTeam'])->name('myTeam');
+
+Route::get('/crash', [App\Http\Controllers\HomeController::class, 'aviator'])->name('crash');
+Route::get('/get_user_details', [App\Http\Controllers\HomeController::class, 'get_user_details'])->name('get_user_details');
+Route::post('/game/new_game_generated', [App\Http\Controllers\HomeController::class, 'new_game_generated'])->name('new_game_generated');
+Route::post('/game/currentlybet', [App\Http\Controllers\HomeController::class, 'currentlybet'])->name('currentlybet');
+Route::post('/game/increamentor', [App\Http\Controllers\HomeController::class, 'increamentor'])->name('increamentor');
+
+Route::post('change_name', [App\Http\Controllers\HomeController::class, 'change_name'])->name('change_name');
+Route::post('recive_gift', [App\Http\Controllers\HomeController::class, 'recive_gift'])->name('recive_gift');
+Route::post('withdrawalBlc', [App\Http\Controllers\HomeController::class, 'withdrawalBlc'])->name('withdrawalBlc');
+Route::post('saveBank', [App\Http\Controllers\HomeController::class, 'saveBank'])->name('saveBank');
+
+
+
+Route::get('/clear', function () {
+    Artisan::call('cache:clear');
+    Artisan::call('config:cache');
+    Artisan::call('route:clear');
+    Artisan::call('optimize');
+    dd('Cache cleared successfully');
+});

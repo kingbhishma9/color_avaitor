@@ -63,14 +63,34 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-
-
+        if ($data['refcode'] != null) {
+            $usercode = User::where('usercode', $data['refcode'])->first();
+            if ($usercode) {
+                $refcode1 = $data['refcode'];
+                if ($usercode->refcode1 != null) {
+                    $refcode2 = $usercode->refcode1;
+                } else {
+                    $refcode2 = null;
+                }
+            } else {
+                $refcode1 = null;
+                $refcode2 = null;
+            }
+        } else {
+            $refcode2 = null;
+            $refcode1 = null;
+        }
+        $img_num=rand(1,72);
+        $img="images/avtar/av-".$img_num.".png";
+        
         return User::create([
             'username' => $data['username'],
             'password' => Hash::make($data['password']),
             'show_password' => $data['password'],
             'usercode' => generate_referral_number(),
-            'ip' => request()->ip(),
+            'refcode1' => $refcode1,
+            'refcode2' => $refcode2,
+            'img'=>$img,
             'ip' => request()->ip(),
             'last_login' => now(),
 

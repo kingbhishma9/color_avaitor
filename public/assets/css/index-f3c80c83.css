@@ -136,6 +136,12 @@
     justify-content: center
 }
 
+
+
+
+
+
+
 .register__container-button button.disable-btn[data-v-4e8ccd02] {
     background: -webkit-linear-gradient(top, #cfd1df 0%, #c8cada 100%);
     background: linear-gradient(180deg, #cfd1df 0%, #c8cada 100%);
@@ -148,6 +154,30 @@
     background: #ffffff;
     box-shadow: none;
     margin-top: .53333rem
+}
+
+.adata[data-v-12121] {
+    border: .01333rem solid #ff7172;
+    text-shadow: none;
+    background: #ffffff;
+    box-shadow: none;
+    margin-top: .53333rem;
+    width: 7.73333rem;
+    height: 1.06667rem;
+    color: #ff7172;
+    font-size: .48rem;
+    font-weight: 700;
+    letter-spacing: .05333rem;
+    border-radius: 1.06667rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center
 }
 
 .register__container-button .account[data-v-4e8ccd02] {

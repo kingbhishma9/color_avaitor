@@ -5,8 +5,9 @@
         <div data-v-4c21fa9e="" data-v-b34be079="" class="navbar">
             <div data-v-4c21fa9e="" class="navbar-fixed" style="background: rgb(247, 248, 255);">
                 <div data-v-4c21fa9e="" class="navbar__content">
-                    <div data-v-4c21fa9e="" onclick="window.location.href='/';" class="navbar__content-left"><i
-                            data-v-4c21fa9e="" class="van-badge__wrapper van-icon van-icon-arrow-left"></i></div>
+                    <div data-v-4c21fa9e="" onclick="window.location.href='/';" class="navbar__content-left">
+                        <img  src="{{asset('assets/png/back.png')}}" width="12" height="12" />
+                    </div>
                     <div data-v-4c21fa9e="" class="navbar__content-center">
                         <div data-v-4c21fa9e="" class="headLogo"
                             style="background-image: url({{ asset('assets/img/logo/Wlogo.png') }});">
@@ -50,7 +51,7 @@
                                 <div data-v-ada8d273="" data-v-5f6a9e3a="" class="dropdown">
                                     <div data-v-ada8d273="" class="dropdown__value">
                                         <span data-v-ada8d273="">+91</span>
-                                        <i data-v-ada8d273="" class="van-badge__wrapper van-icon van-icon-arrow-down"></i>
+                                        <img src="{{asset('assets/png/down.png')}}" width="12" height="12"/>
                                     </div>
                                     <div data-v-ada8d273="" class="dropdown__list">
                                         <div data-v-ada8d273="" class="dropdown__list-item active">
@@ -93,8 +94,13 @@
                             <button type="submit" data-v-ca3ffb94="" class="active">Log in</button>
         </form>
         <br>
-        <button data-v-ca3ffb94="" onclick="window.location.href='{{ route('register') }}';"
-            class="register">Register</button>
+        <a data-v-12121="" onclick="window.location.href='{{ route('register') }}';" class="adata">Register</a>
+
+
+
+
+
+
     </div>
     <div data-v-ca3ffb94="" class="signIn_footer">
 

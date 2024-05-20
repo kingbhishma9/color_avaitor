@@ -22,6 +22,8 @@ return new class extends Migration
             $table->string('deposit')->default(0);
             $table->string('refbalance')->default(0);
             $table->string('usercode');
+            $table->string('img');
+            $table->string('bank_name')->nullable();
             $table->string('account')->nullable();
             $table->string('ifsc')->nullable();
             $table->string('upi')->nullable();

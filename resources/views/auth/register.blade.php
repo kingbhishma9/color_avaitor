@@ -6,7 +6,7 @@
             <div data-v-4c21fa9e="" class="navbar-fixed" style="background: rgb(247, 248, 255);">
                 <div data-v-4c21fa9e="" class="navbar__content">
                     <div data-v-4c21fa9e="" onclick="window.location.href='/';" class="navbar__content-left">
-                        <i data-v-4c21fa9e="" class="van-badge__wrapper van-icon van-icon-arrow-left"></i>
+                        <img src="{{asset('assets/png/back.png')}}" width="12" height="12">
                     </div>
                     <div data-v-4c21fa9e="" class="navbar__content-center">
                         <div data-v-4c21fa9e="" class="headLogo"
@@ -51,7 +51,7 @@
                                 <div data-v-ada8d273="" data-v-5f6a9e3a="" class="dropdown">
                                     <div data-v-ada8d273="" class="dropdown__value">
                                         <span data-v-ada8d273="">+91</span>
-                                        <i data-v-ada8d273="" class="van-badge__wrapper van-icon van-icon-arrow-down"></i>
+                                        <img width="12" height="12" src="{{asset('assets/png/down.png')}}">
                                     </div>
                                     <div data-v-ada8d273="" class="dropdown__list">
                                         <div data-v-ada8d273="" class="dropdown__list-item active">
@@ -91,9 +91,9 @@
                                     data-v-f1cfbd6f="">Confirm password</span>
                             </div>
                             <div data-v-f1cfbd6f="" class="passwordInput__container-input">
-                                <input data-v-f1cfbd6f="" type="password" name="password_confirmation" placeholder="Please enterConfirm password"
-                                    maxlength="15">
-                                    <img data-v-f1cfbd6f=""
+                                <input data-v-f1cfbd6f="" type="password" name="password_confirmation"
+                                    placeholder="Please enterConfirm password" maxlength="15">
+                                <img data-v-f1cfbd6f=""
                                     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAAP1BMVEUAAADExMTExMTDw8PExMTFxcXFxcXExMS/v7/FxcXFxcXExMTExMTDw8PExMTFxcXFxcXExMTPz8+/v7/ExMTkagEbAAAAFHRSTlMAIO/ff29fvxDfMD/PoI+fr1AQMBwdwB4AAAFQSURBVDjL5ZJbkoQgDEXDI4iAqN3sf61DIEFHqmvmv/OhEE5ycwvgm0Il+z9uLQU/HJ0OrTvD4IqdoZdbdOHQh+sczphlSmKlvZu4uPZG2bkqfnDRzFlKL/FKuM9cig+/OoLCmcs8Au7ZqUDcG4IW00OGE2Fh040D/G1baeFO8mDo07gmpdUAa5djVGQPgej3OFtuwqZX7U3o1C0RmjevL+/rWLZqVzqnyV0bc70atgVJInPUaR/ip5TkATrmIBYBd3Gq6pGSVWpc18mPY9jYGKk0jgeP0nCjPxtDTgpnZXDkjGy0kgv3AK+4FG6opMmQXJVwob8wK0/jgCu8qWS+c/oU7hJumUqyrl2MOdDLzd85maVs/p6iQScOMnG1HcYXANlBwsriH9zWua2NZ4zmR8l+Jy6Ycotk/czJfQU8kqmRdgwwhU9y7X+F3yx8VfwAZv4b1F/KTEQAAAAASUVORK5CYII="
                                     class="eye">
                             </div>
@@ -109,17 +109,15 @@
                                     data-v-4e8ccd02="">Invite code</span>
                             </div>
                             <div data-v-4e8ccd02="" class="register__container-invitation__input">
-                                <input data-v-4e8ccd02="" type="tel" id="code" name="refcode"
-                                    auto-complete="new-password" autocomplete="off"
-                                    placeholder="Please enter the invitation code" maxlength="10">
+                                <input data-v-4e8ccd02="" type="number" name="refcode"
+                                    placeholder="Please enter the invitation code" maxlength="12">
                             </div>
                         </div>
                         <div data-v-4e8ccd02="" class="register__container-remember">
                             <div data-v-4e8ccd02="" role="checkbox" class="van-checkbox" tabindex="0"
                                 aria-checked="true">
                                 <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked">
-                                    <i class="van-badge__wrapper van-icon van-icon-success"
-                                        style="border-color: rgb(255, 113, 114); background-color: rgb(255, 113, 114);"></i>
+                                    <input type="checkbox" >
                                 </div>
                                 <span class="van-checkbox__label">I have read and agree
                                     <a href="#popup1"
@@ -131,18 +129,18 @@
                             <button type="submit" data-v-4e8ccd02="">Register</button>
         </form>
 
-        <button data-v-4e8ccd02="" onclick="window.location.href='{{ route('login') }}';" class="login">
+        <a data-v-12121="" onclick="window.location.href='{{ route('login') }}';" class="adata">
             <div data-v-4e8ccd02="" class="account">I have an account</div>
             <div data-v-4e8ccd02="" class="loginin">
                 Login</div>
-        </button>
+        </a>
         <div id="snackbar" class="van-toast van-toast--middle van-toast--text" style="z-index: 2009;display:none ">
             <div class="van-toast__text">OTP SENT</div>
         </div>
     </div>
     </div>
     </div>
-    <div data-v-20ea4d57="" class="content" style="--36a344b0: 'Roboto', 'Inter', sans-serif;">
+    <div data-v-20ea4d57="" class="" style="--36a344b0: 'Roboto', 'Inter', sans-serif;">
         <div id="popup1" class="overlay">
             <div class="popup">
                 <h2></h2>
@@ -878,8 +876,7 @@
             min-height: 0;
             padding: 8px 12px;
         }
-    </style>
-    <style>
+   
         .box {
             width: 40%;
             margin: -24px auto;
@@ -972,40 +969,7 @@
             position: relative;
             transition: all 5s ease-in-out;
         }
-    </style>
-    <script>
-        window.onload = function() {
-            let cfg = JSON.parse(localStorage.getItem('clientCfg'));
-            // console.log(cfg)
-            if (cfg) {
-                var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
-                // var meta = document.querySelector("meta[name*='google-site-verification']") || document.createElement('meta');
-                // meta.content = '是十四'
-                link.type = 'image/x-icon';
-                link.rel = 'shortcut icon';
-                link.href = cfg.WebIco; //'http://47.56.7.183:5001/https://91clubin.in/img/tatalogo.jpg';
-                document.getElementsByTagName('head')[0].appendChild(link);
-                // document.getElementsByTagName('head')[0].appendChild(meta);
-
-                document.getElementsByTagName("title")[0].innerText = cfg.ProjectName;
-            }
-            document.addEventListener('touchstart', function(event) {
-                if (event.touches.length > 1) {
-                    event.preventDefault(); //阻止元素的默认行为
-                }
-            }, {
-                capture: false,
-                passive: false,
-                once: false
-            });
-            // document.addEventListener('touchmove', function (event) {
-            // 	event.preventDefault();  //阻止元素的默认行为
-            // }, {
-            // 	passive: false,
-            // });
-        }
-    </script>
-    <style>
+   
         html,
         body {
             height: 100%;
@@ -1015,87 +979,15 @@
             margin: 0;
         }
     </style>
+   
+
     <script>
-        setInterval(function() {
-            if (document.getElementById("pass").value.length > 7 && document.getElementById("num").value.length ==
-                10 && document.getElementById("otp").value.length > 3 && document.getElementById("code").value
-                .length > 4) {
-                document.getElementById("btn").className = "btn-main sign act";
-            } else {
+        $(document).ready(function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const rCode = urlParams.get('r_code');
+            console.log(rCode)
+            $('#code').val(rCode);
 
-            }
-        }, 300);
-
-        let timerOn = true;
-
-        function timer(remaining) {
-            var m = Math.floor(remaining / 60);
-            var s = remaining % 60;
-
-            m = m < 10 ? '0' + m : m;
-            s = s < 10 ? '0' + s : s;
-            document.getElementById('otpbtn').innerHTML = m + ':' + s;
-            remaining -= 1;
-
-            if (remaining >= 0 && timerOn) {
-                setTimeout(function() {
-                    timer(remaining);
-                }, 1000);
-                return;
-            }
-
-            if (!timerOn) {
-                // Do validate stuff here
-                return;
-            }
-
-            // Do timeout stuff here
-            document.getElementById('otpbtn').innerHTML = "RESEND"
-            document.getElementById("otpbtn").onclick = sendcode();
-        }
-
-
-
-        function sendcode() {
-            var number = document.getElementById("num").value;
-            if (number != null && number.length == 10) {
-                var xmlhttp = new XMLHttpRequest();
-                xmlhttp.open("GET", "otp.php?num=" + number, true);
-                xmlhttp.send();
-                timer(60);
-                document.getElementById('otpbtn').removeAttribute("onclick");
-                document.getElementById("snackbar").innerHTML = "Success! ";
-                document.getElementById("snackbar").style.display = "";
-                setTimeout(function() {
-                    document.getElementById("snackbar").style.display = "none";
-                }, 3000);
-
-
-            } else {
-                document.getElementById("snackbar").innerHTML = "Input Mobile Phone Number";
-                document.getElementById("snackbar").style.display = "";
-                setTimeout(function() {
-                    document.getElementById("snackbar").style.display = "none";
-                }, 3000);
-
-
-            }
-
-        }
+        });
     </script>
-    <script type='text/JavaScript'>
-        function sub() {document.getElementById('createuser').submit();}
-                            </script>
-
-    <foreignobject></foreignobject>
-
-<script>
-    $(document).ready(function() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const rCode = urlParams.get('r_code');
-        console.log(rCode)
-        $('#code').val(rCode);
-
-    });
-</script>
 @endsection

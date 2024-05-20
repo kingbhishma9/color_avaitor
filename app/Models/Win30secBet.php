@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Win30secBet extends Model
 {
     use HasFactory;
+    protected $guarded = ['id'];
+
 }
