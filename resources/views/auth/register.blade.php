@@ -109,7 +109,7 @@
                                     data-v-4e8ccd02="">Invite code</span>
                             </div>
                             <div data-v-4e8ccd02="" class="register__container-invitation__input">
-                                <input data-v-4e8ccd02="" type="number" name="refcode"
+                                <input data-v-4e8ccd02="" type="number" name="refcode" id="code"
                                     placeholder="Please enter the invitation code" maxlength="12">
                             </div>
                         </div>
@@ -876,7 +876,7 @@
             min-height: 0;
             padding: 8px 12px;
         }
-   
+
         .box {
             width: 40%;
             margin: -24px auto;
@@ -969,7 +969,7 @@
             position: relative;
             transition: all 5s ease-in-out;
         }
-   
+
         html,
         body {
             height: 100%;
@@ -979,7 +979,7 @@
             margin: 0;
         }
     </style>
-   
+
 
     <script>
         $(document).ready(function() {
