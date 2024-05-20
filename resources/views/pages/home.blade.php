@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-   
+
     <style>
         .navbar__content-left img[data-v-94f8731b] {
             height: 90%;
@@ -214,7 +214,7 @@
                     </defs>
                 </svg>
                 <div data-v-b4633b52="" class="noticeBar__container-body">
-                    <div data-v-b4633b52="" class="noticeBar__container-body-text" style="font-weight:500;">{{$Setting->welcome_node}}</div>
+                    <div data-v-b4633b52="" class="noticeBar__container-body-text" style="font-weight:500;">{{$Setting->welcome_node ?? ''}}</div>
                 </div>
                 <button data-v-b4633b52="">
                     <svg data-v-b4633b52="" width="24" height="24"
@@ -244,7 +244,7 @@
                             </div>
                         </div>
                     </div>
-                    <div data-v-6c5117cd="" role="tab" onclick="window.location.href='{{route('crash')}}';" 
+                    <div data-v-6c5117cd="" role="tab" onclick="window.location.href='{{route('crash')}}';"
                     class="van-sidebar-item" tabindex="0"
                         aria-selected="false" id="gameType-flash">
                         <div class="van-badge__wrapper van-sidebar-item__text">
@@ -307,7 +307,7 @@
                     </div>
                 </div>
                 <div data-v-906ddf09="" data-v-6c5117cd="" class="gameListGrid__container" style="">
-                    
+
                     <div data-v-785ec202="" data-v-906ddf09="" class="lottery_container">
                         <div data-v-785ec202="" onclick="window.location.href='{{route('win')}}';" class="lotterySlotItem">
                             <img data-v-785ec202="" class=""
@@ -567,9 +567,9 @@
             </div>
         </div>
 
-      
 
-       
+
+
     </div>
     <foreignobject></foreignobject>
 @endsection

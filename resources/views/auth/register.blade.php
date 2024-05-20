@@ -110,7 +110,7 @@
                             </div>
                             <div data-v-4e8ccd02="" class="register__container-invitation__input">
                                 <input data-v-4e8ccd02="" type="number" name="refcode" id="code"
-                                    placeholder="Please enter the invitation code" maxlength="12">
+                                    placeholder="Please enter the invitation code" maxlength="12" readonly>
                             </div>
                         </div>
                         <div data-v-4e8ccd02="" class="register__container-remember">
