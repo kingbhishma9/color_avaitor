@@ -1961,72 +1961,49 @@
 
 
 
-    <script>
-        $(document).ready(function() {
-            $('#tableID').DataTable({
-                searching: false,
-                //  paging: false,
-                info: false,
-                bFilter: false,
-                ordering: false,
-                bInfo: false,
-                sDom: 'lrtip',
-                // dom: 't',
-                dom: 'rtip',
-                bJQueryUI: true,
-                sDom: 'lfrtip',
-
-                ajax: {
-                    url: "{{ route('win') }}",
-                    data: function(d) {},
-                    // dataSrc: function(response) {
-                    //     if (response || response.data && Array.isArray(response)) {
-
-                    //         return response;
-
-                    //     } else {
-                    //         toastr.error(
-                    //             "No data found or invalid response. Please try again."
-                    //         );
-                    //         return [];
-                    //     }
-                    // },
-                    // error: function(xhr, error, thrown) {
-                    //     toastr.error(
-                    //         "No data found or invalid response. Please try again."
-                    //     );
-                    // }
+<script>
+    $(document).ready(function() {
+        $('#tableID').DataTable({
+            searching: false,
+            paging: false,
+            info: false,
+            ordering: false,
+            dom: 'rtip',
+            ajax: {
+                url: "{{ route('win') }}",
+                dataSrc: function(response) {
+                    if (response && response.data && Array.isArray(response.data)) {
+                        return response.data;
+                    } else {
+                        toastr.error("No data found or invalid response. Please try again.");
+                        return [];
+                    }
                 },
-
-                columns: [{
-                        data: 'period'
-                    },
-                    {
-                        data: 'ans'
-                    },
-                    {
-                        data: 'num'
-                    },
-
-                    {
-                        data: 'col',
-                        render: function(data, type, row, meta) {
-                            if (data) {
-                                if (data == 'R') {
-
-                                    return ` <div style=" margin: auto; background-color:rgb(255, 0, 0);  border-radius: 20px 20px 20px 20px; height: 15px; width: 15px; ">
+                error: function(xhr, error, thrown) {
+                    toastr.error("No data found or invalid response. Please try again.");
+                }
+            },
+            columns: [
+                { data: 'period' },
+                { data: 'ans' },
+                { data: 'num' },
+                {
+                    data: 'col',
+                    render: function(data, type, row, meta) {
+                        if (data === 'R') {
+                            return `
+                                <div style="margin: auto; background-color: rgb(255, 0, 0); border-radius: 20px; height: 15px; width: 15px;">
                                 </div>`;
-                                }
-                            } else {
-                                return '';
-                            }
+                        } else {
+                            return '';
                         }
-                    },
-
-                ],
-            });
+                    }
+                }
+            ],
         });
-    </script>
+    });
+</script>
+
 
 
 
