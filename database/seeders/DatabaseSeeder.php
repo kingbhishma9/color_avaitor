@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use App\Models\AppSetting;
 use App\Models\User;
+use App\Models\Win3minBet;
+use Carbon\Carbon;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -34,5 +36,8 @@ class DatabaseSeeder extends Seeder
             'aviatar_charge' => '1',
             'welcome_node' => 'welcome to delhiking ',
         ]);
+
+        $game = new Win3minBet();
+        $game->save();
     }
 }

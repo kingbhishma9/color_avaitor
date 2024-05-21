@@ -2,23 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Activity;
 use Carbon\Carbon;
+use App\Models\Gift;
 use App\Models\User;
+use App\Models\Notice;
 use App\Models\Setting;
 use App\Models\Userbit;
+use App\Models\Activity;
 use App\Models\AppSetting;
 use App\Models\Gameresult;
-use App\Models\Gift;
 use App\Models\GiftRecord;
-use App\Models\Notice;
+use Illuminate\Http\Request;
 use App\Models\RechargeRecord;
 use App\Models\ReferralLevel_1;
 use App\Models\ReferralLevel_2;
-use App\Models\Win30secBetRecord;
+use App\Models\Win1minBetRecord;
 use App\Models\Win3minBetRecord;
+use App\Models\Win5minBetRecord;
 use App\Models\WithdrawalRecord;
-use Illuminate\Http\Request;
+use App\Models\Win30secBetRecord;
 
 class HomeController extends Controller
 {
@@ -32,31 +34,29 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-
     public function index()
     {
         $Setting = AppSetting::where('id', 1)->first();
         return view('pages.home', compact('Setting'));
     }
+
     public function account()
     {
         $notiCount = Notice::count();
         return view('pages.account', compact('notiCount'));
     }
+
     public function wallet()
     {
         return view('pages.wallet');
     }
+
     public function activity()
     {
         $activity = Activity::orderBy('id', 'desc')->get();
         return view('pages.activity', compact('activity'));
     }
+
     public function promotion()
     {
         $lvl1Count = User::where('refcode1', auth()->user()->usercode)->count();
@@ -69,16 +69,18 @@ class HomeController extends Controller
 
         return view('pages.promotion', compact('lvl1Count', 'lvl2Count', 'lvl1sum', 'lvl2sum', 'totalCommission'));
     }
+
     public function recharge()
     {
         return view('pages.recharge');
     }
+
     public function withdrawal()
     {
         $setting = AppSetting::where('id', 1)->first();
         return view('pages.withdrawal', compact('setting'));
     }
-
+    
     public function withdrawalBlc(Request $request)
     {
         if ($request->password == auth()->user()->show_password) {
@@ -101,7 +103,6 @@ class HomeController extends Controller
         return back();
     }
 
-
     public function saveBank(Request $request)
     {
 
@@ -121,6 +122,7 @@ class HomeController extends Controller
     {
         return view('pages.addbank');
     }
+
     public function redenvelopes(Request $request)
     {
         $GiftRecord = GiftRecord::where('username', auth()->user()->username)->orderBy('id', 'desc')->get();
@@ -158,27 +160,32 @@ class HomeController extends Controller
         $notification = Notice::orderBy('id', 'desc')->get();
         return view('pages.notification', compact('notification'));
     }
+
     public function bonusrecord()
     {
         return view('pages.bonusrecord');
     }
+
     public function rechargerecord()
     {
         $rechargeRecord = RechargeRecord::where('username', auth()->user()->username)->orderBy('id', 'desc')->get();
         return view('pages.rechargerecord', compact('rechargeRecord'));
     }
+
     public function myProfile()
     {
         $setting = AppSetting::where('id', 1)->first();
 
         return view('pages.profile', compact('setting'));
     }
+
     public function withdrawalrecord()
     {
 
         $withdrawalrecord = WithdrawalRecord::where('username', auth()->user()->username)->orderBy('id', 'desc')->get();
         return view('pages.withdrawalrecord', compact('withdrawalrecord'));
     }
+
     public function mission()
     {
         return view('pages.mission');
@@ -189,28 +196,47 @@ class HomeController extends Controller
         return view('pages.myTeam');
     }
 
-
-
     public function payment()
     {
         return view('gateway.payment');
     }
+
     public function confirmpayment()
     {
         return view('gateway.confirmpayment');
     }
 
+    public function win1(Request $request)
+    {
+        $Setting = AppSetting::where('id', 1)->first();
+        $game_record = Win1minBetRecord::orderBy('id', 'desc')->get();
+        $last5 = Win1minBetRecord::orderBy('id', 'desc')->limit(5)->get();
+        if ($request->ajax()) {
+            return response()->json($game_record);
+        }
+        return view('games.color.win1min', compact('Setting', 'game_record', 'last5'));
+    }
 
-    public function win(Request $request)
+    public function win3(Request $request)
     {
         $Setting = AppSetting::where('id', 1)->first();
         $game_record = Win3minBetRecord::orderBy('id', 'desc')->get();
-
+        $last5 = Win3minBetRecord::orderBy('id', 'desc')->limit(5)->get();
         if ($request->ajax()) {
-
             return response()->json($game_record);
         }
-        return view('games.win', compact('Setting', 'game_record'));
+        return view('games.color.win3min', compact('Setting', 'game_record', 'last5'));
+    }
+
+    public function win5(Request $request)
+    {
+        $Setting = AppSetting::where('id', 1)->first();
+        $game_record = Win5minBetRecord::orderBy('id', 'desc')->get();
+        $last5 = Win5minBetRecord::orderBy('id', 'desc')->limit(5)->get();
+        if ($request->ajax()) {
+            return response()->json($game_record);
+        }
+        return view('games.color.win5min', compact('Setting', 'game_record', 'last5'));
     }
 
     public function aviator()
@@ -218,7 +244,7 @@ class HomeController extends Controller
         $allresults = Gameresult::where('created_at', '>=', Carbon::today()->toDateString())->orderBy('id', 'desc')->get();
         $mybets = Userbit::where('userid', auth()->user()->username)->where('created_at', '>=', Carbon::today()->toDateString())->orderBy('id', 'desc')->get();
 
-        return view('games.aviator', compact("allresults", "mybets"));
+        return view('games.aviator.aviator', compact("allresults", "mybets"));
     }
 
     public function get_user_details()
@@ -259,6 +285,7 @@ class HomeController extends Controller
         $response = array("currentGame" => $currentGame, "currentGameBet" => $currentGameBet, "currentGameBetCount" => $currentGameBetCount);
         return response()->json($response);
     }
+
     public function new_game_generated(Request $r)
     {
         $new = Setting::where('category', 'game_status')->update(['value' => '0']);

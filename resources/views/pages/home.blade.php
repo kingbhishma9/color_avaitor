@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
     <style>
         .navbar__content-left img[data-v-94f8731b] {
             height: 90%;
@@ -13,9 +12,9 @@
                 <div data-v-4c21fa9e="" class="navbar-fixed" style="background: rgb(247, 248, 255);">
                     <div data-v-4c21fa9e="" class="navbar__content">
                         <div data-v-4c21fa9e="" class="navbar__content-left">
-                            <img data-v-94f8731b=""
-                                onclick="window.location.href='/';" src="{{ asset('assets/img/logo/favicon.png') }}"
-                                alt=""></div>
+                            <img data-v-94f8731b="" onclick="window.location.href='/';"
+                                src="{{ asset('assets/img/logo/favicon.png') }}" alt="">
+                        </div>
                         <div data-v-4c21fa9e="" class="navbar__content-center">
                             <div data-v-4c21fa9e="" class="navbar__content-title"></div>
                         </div>
@@ -177,8 +176,7 @@
                 </div>
             </div>
             <div data-v-b4633b52="" data-v-94f8731b="" class="noticeBar__container">
-                <svg data-v-b4633b52=""
-                    width="32" height="32" viewBox="0 0 32 32" fill="none"
+                <svg data-v-b4633b52="" width="32" height="32" viewBox="0 0 32 32" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_589_37747)">
                         <path
@@ -214,11 +212,12 @@
                     </defs>
                 </svg>
                 <div data-v-b4633b52="" class="noticeBar__container-body">
-                    <div data-v-b4633b52="" class="noticeBar__container-body-text" style="font-weight:500;">{{$Setting->welcome_node ?? ''}}</div>
+                    <div data-v-b4633b52="" class="noticeBar__container-body-text" style="font-weight:500;">
+                        {{ $Setting->welcome_node ?? '' }}</div>
                 </div>
                 <button data-v-b4633b52="">
-                    <svg data-v-b4633b52="" width="24" height="24"
-                        viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg data-v-b4633b52="" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_589_37755)">
                             <path d="M24 0H0V24H24V0Z" fill="white" fill-opacity="0.01"></path>
                             <path
@@ -234,8 +233,8 @@
             </div>
             <div data-v-6c5117cd="" data-v-94f8731b="" class="gameList">
                 <div data-v-6c5117cd="" role="tablist" class="van-sidebar mySideBar">
-                    <div data-v-6c5117cd="" role="tab" class="van-sidebar-item"
-                        tabindex="0" aria-selected="true" id="gameType-lottery">
+                    <div data-v-6c5117cd="" role="tab" class="van-sidebar-item" tabindex="0" aria-selected="true"
+                        id="gameType-lottery">
                         <div class="van-badge__wrapper van-sidebar-item__text">
                             <div data-v-6c5117cd="" class="">
                                 <div data-v-6c5117cd=""
@@ -244,9 +243,8 @@
                             </div>
                         </div>
                     </div>
-                    <div data-v-6c5117cd="" role="tab" onclick="window.location.href='{{route('crash')}}';"
-                    class="van-sidebar-item" tabindex="0"
-                        aria-selected="false" id="gameType-flash">
+                    <div data-v-6c5117cd="" role="tab" onclick="window.location.href='{{ route('crash') }}';"
+                        class="van-sidebar-item" tabindex="0" aria-selected="false" id="gameType-flash">
                         <div class="van-badge__wrapper van-sidebar-item__text">
                             <div data-v-6c5117cd="" class="">
                                 <div data-v-6c5117cd=""
@@ -309,50 +307,43 @@
                 <div data-v-906ddf09="" data-v-6c5117cd="" class="gameListGrid__container" style="">
 
                     <div data-v-785ec202="" data-v-906ddf09="" class="lottery_container">
-                        <div data-v-785ec202="" onclick="window.location.href='{{route('win')}}';" class="lotterySlotItem">
+                        <div data-v-785ec202="" onclick="window.location.href='{{ route('win1') }}';"
+                            class="lotterySlotItem">
                             <img data-v-785ec202="" class=""
                                 src="https://ossimg.91admin123admin.com/91club/lotterycategory/lotterycategory_202307140102511fow.png"
-                                src="https://ossimg.91admin123admin.com/91club/lotterycategory/lotterycategory_202307140102511fow.png"><span
-                                data-v-785ec202="">Win Go</span>
+                                src="https://ossimg.91admin123admin.com/91club/lotterycategory/lotterycategory_202307140102511fow.png">
+                                <span
+                                data-v-785ec202="">Win 1 Min Go</span>
                             <h4 data-v-785ec202="">
-                                <div data-v-785ec202="">Guess Number</div>
-                                <div data-v-785ec202="">Green/Red/Purple to win</div>
+                                <div data-v-785ec202="">   </div>
+                                <div data-v-785ec202=""> </div>
                             </h4>
                         </div>
-                        <div data-v-785ec202="" onclick="window.location.href='{{route('win')}}/';" class="lotterySlotItem">
+                        <div data-v-785ec202="" onclick="window.location.href='{{ route('win3') }}/';"
+                            class="lotterySlotItem">
                             <img data-v-785ec202="" class=""
                                 src="https://ossimg.91admin123admin.com/91club/lotterycategory/lotterycategory_20230714010246lyuc.png"
-                                src="https://ossimg.91admin123admin.com/91club/lotterycategory/lotterycategory_20230714010246lyuc.png"><span
-                                data-v-785ec202="">Trx Win</span>
+                                src="https://ossimg.91admin123admin.com/91club/lotterycategory/lotterycategory_20230714010246lyuc.png">
+                                <span
+                                data-v-785ec202="">Trx 3Min Win</span>
                             <h4 data-v-785ec202="">
-                                <div data-v-785ec202="">Guess Number</div>
-                                <div data-v-785ec202="">Green/Red/Purple to win</div>
+                                <div data-v-785ec202="">  </div>
+                                <div data-v-785ec202=""> </div>
                             </h4>
                         </div>
-                        <div data-v-785ec202="" onclick="window.location.href='{{route('win')}}';" class="lotterySlotItem">
+                        <div data-v-785ec202="" onclick="window.location.href='{{ route('win5') }}';"
+                            class="lotterySlotItem">
                             <img data-v-785ec202="" class=""
                                 src="https://ossimg.91admin123admin.com/91club/lotterycategory/lotterycategory_20230714010227swu2.png"
-                                src="https://ossimg.91admin123admin.com/91club/lotterycategory/lotterycategory_20230714010227swu2.png"><span
-                                data-v-785ec202="">K3</span>
+                                src="https://ossimg.91admin123admin.com/91club/lotterycategory/lotterycategory_20230714010227swu2.png">
+                                <span
+                                data-v-785ec202="">K3 5Min Win</span>
                             <h4 data-v-785ec202="">
-                                <div data-v-785ec202="">Guess Number</div>
-                                <div data-v-785ec202="">Big/Small/Odd/Even</div>
+                                <div data-v-785ec202=""> </div>
+                                <div data-v-785ec202="">    </div>
                             </h4>
                         </div>
-                        <div data-v-785ec202="" onclick="window.location.href='{{route('win')}}';" class="lotterySlotItem">
-                            <img data-v-785ec202="" class=""
-                                src="https://ossimg.91admin123admin.com/91club/lotterycategory/lotterycategory_2023071401023322dy.png"
-                                src="https://ossimg.91admin123admin.com/91club/lotterycategory/lotterycategory_2023071401023322dy.png"><span
-                                data-v-785ec202="">5D</span>
-                            <h4 data-v-785ec202="">
-                                <div data-v-785ec202="">Guess Number</div>
-                                <div data-v-785ec202="">Big/Small/Odd/Even</div>
-                            </h4>
-                        </div>
-                    </div><button onclick="window.location.href='{{route('win')}}';" data-v-906ddf09=""
-                        class="look_all"><img data-v-906ddf09=""
-                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwBAMAAAClLOS0AAAAIVBMVEUAAAD5Wlr3WFj6WVn6WFj5V1f6WVn5WVn5WVn4V1f5WVnpXZn/AAAACnRSTlMA72C/v1DP329wWe0twgAAAKNJREFUOMtjoA/gMFwFAkkgdrMUiLlMASyhtQoCGhgYmKDMFWCJLCivgIGBDcpcDpZYBQULGBi4YOwRLlEF5SQwMLBDmcvAErOgPGBYc0KZi8ASTI4g9kIjEFsFHB/CCgyDF7AaIpwbjHAuIvkEIJLPUrCEF5RnwMDAAmUuBktIQXkCDAyMUObCgY9BGkvg9Dn+sIpCJB9WbMnHFCn5BDDQBQAAbjlnhYlIhpEAAAAASUVORK5CYII="
-                            alt=""> View All</button>
+                    </div>
                 </div>
             </div>
             <div data-v-f477932f="" data-v-94f8731b="" class="luckyWinners__container">
@@ -560,8 +551,7 @@
                                 reward</div>
                         </div>
                     </div>
-                    <div data-v-0e007999="" class="dialog__container-footer"><button
-                            data-v-0e007999="">OK</button></div>
+                    <div data-v-0e007999="" class="dialog__container-footer"><button data-v-0e007999="">OK</button></div>
                 </div>
                 <div data-v-0e007999="" class="dialog__outside"></div>
             </div>

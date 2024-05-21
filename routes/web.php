@@ -11,13 +11,21 @@ Route::get('/keFuMenu', [App\Http\Controllers\FrontendController::class, 'suppor
 Auth::routes();
 
 Route::any('get-gameId', [FrontendController::class, 'getGameId'])->name('get.gameId');
+Route::any('get-gameId1min', [FrontendController::class, 'getgameId1min'])->name('get.gameId1min');
+Route::any('get-gameId5min', [FrontendController::class, 'getgameId5min'])->name('get.gameId5min');
+
+Route::any('set-colorBet', [FrontendController::class, 'setColorBet'])->name('set.colorBet');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/activity', [App\Http\Controllers\HomeController::class, 'activity'])->name('activity');
 Route::get('/promotion', [App\Http\Controllers\HomeController::class, 'promotion'])->name('promotion');
 Route::get('/wallet', [App\Http\Controllers\HomeController::class, 'wallet'])->name('wallet');
 Route::get('/account', [App\Http\Controllers\HomeController::class, 'account'])->name('account');
-Route::get('/win', [App\Http\Controllers\HomeController::class, 'win'])->name('win');
+
+Route::get('/win1', [App\Http\Controllers\HomeController::class, 'win1'])->name('win1');
+Route::get('/win3', [App\Http\Controllers\HomeController::class, 'win3'])->name('win3');
+Route::get('/win5', [App\Http\Controllers\HomeController::class, 'win5'])->name('win5');
+
 // Route::get('/win1', [App\Http\Controllers\HomeController::class, 'index'])->name('win1');
 Route::get('/recharge', [App\Http\Controllers\HomeController::class, 'recharge'])->name('recharge');
 Route::get('/withdrawal', [App\Http\Controllers\HomeController::class, 'withdrawal'])->name('withdrawal');

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('ans', 11)->notNull();
             $table->string('num', 20)->notNull();
             $table->tinyText('clo')->notNull();
-            $table->string('res1', 211)->notNull();
+            $table->string('res1', 211)->nullable();
             $table->timestamps();
         });
     }

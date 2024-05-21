@@ -262,7 +262,7 @@
                 <div data-v-906ddf09="" data-v-6c5117cd="" class="gameListGrid__container" style="">
 
                     <div data-v-785ec202="" data-v-906ddf09="" class="lottery_container">
-                        <div data-v-785ec202="" onclick="window.location.href='{{ route('win') }}';"
+                        <div data-v-785ec202="" onclick="window.location.href='{{ route('home') }}';"
                             class="lotterySlotItem">
                             <img data-v-785ec202="" class=""
                                 src="https://ossimg.91admin123admin.com/91club/lotterycategory/lotterycategory_202307140102511fow.png"
@@ -273,7 +273,7 @@
                                 <div data-v-785ec202="">Green/Red/Purple to win</div>
                             </h4>
                         </div>
-                        <div data-v-785ec202="" onclick="window.location.href='{{ route('win') }}';"
+                        <div data-v-785ec202="" onclick="window.location.href='{{ route('home') }}';"
                             class="lotterySlotItem">
                             <img data-v-785ec202="" class=""
                                 src="https://ossimg.91admin123admin.com/91club/lotterycategory/lotterycategory_20230714010246lyuc.png"
