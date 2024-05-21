@@ -1972,8 +1972,8 @@
             ajax: {
                 url: "{{ route('win') }}",
                 dataSrc: function(response) {
-                    if (response && response.data && Array.isArray(response.data)) {
-                        return response.data;
+                    if (response && Array.isArray(response)) {
+                        return response;
                     } else {
                         toastr.error("No data found or invalid response. Please try again.");
                         return [];
@@ -1988,7 +1988,7 @@
                 { data: 'ans' },
                 { data: 'num' },
                 {
-                    data: 'col',
+                    data: 'clo',
                     render: function(data, type, row, meta) {
                         if (data === 'R') {
                             return `
@@ -2003,6 +2003,7 @@
         });
     });
 </script>
+
 
 
 
