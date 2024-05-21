@@ -215,7 +215,7 @@
         }
 
         func();
-      
+
 
 
 
@@ -227,7 +227,7 @@
             ordering: false,
             dom: 'rtip',
             ajax: {
-                url: "{{ route('win1') }}",
+                url: "{{ route('win5') }}",
                 dataSrc: function(response) {
                     if (response && Array.isArray(response)) {
                         return response;

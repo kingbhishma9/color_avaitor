@@ -4,10 +4,9 @@
     <div data-v-c0d1aac6="" class="TimeLeft__C">
         <div data-v-c0d1aac6="" class="TimeLeft__C-rule" id="readrule">How to play</div>
         <div data-v-c0d1aac6="" class="TimeLeft__C-name">Win Go 1Min</div>
-        <div data-v-c0d1aac6="" class="TimeLeft__C-num">
-            @foreach ($last5 as $item)
-                <div data-v-c0d1aac6="" class="n{{ $item->num }}"></div>
-            @endforeach
+        <div data-v-c0d1aac6="" class="TimeLeft__C-num"  id="colorNumber">
+
+
         </div>
         <div data-v-c0d1aac6="" class="TimeLeft__C-id" style="font-size:0.52667rem;">
             <span id="period">{{ renderGameId1() }}</span>
@@ -107,7 +106,7 @@
 
 
 
-    
+
     <script>
         $(window).on("load", function() {
             setTimeout(
@@ -187,9 +186,9 @@
                 document.getElementById("saprenum9").removeAttribute('disabled');
             }
             if (diff == 60) {
+             $('#colorNumber').empty();
 
-                // $("#sapremybet").load('saprerec.php?srpage=1');
-                // get result
+            $('#tableID').DataTable().ajax.reload();
 
             }
             if (diff == 58) {
@@ -218,10 +217,19 @@
 
         func();
 
+function getAllIndices(data) {
+data.forEach(element => {
+    var className= "n"+ element.num;
+    var newSpan=$('<div data-v-c0d1aac6=""></div>').addClass(className);
+   $('#colorNumber').append(newSpan);
+
+});
+
+}
 
 
-
-        $(document).ready(function() {
+    $(document).ready(function() {
+        // function fetchGameIds(){
         $('#tableID').DataTable({
             searching: false,
             paging: true,
@@ -232,6 +240,8 @@
                 url: "{{ route('win1') }}",
                 dataSrc: function(response) {
                     if (response && Array.isArray(response)) {
+                        const sliceData=response.slice(0,5);
+                        getAllIndices(sliceData);
                         return response;
                     } else {
                         toastr.error("No data found or invalid response. Please try again.");
@@ -260,6 +270,8 @@
                 }
             ],
         });
+
+    // }
     });
 
 

@@ -80,7 +80,7 @@ class HomeController extends Controller
         $setting = AppSetting::where('id', 1)->first();
         return view('pages.withdrawal', compact('setting'));
     }
-    
+
     public function withdrawalBlc(Request $request)
     {
         if ($request->password == auth()->user()->show_password) {
@@ -210,11 +210,10 @@ class HomeController extends Controller
     {
         $Setting = AppSetting::where('id', 1)->first();
         $game_record = Win1minBetRecord::orderBy('id', 'desc')->get();
-        $last5 = Win1minBetRecord::orderBy('id', 'desc')->limit(5)->get();
         if ($request->ajax()) {
             return response()->json($game_record);
         }
-        return view('games.color.win1min', compact('Setting', 'game_record', 'last5'));
+        return view('games.color.win1min', compact('Setting', 'game_record'));
         // return view('games.color.samipwin', compact('Setting', 'game_record', 'last5'));
     }
 
