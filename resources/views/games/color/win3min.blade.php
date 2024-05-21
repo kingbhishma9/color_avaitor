@@ -218,28 +218,54 @@
         }
 
         func();
-        var interval = setInterval(func, 1000);
-        var sapremodal = document.getElementById("sapregreenbox");
-        var saprespan = document.getElementById("sapreclose");
-        var saprespan3 = document.getElementById("sapreclose3");
-        var saprespan1 = document.getElementById("sapreclose1");
-        saprespan3.onclick = function() {
-            document.getElementById("saprered").className = "cu-modal";
-        }
-        saprespan1.onclick = function() {
-            document.getElementById("sapreviobox").className = "cu-modal";
-        }
+    
 
-        saprespan.onclick = function() {
-            sapremodal.className = "cu-modal";
-        }
 
-        document.getElementById("readrule").onclick = function() {
-            document.getElementById("rule").className = "cu-modal show";
-        }
-        document.getElementById("ruleclose").onclick = function() {
-            document.getElementById("rule").className = "cu-modal";
-        }
+
+        $(document).ready(function() {
+        $('#tableID').DataTable({
+            searching: false,
+            paging: true,
+            info: false,
+            ordering: false,
+            dom: 'rtip',
+            ajax: {
+                url: "{{ route('win1') }}",
+                dataSrc: function(response) {
+                    if (response && Array.isArray(response)) {
+                        return response;
+                    } else {
+                        toastr.error("No data found or invalid response. Please try again.");
+                        return [];
+                    }
+                },
+                error: function(xhr, error, thrown) {
+                    toastr.error("No data found or invalid response. Please try again.");
+                }
+            },
+            columns: [
+                { data: 'period' },
+                { data: 'ans' },
+                { data: 'num' },
+                {
+                    data: 'clo',
+                    render: function(data, type, row, meta) {
+                        if (data === 'R') {
+                            return `
+                                <div style="margin: auto; background-color: rgb(255, 0, 0); border-radius: 20px; height: 15px; width: 15px;">
+                                </div>`;
+                        } else {
+                            return '';
+                        }
+                    }
+                }
+            ],
+        });
+    });
+
+
+
+
     </script>
 
 @endsection

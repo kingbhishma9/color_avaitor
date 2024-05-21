@@ -217,6 +217,55 @@
         }
 
         func();
+
+
+
+
+        $(document).ready(function() {
+        $('#tableID').DataTable({
+            searching: false,
+            paging: true,
+            info: false,
+            ordering: false,
+            dom: 'rtip',
+            ajax: {
+                url: "{{ route('win1') }}",
+                dataSrc: function(response) {
+                    if (response && Array.isArray(response)) {
+                        return response;
+                    } else {
+                        toastr.error("No data found or invalid response. Please try again.");
+                        return [];
+                    }
+                },
+                error: function(xhr, error, thrown) {
+                    toastr.error("No data found or invalid response. Please try again.");
+                }
+            },
+            columns: [
+                { data: 'period' },
+                { data: 'ans' },
+                { data: 'num' },
+                {
+                    data: 'clo',
+                    render: function(data, type, row, meta) {
+                        if (data === 'R') {
+                            return `
+                                <div style="margin: auto; background-color: rgb(255, 0, 0); border-radius: 20px; height: 15px; width: 15px;">
+                                </div>`;
+                        } else {
+                            return '';
+                        }
+                    }
+                }
+            ],
+        });
+    });
+
+
+
+
+
     </script>
 
 @endsection
