@@ -2241,7 +2241,7 @@
     $(document).ready(function() {
         $('#tableID').DataTable({
             searching: false,
-            paging: ture,
+            paging: true,
             info: false,
             ordering: false,
             dom: 'rtip',

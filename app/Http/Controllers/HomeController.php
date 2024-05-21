@@ -215,6 +215,7 @@ class HomeController extends Controller
             return response()->json($game_record);
         }
         return view('games.color.win1min', compact('Setting', 'game_record', 'last5'));
+        // return view('games.color.samipwin', compact('Setting', 'game_record', 'last5'));
     }
 
     public function win3(Request $request)
