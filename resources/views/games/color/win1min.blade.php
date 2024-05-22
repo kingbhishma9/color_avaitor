@@ -98,19 +98,20 @@
 
      $(document).ready(function(){
 
-         $('.content').hide();
+            $('.display').hide();
 
-         $(".RecordNav__C > div .active" ).each(function(){
-            var target=$(this).data('content');
-            console.log(target)
-            $(target).show()
-         });
-        $(".RecordNav__C" ).delegate( "div", "click", function() {
-            $(this).siblings().removeClass('active');
-            $(this).addClass('active');
-            var target=$(this).data('content');
-            $(target).show()
-        });
+            $(".RecordNav__C > div.active").each(function() {
+                var target = $(this).data('target');
+                $(target).show();
+            });
+
+            $(".RecordNav__C" ).delegate( "div", "click", function() {
+                $(this).siblings().removeClass('active');
+                $(this).addClass('active');
+                $('.display').hide();
+                var target = $(this).data('target');
+                $(target).show();
+            });
 
      });
 
