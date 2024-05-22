@@ -101,7 +101,7 @@
     </style>
 
 
-<div data-v-54016b1c="" class="Trend__C-body2">
+<div data-v-54016b1c="" class="Trend__C-body2 content" id="chart" >
     <div data-v-54016b1c="" issuenumber="20240522011373" number="1" colour="green" rowid="0">
         <div data-v-54016b1c="" class="van-row">
             <div data-v-54016b1c="" class="van-col van-col--8">

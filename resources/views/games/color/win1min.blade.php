@@ -54,9 +54,9 @@
         </div>
     </div>
     <div data-v-4e271e20="" data-v-f31474c6="" class="RecordNav__C">
-        <div data-v-4e271e20="" class="active">Game history</div>
-        <div data-v-4e271e20="" class="">Chart</div>
-        <div data-v-4e271e20="" class="">My history</div>
+        <div data-v-4e271e20="" data-target="#game_histrory" class="active">Game history</div>
+        <div data-v-4e271e20="" data-target="#chart" class="">Chart</div>
+        <div data-v-4e271e20="" data-target="#my_history" class="">My history</div>
     </div>
     <div data-v-c74f4bba="" data-v-f31474c6="" class="GameRecord__C">
         <table id="tableID" class="display" style="width:100%">
@@ -73,11 +73,11 @@
             </tbody>
         </table>
     </div>
-  
+
 @include('games.color.includes.chart')
 
     <div data-v-c74f4bba="" data-v-f31474c6="" class="History__C">
-        <table id="tableID" class="display" style="width:100%">
+        <table id="game_histrory" class="display" style="width:100%">
             <thead>
                 <tr>
                     <th>Period</th>
@@ -98,9 +98,18 @@
 
      $(document).ready(function(){
 
+         $('.content').hide();
+
+         $(".RecordNav__C > div .active" ).each(function(){
+            var target=$(this).data('content');
+            console.log(target)
+            $(target).show()
+         });
         $(".RecordNav__C" ).delegate( "div", "click", function() {
             $(this).siblings().removeClass('active');
             $(this).addClass('active');
+            var target=$(this).data('content');
+            $(target).show()
         });
 
      });
@@ -236,7 +245,7 @@
 
         $(document).ready(function() {
 
-            $('#tableID').DataTable({
+            $('#game_histrory').DataTable({
                 searching: false,
                 paging: true,
                 info: false,
