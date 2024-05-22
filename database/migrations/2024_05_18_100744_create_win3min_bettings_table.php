@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('res')->default('wait');
             $table->string('price')->default('wait');
             $table->string('number')->default('wait');
-            $table->text('color')->default('wait');
+            $table->string('color')->default('wait');
             $table->string('am')->default('wait');
             $table->timestamps();
         });

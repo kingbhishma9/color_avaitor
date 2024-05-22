@@ -77,6 +77,18 @@
 
 
     <script>
+
+     $(document).ready(function(){
+
+        $(".RecordNav__C" ).delegate( "div", "click", function() {
+            $(this).siblings().removeClass('active');
+            $(this).addClass('active');
+        });
+
+     });
+
+
+
         $(window).on("load", function() {
             setTimeout(
                 function() {
@@ -171,7 +183,7 @@
 
                 $('#tableID').DataTable().ajax.reload();
             }
-           
+
 
 
         }
