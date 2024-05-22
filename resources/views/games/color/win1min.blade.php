@@ -4,7 +4,7 @@
     <div data-v-c0d1aac6="" class="TimeLeft__C">
         <div data-v-c0d1aac6="" class="TimeLeft__C-rule" id="readrule">How to play</div>
         <div data-v-c0d1aac6="" class="TimeLeft__C-name">Win Go 1Min</div>
-        <div data-v-c0d1aac6="" class="TimeLeft__C-num"  id="colorNumber">
+        <div data-v-c0d1aac6="" class="TimeLeft__C-num" id="colorNumber">
 
 
         </div>
@@ -18,7 +18,7 @@
             </div>
         </div>
     </div>
-    <div data-v-43251c11="" data-v-f31474c6="" class="Betting__C" voicetype="1" typeid="1">
+    <div data-v-43251c11="" data-v-f31474c6="" class="Betting__C" id="disable_button" voicetype="1" typeid="1">
         <div data-v-43251c11="" class="Betting__C-head">
             <div data-v-43251c11="" class="Betting__C-head-g" id="sapregreen" onclick="green()">Green</div>
             <div data-v-43251c11="" class="Betting__C-head-p" id="saprevoilet" onclick="vio()">Violet</div>
@@ -36,7 +36,10 @@
             <div data-num="8" id="saprenum8" onclick="saprenum8()" data-v-43251c11="" class="Betting__C-numC-item8"></div>
             <div data-v-43251c11="" data-num="9" id="saprenum9" onclick="saprenum9()" class="Betting__C-numC-item9"></div>
         </div>
-        <div data-v-43251c11="" class="Betting__C-multiple">
+
+        {{-- Hide from page-home css file line number 22455 --}}
+
+        <div data-v-43251c11="" class="Betting__C-multiple" style="display: none">
             <div data-v-43251c11="" class="Betting__C-multiple-l">Random</div>
             <div data-v-43251c11="" class="Betting__C-multiple-r active"> X1</div>
             <div data-v-43251c11="" class="Betting__C-multiple-r"> X5</div>
@@ -45,7 +48,7 @@
             <div data-v-43251c11="" class="Betting__C-multiple-r"> X50</div>
             <div data-v-43251c11="" class="Betting__C-multiple-r"> X100</div>
         </div>
-        <div data-v-43251c11="" class="Betting__C-foot">
+        <div data-v-43251c11="" class="Betting__C-foot" style="display: none">
             <div data-v-43251c11="" class="Betting__C-foot-b">Big</div>
             <div data-v-43251c11="" class="Betting__C-foot-s">Small</div>
         </div>
@@ -66,44 +69,10 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($game_record as $item)
-                    <tr>
-                        <td>{{ $item->period }}</td>
-                        <td>{{ $item->ans }}</td>
-                        <td>{{ $item->num }}</td>
-                        <td>
-                            @if ($item->clo == 'R')
-                                <div
-                                    style=" margin: auto; background-color:rgb(255, 0, 0);  border-radius: 20px 20px 20px 20px; height: 15px; width: 15px; ">
-                                </div>
-                            @elseif($item->clo == 'G')
-                                <div
-                                    style="margin: auto;  background-color:rgb(0, 255, 0);  border-radius: 20px 20px 20px 20px; height: 15px; width: 15px; ">
-                                </div>
-                            @elseif($item->clo == 'GV')
-                                <div
-                                    style="margin: auto;  background-color:rgb(0, 255, 0);  border-radius: 20px 20px 20px 20px; height: 15px; width: 15px; display: inline-block; *display: inline;  ">
-                                </div>
-                                <div
-                                    style="margin: auto;  background-color:rgb(143, 0, 255);  border-radius: 20px 20px 20px 20px; height: 15px; width: 15px; display: inline-block; *display: inline;  ">
-                                </div>
-                            @elseif($item->clo == 'RV')
-                                <div
-                                    style="margin: auto;  background-color:rgb(255, 0, 0);  border-radius: 20px 20px 20px 20px; height: 15px; width: 15px; display: inline-block; *display: inline;  ">
-                                </div>
-                                <div
-                                    style="margin: auto;  background-color:rgb(143, 0, 255);  border-radius: 20px 20px 20px 20px; height: 15px; width: 15px; display: inline-block; *display: inline;  ">
-                                </div>
-                            @endif
-                        </td>
 
-                    </tr>
-                @endforeach
             </tbody>
         </table>
     </div>
-
-
 
 
 
@@ -134,7 +103,7 @@
 
             var diff = distance;
 
-            if (diff < 2 || diff < 3) {
+            if (diff < 2) {
                 setTimeout(function() {
 
                     triggerAjaxCall()
@@ -142,6 +111,8 @@
 
             }
             if (diff < 5) {
+                document.getElementById('disable_button').style.display = 'none';
+
                 document.getElementById("saprered").className = "cu-modal";
                 document.getElementById("sapregreenbox").className = "cu-modal";
                 document.getElementById("sapreviobox").className = "cu-modal";
@@ -171,6 +142,7 @@
             }
 
             if (diff > 5) {
+                document.getElementById('disable_button').style.display = '';
                 document.getElementById("sapregreen").removeAttribute('disabled');
                 document.getElementById("saprevoilet").removeAttribute('disabled');
                 document.getElementById("sapreredbutton").removeAttribute('disabled');
@@ -186,17 +158,20 @@
                 document.getElementById("saprenum9").removeAttribute('disabled');
             }
             if (diff == 60) {
-             $('#colorNumber').empty();
+                $('#colorNumber').empty();
 
-            $('#tableID').DataTable().ajax.reload();
+                $('#tableID').DataTable().ajax.reload();
+
+
 
             }
             if (diff == 58) {
 
+                $('#colorNumber').empty();
 
-                // $("#sapremybet").load('saprerec.php?srpage=1');
-                // get rsult
+                $('#tableID').DataTable().ajax.reload();
             }
+           
 
 
         }
@@ -206,78 +181,89 @@
                 url: "{{ route('get.gameId1min') }}",
                 method: 'GET',
                 success: function(response) {
-                    console.log("AJAX response:", response);
                     $('#period').text(response.id);
+                    // console.log(response.id);
+
                 },
                 error: function(error) {
-                    console.error("AJAX error:", error);
+
                 }
             });
         }
 
         func();
 
-function getAllIndices(data) {
-data.forEach(element => {
-    var className= "n"+ element.num;
-    var newSpan=$('<div data-v-c0d1aac6=""></div>').addClass(className);
-   $('#colorNumber').append(newSpan);
+        function getAllIndices(data) {
+            data.forEach(element => {
+                var className = "n" + element.num;
+                var newSpan = $('<div data-v-c0d1aac6=""></div>').addClass(className);
+                $('#colorNumber').append(newSpan);
 
-});
+            });
 
-}
+        }
 
 
-    $(document).ready(function() {
-        // function fetchGameIds(){
-        $('#tableID').DataTable({
-            searching: false,
-            paging: true,
-            info: false,
-            ordering: false,
-            dom: 'rtip',
-            ajax: {
-                url: "{{ route('win1') }}",
-                dataSrc: function(response) {
-                    if (response && Array.isArray(response)) {
-                        const sliceData=response.slice(0,5);
-                        getAllIndices(sliceData);
-                        return response;
-                    } else {
+        $(document).ready(function() {
+
+            $('#tableID').DataTable({
+                searching: false,
+                paging: true,
+                info: false,
+                ordering: false,
+                dom: 'rtip',
+                ajax: {
+                    url: "{{ route('win1') }}",
+                    dataSrc: function(response) {
+                        if (response && Array.isArray(response)) {
+                            const sliceData = response.slice(0, 5);
+                            getAllIndices(sliceData);
+                            return response;
+                        } else {
+                            toastr.error("No data found or invalid response. Please try again.");
+                            return [];
+                        }
+                    },
+                    error: function(xhr, error, thrown) {
                         toastr.error("No data found or invalid response. Please try again.");
-                        return [];
                     }
                 },
-                error: function(xhr, error, thrown) {
-                    toastr.error("No data found or invalid response. Please try again.");
-                }
-            },
-            columns: [
-                { data: 'period' },
-                { data: 'ans' },
-                { data: 'num' },
-                {
-                    data: 'clo',
-                    render: function(data, type, row, meta) {
-                        if (data === 'R') {
-                            return `
-                                <div style="margin: auto; background-color: rgb(255, 0, 0); border-radius: 20px; height: 15px; width: 15px;">
+                columns: [{
+                        data: 'period'
+                    },
+                    {
+                        data: 'ans'
+                    },
+                    {
+                        data: 'num'
+                    },
+                    {
+                        data: 'clo',
+                        render: function(data, type, row, meta) {
+                            if (data === 'R') {
+                                return `
+                                <div style="margin: auto; background-color: rgb(255, 0, 0); border-radius: 20px; height: 20px; width: 20px;">
                                 </div>`;
-                        } else {
-                            return '';
+                            } else if (data === 'G') {
+                                return `<div style="margin: auto;  background-color:rgb(0, 255, 0);  border-radius: 20px 20px 20px 20px; height: 20px; width: 20px; ">
+                                </div>`;
+
+                            } else if (data === 'RV') {
+                                return `<div style="margin: auto;  background-image:linear-gradient(to right, rgb(255, 0, 0) 50%, rgb(143, 0, 255) 50%);  border-radius: 20px 20px 20px 20px; height: 20px; width: 20px; ">
+                                </div>`;
+
+                            } else if (data === 'GV') {
+                                return `<div style="margin: auto;  background-image:linear-gradient(to right, rgb(0, 255, 0) 50%, rgb(143, 0, 255) 50%);  border-radius: 20px 20px 20px 20px; height: 20px; width: 20px; ">
+                                </div>`;
+                            } else {
+                                return '';
+                            }
                         }
                     }
-                }
-            ],
+                ],
+            });
+
+
         });
-
-    // }
-    });
-
-
-
-
-
     </script>
-
 @endsection

@@ -25,7 +25,9 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" />
 
     <!-- jQuery library file -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
     <!-- Datatable plugin JS library file -->
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
@@ -58,28 +60,15 @@
             display: -webkit-flex;
             display: flex;
         }
+        
     </style>
 
     <script>
         $(document).ready(function() {
-            $("#saprebalancetop").load('balance.php');
-
-            setInterval(function() {
-                $("#saprebalancetop").load('balance.php');
-            }, 2000);
-
-
-
 
             setInterval(function() {
 
             }, 2000);
-
-
-
-
-
-
 
             setInterval(function() {
                 if (typeof m == 'undefined') {
@@ -877,7 +866,7 @@
                 <div data-v-ed6673b8="" class="Wallet__C-balance">
                     <div data-v-ed6673b8="" class="Wallet__C-balance-l1">
                         <div onclick="location.reload()" data-v-ed6673b8="">₹<span
-                                id="saprebalancetop">{{ auth()->user()->balance }}</span>
+                                id="saprebalancetop">{{ auth()->user()->balance + auth()->user()->deposit + auth()->user()->bonus+  auth()->user()->refbalance}}</span>
                         </div>
                     </div>
                     <div data-v-ed6673b8="" class="Wallet__C-balance-l2">
@@ -957,8 +946,7 @@
                         class="inner">
                         <span
                             style="font-family: MulticoloreFont; color: #d37116; font-size: .75rem; line-height: .5rem; position: absolute; width: 100%; text-align: center; font-weight: 600; top: 0.60rem; left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%);"
-                            data-v-78027f36="">₹
-                            {{ auth()->user()->balance + auth()->user()->deposit + auth()->user()->bonus }}</span>
+                            data-v-78027f36="">₹ 0</span>
                     </div>
                 </div>
             </div>
@@ -1233,8 +1221,30 @@
                         </uni-view>
                     </uni-view>
                 </uni-view>
+
+
+
+
                 <form id="saprerform" method="post" action="{{ route('set.colorBet') }}">
-                    <input type="hidden" id="saprerper" name="period" value="{{ renderGameId1() }}">
+
+
+
+                    @csrf
+                    <input type="hidden" id="sapreper" name="period"
+                        value="
+                    @if (Route::currentRouteName() == 'win1') {{ renderGameId1() }}
+                     @elseif(Route::currentRouteName() == 'win3')
+                     {{ renderGameId3() }}
+                     @elseif(Route::currentRouteName() == 'win5')
+                     {{ renderGameId5() }} @endif
+                     ">
+
+                    <input type="hidden" name="game"
+                        value=" @if (Route::currentRouteName() == 'win1') win1
+                     @elseif(Route::currentRouteName() == 'win3')
+                     win3
+                     @elseif(Route::currentRouteName() == 'win5')
+                     win5 @endif">
                     <input type="hidden" name="ans" value="red">
                     <input type="hidden" type="text" id="saprerfamount" name="amount" value="10">
                 </form>
@@ -1331,7 +1341,22 @@
                     </uni-view>
                 </uni-view>
                 <form id="saprevform" method="post" action="{{ route('set.colorBet') }}">
-                    <input type="hidden" id="saprevper" name="period" value="{{ renderGameId1() }}">
+                    @csrf
+                    <input type="hidden" id="sapreper" name="period"
+                        value="
+                    @if (Route::currentRouteName() == 'win1') {{ renderGameId1() }}
+                     @elseif(Route::currentRouteName() == 'win3')
+                     {{ renderGameId3() }}
+                     @elseif(Route::currentRouteName() == 'win5')
+                     {{ renderGameId5() }} @endif
+                     ">
+
+                    <input type="hidden" name="game"
+                        value=" @if (Route::currentRouteName() == 'win1') win1
+                     @elseif(Route::currentRouteName() == 'win3')
+                     win3
+                     @elseif(Route::currentRouteName() == 'win5')
+                     win5 @endif">
                     <input type="hidden" name="ans" value="violet">
                     <input type="hidden" type="text" id="saprevfamount" name="amount" value="10">
                 </form>
@@ -1411,7 +1436,22 @@
                     </uni-view>
                 </uni-view>
                 <form id="sapre0form" method="post" action="{{ route('set.colorBet') }}">
-                    <input type="hidden" id="sapreper0" name="period" value="{{ renderGameId1() }}">
+                    @csrf
+                    <input type="hidden" id="sapreper" name="period"
+                        value="
+                    @if (Route::currentRouteName() == 'win1') {{ renderGameId1() }}
+                     @elseif(Route::currentRouteName() == 'win3')
+                     {{ renderGameId3() }}
+                     @elseif(Route::currentRouteName() == 'win5')
+                     {{ renderGameId5() }} @endif
+                     ">
+
+                    <input type="hidden" name="game"
+                        value=" @if (Route::currentRouteName() == 'win1') win1
+                     @elseif(Route::currentRouteName() == 'win3')
+                     win3
+                     @elseif(Route::currentRouteName() == 'win5')
+                     win5 @endif">
                     <input type="hidden" name="ans" value="0">
                     <input type="hidden" type="text" id="saprefamount0" name="amount" value="10">
                 </form>
@@ -1494,7 +1534,22 @@
                     </uni-view>
                 </uni-view>
                 <form id="sapre1form" method="post" action="{{ route('set.colorBet') }}">
-                    <input type="hidden" id="sapreper1" name="period" value="{{ renderGameId1() }}">
+                    @csrf
+                    <input type="hidden" id="sapreper" name="period"
+                        value="
+                    @if (Route::currentRouteName() == 'win1') {{ renderGameId1() }}
+                     @elseif(Route::currentRouteName() == 'win3')
+                     {{ renderGameId3() }}
+                     @elseif(Route::currentRouteName() == 'win5')
+                     {{ renderGameId5() }} @endif
+                     ">
+
+                    <input type="hidden" name="game"
+                        value=" @if (Route::currentRouteName() == 'win1') win1
+                     @elseif(Route::currentRouteName() == 'win3')
+                     win3
+                     @elseif(Route::currentRouteName() == 'win5')
+                     win5 @endif">
                     <input type="hidden" name="ans" value="1">
                     <input type="hidden" type="text" id="saprefamount1" name="amount" value="10">
                 </form>
@@ -1577,7 +1632,22 @@
                     </uni-view>
                 </uni-view>
                 <form id="sapre2form" method="post" action="{{ route('set.colorBet') }}">
-                    <input type="hidden" id="sapreper2" name="period" value="{{ renderGameId1() }}">
+                    @csrf
+                    <input type="hidden" id="sapreper" name="period"
+                        value="
+                    @if (Route::currentRouteName() == 'win1') {{ renderGameId1() }}
+                     @elseif(Route::currentRouteName() == 'win3')
+                     {{ renderGameId3() }}
+                     @elseif(Route::currentRouteName() == 'win5')
+                     {{ renderGameId5() }} @endif
+                     ">
+
+                    <input type="hidden" name="game"
+                        value=" @if (Route::currentRouteName() == 'win1') win1
+                     @elseif(Route::currentRouteName() == 'win3')
+                     win3
+                     @elseif(Route::currentRouteName() == 'win5')
+                     win5 @endif">
                     <input type="hidden" name="ans" value="2">
                     <input type="hidden" type="text" id="saprefamount2" name="amount" value="10">
                 </form>
@@ -1660,7 +1730,23 @@
                     </uni-view>
                 </uni-view>
                 <form id="sapre3form" method="post" action="{{ route('set.colorBet') }}">
-                    <input type="hidden" id="sapreper3" name="period" value="{{ renderGameId1() }}">
+                    @csrf
+                    <input type="hidden" id="sapreper" name="period"
+                        value="
+                    @if (Route::currentRouteName() == 'win1') {{ renderGameId1() }}
+                     @elseif(Route::currentRouteName() == 'win3')
+                     {{ renderGameId3() }}
+                     @elseif(Route::currentRouteName() == 'win5')
+                     {{ renderGameId5() }} @endif
+                     ">
+
+                    <input type="hidden" name="game"
+                        value=" @if (Route::currentRouteName() == 'win1') win1
+                     @elseif(Route::currentRouteName() == 'win3')
+                     win3
+                     @elseif(Route::currentRouteName() == 'win5')
+                     win5 @endif">
+                       
                     <input type="hidden" name="ans" value="3">
                     <input type="hidden" type="text" id="saprefamount3" name="amount" value="10">
                 </form>
@@ -1745,7 +1831,22 @@
                     </uni-view>
                 </uni-view>
                 <form id="sapre4form" method="post" action="{{ route('set.colorBet') }}">
-                    <input type="hidden" id="sapreper4" name="period" value="{{ renderGameId1() }}">
+                    @csrf
+                    <input type="hidden" id="sapreper" name="period"
+                        value="
+                    @if (Route::currentRouteName() == 'win1') {{ renderGameId1() }}
+                     @elseif(Route::currentRouteName() == 'win3')
+                     {{ renderGameId3() }}
+                     @elseif(Route::currentRouteName() == 'win5')
+                     {{ renderGameId5() }} @endif
+                     ">
+
+                    <input type="hidden" name="game"
+                        value=" @if (Route::currentRouteName() == 'win1') win1
+                     @elseif(Route::currentRouteName() == 'win3')
+                     win3
+                     @elseif(Route::currentRouteName() == 'win5')
+                     win5 @endif">
                     <input type="hidden" name="ans" value="4">
                     <input type="hidden" type="text" id="saprefamount4" name="amount" value="10">
                 </form>
@@ -1834,7 +1935,22 @@
                     </uni-view>
                 </uni-view>
                 <form id="sapre5form" method="post" action="{{ route('set.colorBet') }}">
-                    <input type="hidden" id="sapreper5" name="period" value="{{ renderGameId1() }}">
+                    @csrf
+                    <input type="hidden" id="sapreper" name="period"
+                        value="
+                    @if (Route::currentRouteName() == 'win1') {{ renderGameId1() }}
+                     @elseif(Route::currentRouteName() == 'win3')
+                     {{ renderGameId3() }}
+                     @elseif(Route::currentRouteName() == 'win5')
+                     {{ renderGameId5() }} @endif
+                     ">
+
+                    <input type="hidden" name="game"
+                        value=" @if (Route::currentRouteName() == 'win1') win1
+                     @elseif(Route::currentRouteName() == 'win3')
+                     win3
+                     @elseif(Route::currentRouteName() == 'win5')
+                     win5 @endif">
                     <input type="hidden" name="ans" value="5">
                     <input type="hidden" type="text" id="saprefamount5" name="amount" value="10">
                 </form>
@@ -1926,7 +2042,22 @@
 
 
                 <form id="sapre6form" method="post" action="{{ route('set.colorBet') }}">
-                    <input type="hidden" id="sapreper6" name="period" value="{{ renderGameId1() }}">
+                    @csrf
+                    <input type="hidden" id="sapreper" name="period"
+                        value="
+                    @if (Route::currentRouteName() == 'win1') {{ renderGameId1() }}
+                     @elseif(Route::currentRouteName() == 'win3')
+                     {{ renderGameId3() }}
+                     @elseif(Route::currentRouteName() == 'win5')
+                     {{ renderGameId5() }} @endif
+                     ">
+
+                    <input type="hidden" name="game"
+                        value=" @if (Route::currentRouteName() == 'win1') win1
+                     @elseif(Route::currentRouteName() == 'win3')
+                     win3
+                     @elseif(Route::currentRouteName() == 'win5')
+                     win5 @endif">
                     <input type="hidden" name="ans" value="6">
                     <input type="hidden" type="text" id="saprefamount6" name="amount" value="10">
                 </form>
@@ -2018,7 +2149,22 @@
 
                 {{-- formUpdate --}}
                 <form id="sapre7form" method="post" action="{{ route('set.colorBet') }}">
-                    <input type="hidden" id="sapreper7" name="period" value="{{ renderGameId1() }}">
+                    @csrf
+                    <input type="hidden" id="sapreper" name="period"
+                        value="
+                    @if (Route::currentRouteName() == 'win1') {{ renderGameId1() }}
+                     @elseif(Route::currentRouteName() == 'win3')
+                     {{ renderGameId3() }}
+                     @elseif(Route::currentRouteName() == 'win5')
+                     {{ renderGameId5() }} @endif
+                     ">
+
+                    <input type="hidden" name="game"
+                        value=" @if (Route::currentRouteName() == 'win1') win1
+                     @elseif(Route::currentRouteName() == 'win3')
+                     win3
+                     @elseif(Route::currentRouteName() == 'win5')
+                     win5 @endif">
                     <input type="hidden" name="ans" value="7">
                     <input type="hidden" type="text" id="saprefamount7" name="amount" value="10">
                 </form>
@@ -2110,7 +2256,22 @@
 
                 {{-- formUpdate --}}
                 <form id="sapre8form" method="post" action="{{ route('set.colorBet') }}">
-                    <input type="hidden" id="sapreper8" name="period" value="{{ renderGameId1() }}">
+                    @csrf
+                    <input type="hidden" id="sapreper" name="period"
+                        value="
+                    @if (Route::currentRouteName() == 'win1') {{ renderGameId1() }}
+                     @elseif(Route::currentRouteName() == 'win3')
+                     {{ renderGameId3() }}
+                     @elseif(Route::currentRouteName() == 'win5')
+                     {{ renderGameId5() }} @endif
+                     ">
+
+                    <input type="hidden" name="game"
+                        value=" @if (Route::currentRouteName() == 'win1') win1
+                     @elseif(Route::currentRouteName() == 'win3')
+                     win3
+                     @elseif(Route::currentRouteName() == 'win5')
+                     win5 @endif">
                     <input type="hidden" name="ans" value="8">
                     <input type="hidden" type="text" id="saprefamount8" name="amount" value="10">
                 </form>
@@ -2203,7 +2364,22 @@
 
                 {{-- formUpdate --}}
                 <form id="sapre9form" method="post" action="{{ route('set.colorBet') }}">
-                    <input type="hidden" id="sapreper9" name="period" value="{{ renderGameId1() }}">
+                    @csrf
+                    <input type="hidden" id="sapreper" name="period"
+                        value="
+                    @if (Route::currentRouteName() == 'win1') {{ renderGameId1() }}
+                     @elseif(Route::currentRouteName() == 'win3')
+                     {{ renderGameId3() }}
+                     @elseif(Route::currentRouteName() == 'win5')
+                     {{ renderGameId5() }} @endif
+                     ">
+
+                    <input type="hidden" name="game"
+                        value=" @if (Route::currentRouteName() == 'win1') win1
+                     @elseif(Route::currentRouteName() == 'win3')
+                     win3
+                     @elseif(Route::currentRouteName() == 'win5')
+                     win5 @endif">
                     <input type="hidden" name="ans" value="9">
                     <input type="hidden" type="text" id="saprefamount9" name="amount" value="10">
                 </form>
@@ -2237,9 +2413,7 @@
 
 
 
-<script>
-  
-
+    <script>
         var interval = setInterval(func, 1000);
         var sapremodal = document.getElementById("sapregreenbox");
         var saprespan = document.getElementById("sapreclose");
@@ -2263,7 +2437,68 @@
             document.getElementById("rule").className = "cu-modal";
         }
     </script>
+    @if ($errors->any())
+        <div id="snackbar" class="van-toast van-toast--middle van-toast--text"
+            style="z-index: 2009;display:none ">
+            <div class="van-toast__text"></div>
+        </div>
+        {{-- <h4>{{$errors->first()}}</h4> --}}
+        <style>
+            .van-toast {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: flex;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -webkit-flex-direction: column;
+                flex-direction: column;
+                -webkit-box-align: center;
+                -webkit-align-items: center;
+                align-items: center;
+                -webkit-box-pack: center;
+                -webkit-justify-content: center;
+                justify-content: center;
+                box-sizing: content-box;
+                width: 88px;
+                max-width: 70%;
+                min-height: 88px;
+                padding: 16px;
+                color: #fff;
+                font-size: 14px;
+                line-height: 20px;
+                white-space: pre-wrap;
+                text-align: center;
+                word-wrap: break-word;
+                background-color: rgba(50, 50, 51, .88);
+                border-radius: 0px;
+                -webkit-transform: translate3d(-50%, -50%, 0);
+                transform: translate3d(-50%, -50%, 0);
+            }
 
+            .van-toast--html,
+            .van-toast--text {
+                width: -webkit-fit-content;
+                width: fit-content;
+                min-width: 96px;
+                min-height: 0;
+                padding: 10px 30px;
+            }
+        </style>
+
+
+        <script>
+            $(document).ready(function() {
+                document.getElementById("snackbar").innerHTML = '{{ $errors->first() }}';
+                document.getElementById("snackbar").style.display = "";
+                setTimeout(function() {
+                    document.getElementById("snackbar").style.display = "none";
+                }, 3000);
+            });
+        </script>
+    @endif
 </body>
 
 </html>

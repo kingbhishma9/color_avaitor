@@ -117,7 +117,7 @@
                             <div data-v-4e8ccd02="" role="checkbox" class="van-checkbox" tabindex="0"
                                 aria-checked="true">
                                 <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked">
-                                    <input type="checkbox" >
+                                    <input type="checkbox" required>
                                 </div>
                                 <span class="van-checkbox__label">I have read and agree
                                     <a href="#popup1"

@@ -13,6 +13,7 @@ Auth::routes();
 Route::any('get-gameId', [FrontendController::class, 'getGameId'])->name('get.gameId');
 Route::any('get-gameId1min', [FrontendController::class, 'getgameId1min'])->name('get.gameId1min');
 Route::any('get-gameId5min', [FrontendController::class, 'getgameId5min'])->name('get.gameId5min');
+Route::any('get-getGameId1', [FrontendController::class, 'getGameId1'])->name('getGameId1');
 
 Route::any('set-colorBet', [FrontendController::class, 'setColorBet'])->name('set.colorBet');
 

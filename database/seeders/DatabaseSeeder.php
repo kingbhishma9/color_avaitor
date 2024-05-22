@@ -2,11 +2,13 @@
 
 namespace Database\Seeders;
 
-use App\Models\AppSetting;
-use App\Models\User;
-use App\Models\Win3minBet;
 use Carbon\Carbon;
+use App\Models\User;
+use App\Models\AppSetting;
+use App\Models\Win1minBet;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Win3minBet;
+use App\Models\Win5minBet;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -39,5 +41,11 @@ class DatabaseSeeder extends Seeder
 
         $game = new Win3minBet();
         $game->save();
+
+        $game1 = new Win1minBet();
+        $game1->save();
+
+        $game2 = new Win5minBet();
+        $game2->save();
     }
 }
