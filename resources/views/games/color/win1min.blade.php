@@ -73,6 +73,24 @@
             </tbody>
         </table>
     </div>
+  
+@include('games.color.includes.chart')
+
+    <div data-v-c74f4bba="" data-v-f31474c6="" class="History__C">
+        <table id="tableID" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Period</th>
+                    <th>Prize</th>
+                    <th>Number</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
 
 
 
