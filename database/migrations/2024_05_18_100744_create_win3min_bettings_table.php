@@ -13,16 +13,17 @@ return new class extends Migration
     {
         Schema::create('win3min_bettings', function (Blueprint $table) {
             $table->id();
-            $table->string('username');
-            $table->bigInteger('period');
-            $table->string('ans');
-            $table->double('amount');
-            $table->string('status')->default('pending');
-            $table->string('res')->default('wait');
-            $table->string('price')->default('wait');
-            $table->string('number')->default('wait');
-            $table->string('color')->default('wait');
-            $table->string('am')->default('wait');
+            $table->string('username', 225)->notNull();
+            $table->bigInteger('period')->notNull();
+            $table->string('ans', 11)->notNull();
+            $table->double('amount')->notNull();
+            $table->string('status', 255)->default('pending')->notNull();
+            $table->string('res', 255)->default('wait')->notNull();
+            $table->string('price', 211)->default('wait')->notNull();
+            $table->string('number', 255)->default('wait')->notNull();
+            $table->text('color')->nullable();
+            $table->string('am', 211)->default('wait')->notNull();
+            $table->text('color2')->nullable();
             $table->timestamps();
         });
     }

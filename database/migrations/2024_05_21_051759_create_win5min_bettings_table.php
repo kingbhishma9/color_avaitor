@@ -21,9 +21,9 @@ return new class extends Migration
             $table->string('res', 255)->default('wait')->notNull();
             $table->string('price', 211)->default('wait')->notNull();
             $table->string('number', 255)->default('wait')->notNull();
-            $table->text('color')->notNull();
+            $table->text('color')->nullable();
             $table->string('am', 211)->default('wait')->notNull();
-            $table->text('color2')->notNull();
+            $table->text('color2')->nullable();
             $table->timestamps();
         });
     }

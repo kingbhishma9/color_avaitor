@@ -2443,7 +2443,6 @@
             style="z-index: 2009;display:none ">
             <div class="van-toast__text"></div>
         </div>
-        {{-- <h4>{{$errors->first()}}</h4> --}}
         <style>
             .van-toast {
                 position: fixed;

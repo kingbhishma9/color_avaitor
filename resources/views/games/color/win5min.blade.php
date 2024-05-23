@@ -53,29 +53,41 @@
         </div>
     </div>
     <div data-v-4e271e20="" data-v-f31474c6="" class="RecordNav__C">
-        <div data-v-4e271e20="" class="active">Game history</div>
-        <div data-v-4e271e20="" class="">Chart</div>
-        <div data-v-4e271e20="" class="">My history</div>
+        <div data-v-4e271e20="" data-target="#div_game_history" class="active">Game history</div>
+        <div data-v-4e271e20="" data-target="#chart" class="">Chart</div>
+        <div data-v-4e271e20="" data-target="#div_my_history" class="">My history</div>
     </div>
-    <div data-v-c74f4bba="" data-v-f31474c6="" class="GameRecord__C">
-        <table id="tableID" class="display" style="width:100%">
-            <thead>
-                <tr>
-                    <th>Period</th>
-                    <th>Prize</th>
-                    <th>Number</th>
-                    <th>Result</th>
-                </tr>
-            </thead>
-            <tbody>
 
-            </tbody>
-        </table>
-    </div>
+    @include('games.color.includes.game')
+    @include('games.color.includes.chart')
+    @include('games.color.includes.history')
+
 
 
 
     <script>
+        $(document).ready(function() {
+
+            $('.display').hide();
+
+            $(".RecordNav__C > div.active").each(function() {
+                var target = $(this).data('target');
+                $(target).show();
+            });
+
+            $(".RecordNav__C").delegate("div", "click", function() {
+                $(this).siblings().removeClass('active');
+                $(this).addClass('active');
+                $('.display').hide();
+
+                var target = $(this).data('target');
+                $(target).show();
+            });
+
+        });
+
+
+
         $(window).on("load", function() {
             setTimeout(
                 function() {
@@ -165,14 +177,14 @@
 
                 $('#colorNumber').empty();
 
-                $('#tableID').DataTable().ajax.reload();
+                $('#game_histroy').DataTable().ajax.reload();
 
             }
             if (diff == 300) {
 
                 $('#colorNumber').empty();
 
-                $('#tableID').DataTable().ajax.reload();
+                $('#game_histroy').DataTable().ajax.reload();
             }
 
 
@@ -206,8 +218,69 @@
 
 
 
+        //user history
         $(document).ready(function() {
-            $('#tableID').DataTable({
+            var selectedId = {{ auth()->user()->username }};
+
+            $('#my_history').DataTable({
+                searching: false,
+                paging: true,
+                info: false,
+                ordering: false,
+                dom: 'rtip',
+                ajax: {
+                    url: "{{ route('getBeting5') }}",
+                    data: {
+                        'username': selectedId
+                    },
+
+
+                    dataSrc: function(response) {
+                        if (response && Array.isArray(response)) {
+                            return response;
+                        } else {
+                            toastr.error("No data found or invalid response. Please try again.");
+                            return [];
+                        }
+                    },
+                    error: function(xhr, error, thrown) {
+                        toastr.error("No data found or invalid response. Please try again.");
+                    }
+                },
+                columns: [{
+
+                        data: 'ans'
+                    },
+                    {
+                        data: 'period'
+                    },
+                    {
+                        data: 'res',
+                        render: function(data, type, row, meta) {
+                            if (data === 'fail') {
+                                return `
+                                <div style="color:red">fail</div>`;
+                            } else {
+                                return ` <div style="color:green">success</div>`;
+                            }
+                        }
+                    },
+                    {
+                        data: 'created_at',
+
+
+                    }
+                ],
+            });
+
+
+        });
+
+
+        //game history
+        $(document).ready(function() {
+
+            $('#game_histroy').DataTable({
                 searching: false,
                 paging: true,
                 info: false,
@@ -263,6 +336,242 @@
                     }
                 ],
             });
+
+
+        });
+
+
+
+        //chart
+        $(document).ready(function() {
+
+            $('#chartdata').DataTable({
+                searching: false,
+                paging: true,
+                info: false,
+                ordering: false,
+                dom: 'rtip',
+                ajax: {
+                    url: "{{ route('win5') }}",
+                    dataSrc: function(response) {
+                        if (response && Array.isArray(response)) {
+                            return response;
+                        } else {
+                            toastr.error("No data found or invalid response. Please try again.");
+                            return [];
+                        }
+                    },
+                    error: function(xhr, error, thrown) {
+                        toastr.error("No data found or invalid response. Please try again.");
+                    }
+                },
+                columns: [{
+                        data: 'period'
+                    },
+
+
+                    {
+                        data: 'num',
+                        render: function(data, type, row, meta) {
+                            if (data === '1') {
+                                return `
+                                
+                                <div data-v-54016b1c="" class="van-col van-col--16">
+                                    <div data-v-54016b1c="" class="Trend__C-body2-Num">
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">0</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item action1">1</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">2</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">3</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">4</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">5</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">6</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">7</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">8</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">9</div>
+                                    </div>
+                                </div>
+                                        `;
+                            } else if (data === '2') {
+                                return `
+                              
+                                <div data-v-54016b1c="" class="van-col van-col--16">
+                                    <div data-v-54016b1c="" class="Trend__C-body2-Num">
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">0</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item ">1</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item action2">2</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">3</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">4</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">5</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">6</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">7</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">8</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">9</div>
+                                    </div>
+                                </div>
+                                `;
+
+                            } else if (data === '3') {
+                                return `
+                               
+                                <div data-v-54016b1c="" class="van-col van-col--16">
+                                    <div data-v-54016b1c="" class="Trend__C-body2-Num">
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">0</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item ">1</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">2</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item action3">3</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">4</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">5</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">6</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">7</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">8</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">9</div>
+                                    </div>
+                                </div>
+                                
+                                `;
+
+                            } else if (data === '4') {
+                                return `
+                               
+                                <div data-v-54016b1c="" class="van-col van-col--16">
+                                    <div data-v-54016b1c="" class="Trend__C-body2-Num">
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">0</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item ">1</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">2</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">3</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item action4">4</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">5</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">6</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">7</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">8</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">9</div>
+                                    </div>
+                                </div>
+                                
+                                `;
+                            } else if (data === '5') {
+                                return `
+                               
+                                <div data-v-54016b1c="" class="van-col van-col--16">
+                                    <div data-v-54016b1c="" class="Trend__C-body2-Num">
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">0</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item ">1</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">2</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">3</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">4</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item action5">5</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">6</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">7</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">8</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">9</div>
+                                    </div>
+                                </div>
+                                
+                                `;
+                            } else if (data === '6') {
+                                return `
+                               
+                                <div data-v-54016b1c="" class="van-col van-col--16">
+                                    <div data-v-54016b1c="" class="Trend__C-body2-Num">
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">0</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item ">1</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">2</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">3</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">4</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">5</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item action6">6</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">7</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">8</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">9</div>
+                                    </div>
+                                </div>
+                                
+                                `;
+                            } else if (data === '7') {
+                                return `
+                               
+                                <div data-v-54016b1c="" class="van-col van-col--16">
+                                    <div data-v-54016b1c="" class="Trend__C-body2-Num">
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">0</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item ">1</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">2</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">3</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">4</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">5</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">6</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item action7">7</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">8</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">9</div>
+                                    </div>
+                                </div>
+                                
+                                `;
+                            } else if (data === '8') {
+                                return `
+                               
+                                <div data-v-54016b1c="" class="van-col van-col--16">
+                                    <div data-v-54016b1c="" class="Trend__C-body2-Num">
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">0</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item ">1</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">2</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">3</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">4</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">5</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">6</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">7</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item action8">8</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">9</div>
+                                    </div>
+                                </div>
+                                
+                                `;
+                            } else if (data === '9') {
+                                return `
+                               
+                                <div data-v-54016b1c="" class="van-col van-col--16">
+                                    <div data-v-54016b1c="" class="Trend__C-body2-Num">
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">0</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item ">1</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">2</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">3</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">4</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">5</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">6</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">7</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">8</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item action9">9</div>
+                                    </div>
+                                </div>
+                                
+                                `;
+                            } else if (data === '0') {
+                                return `
+                               
+                                <div data-v-54016b1c="" class="van-col van-col--16">
+                                    <div data-v-54016b1c="" class="Trend__C-body2-Num">
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item action0">0</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item ">1</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">2</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">3</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">4</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">5</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">6</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">7</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">8</div>
+                                        <div data-v-54016b1c="" class="Trend__C-body2-Num-item">9</div>
+                                    </div>
+                                </div>
+                                
+                                `;
+                            } else {
+                                return '';
+                            }
+                        }
+                    }
+                ],
+            });
+
+
         });
     </script>
 @endsection

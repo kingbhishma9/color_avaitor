@@ -11,6 +11,7 @@ use App\Models\Transaction;
 use Illuminate\Http\Request;
 use App\Models\Win1minBetting;
 use App\Models\Win3minBetting;
+use App\Models\Win5minBetting;
 use App\Models\Win1minBetRecord;
 use App\Models\Win3minBetRecord;
 use App\Models\Win5minBetRecord;
@@ -249,14 +250,19 @@ class FrontendController extends Controller
 
     public function setColorBet(Request $request)
     {
+
+        
+       
+
         $totalbetAmount = auth()->user()->balance + auth()->user()->bonus + auth()->user()->deposit + auth()->user()->refbalance;
         if ($request->amount <= $totalbetAmount) {
             if ($request->game == 'win1') {
+                $gameId = Win1minBet::latest('created_at')->first()->id;
                 if (auth()->user()->refbalance >= $request->amount) {
 
                     $bets = Win1minBetting::create([
                         'username' => auth()->user()->username,
-                        'period' => $request->period,
+                        'period' => $gameId,
                         'ans' => $request->ans,
                         'amount' => $request->amount,
                     ]);
@@ -281,7 +287,7 @@ class FrontendController extends Controller
 
                     $bets = Win1minBetting::create([
                         'username' => auth()->user()->username,
-                        'period' => $request->period,
+                        'period' => $gameId,
                         'ans' => $request->ans,
                         'amount' => $request->amount,
                     ]);
@@ -308,7 +314,7 @@ class FrontendController extends Controller
                 } else if (auth()->user()->bonus + auth()->user()->refbalance + auth()->user()->deposit >= $request->amount) {
                     $bets = Win1minBetting::create([
                         'username' => auth()->user()->username,
-                        'period' => $request->period,
+                        'period' => $gameId,
                         'ans' => $request->ans,
                         'amount' => $request->amount,
                     ]);
@@ -337,7 +343,7 @@ class FrontendController extends Controller
                 } else if (auth()->user()->bonus + auth()->user()->refbalance + auth()->user()->deposit + auth()->user()->balance >= $request->amount) {
                     $bets = Win1minBetting::create([
                         'username' => auth()->user()->username,
-                        'period' => $request->period,
+                        'period' => $gameId,
                         'ans' => $request->ans,
                         'amount' => $request->amount,
                     ]);
@@ -370,11 +376,12 @@ class FrontendController extends Controller
                 }
             }
             if ($request->game == 'win3') {
+                $gameId = Win3minBet::latest('created_at')->first()->id;
                 if (auth()->user()->refbalance >= $request->amount) {
 
                     $bets = Win3minBetting::create([
                         'username' => auth()->user()->username,
-                        'period' => $request->period,
+                        'period' => $gameId,
                         'ans' => $request->ans,
                         'amount' => $request->amount,
                     ]);
@@ -399,7 +406,7 @@ class FrontendController extends Controller
 
                     $bets = Win3minBetting::create([
                         'username' => auth()->user()->username,
-                        'period' => $request->period,
+                        'period' => $gameId,
                         'ans' => $request->ans,
                         'amount' => $request->amount,
                     ]);
@@ -426,7 +433,7 @@ class FrontendController extends Controller
                 } else if (auth()->user()->bonus + auth()->user()->refbalance + auth()->user()->deposit >= $request->amount) {
                     $bets = Win3minBetting::create([
                         'username' => auth()->user()->username,
-                        'period' => $request->period,
+                        'period' => $gameId,
                         'ans' => $request->ans,
                         'amount' => $request->amount,
                     ]);
@@ -455,7 +462,7 @@ class FrontendController extends Controller
                 } else if (auth()->user()->bonus + auth()->user()->refbalance + auth()->user()->deposit + auth()->user()->balance >= $request->amount) {
                     $bets = Win3minBetting::create([
                         'username' => auth()->user()->username,
-                        'period' => $request->period,
+                        'period' => $gameId,
                         'ans' => $request->ans,
                         'amount' => $request->amount,
                     ]);
@@ -488,11 +495,12 @@ class FrontendController extends Controller
                 }
             }
             if ($request->game == 'win5') {
+                $gameId = Win5minBet::latest('created_at')->first()->id;
                 if (auth()->user()->refbalance >= $request->amount) {
 
                     $bets = Win5minBetting::create([
                         'username' => auth()->user()->username,
-                        'period' => $request->period,
+                        'period' => $gameId,
                         'ans' => $request->ans,
                         'amount' => $request->amount,
                     ]);
@@ -517,7 +525,7 @@ class FrontendController extends Controller
 
                     $bets = Win5minBetting::create([
                         'username' => auth()->user()->username,
-                        'period' => $request->period,
+                        'period' => $gameId,
                         'ans' => $request->ans,
                         'amount' => $request->amount,
                     ]);
@@ -544,7 +552,7 @@ class FrontendController extends Controller
                 } else if (auth()->user()->bonus + auth()->user()->refbalance + auth()->user()->deposit >= $request->amount) {
                     $bets = Win5minBetting::create([
                         'username' => auth()->user()->username,
-                        'period' => $request->period,
+                        'period' => $gameId,
                         'ans' => $request->ans,
                         'amount' => $request->amount,
                     ]);
@@ -573,7 +581,7 @@ class FrontendController extends Controller
                 } else if (auth()->user()->bonus + auth()->user()->refbalance + auth()->user()->deposit + auth()->user()->balance >= $request->amount) {
                     $bets = Win5minBetting::create([
                         'username' => auth()->user()->username,
-                        'period' => $request->period,
+                        'period' => $gameId,
                         'ans' => $request->ans,
                         'amount' => $request->amount,
                     ]);
@@ -608,5 +616,24 @@ class FrontendController extends Controller
         } else {
             return Redirect::back()->withErrors(['msg' => 'Insuffesent Balance']);
         }
+    }
+
+    public function getBeting(Request $request){
+        $beting=Win1minBetting::where('username',$request->username)->orderBy('id','desc')->get();
+
+
+        return response()->json($beting);
+    }
+    public function getBeting3(Request $request){
+        $beting=Win3minBetting::where('username',$request->username)->orderBy('id','desc')->get();
+
+
+        return response()->json($beting);
+    }
+    public function getBeting5(Request $request){
+        $beting=Win5minBetting::where('username',$request->username)->orderBy('id','desc')->get();
+
+
+        return response()->json($beting);
     }
 }

@@ -16,6 +16,9 @@ Route::any('get-gameId5min', [FrontendController::class, 'getgameId5min'])->name
 Route::any('get-getGameId1', [FrontendController::class, 'getGameId1'])->name('getGameId1');
 
 Route::any('set-colorBet', [FrontendController::class, 'setColorBet'])->name('set.colorBet');
+Route::any('getBeting', [FrontendController::class, 'getBeting'])->name('getBeting');
+Route::any('getBeting3', [FrontendController::class, 'getBeting3'])->name('getBeting3');
+Route::any('getBeting5', [FrontendController::class, 'getBeting5'])->name('getBeting5');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/activity', [App\Http\Controllers\HomeController::class, 'activity'])->name('activity');

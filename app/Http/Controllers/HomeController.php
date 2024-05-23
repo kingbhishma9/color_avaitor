@@ -20,7 +20,6 @@ use App\Models\Win1minBetRecord;
 use App\Models\Win3minBetRecord;
 use App\Models\Win5minBetRecord;
 use App\Models\WithdrawalRecord;
-use App\Models\Win30secBetRecord;
 
 class HomeController extends Controller
 {
