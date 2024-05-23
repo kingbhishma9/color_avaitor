@@ -266,6 +266,15 @@
                     },
                     {
                         data: 'created_at',
+                        render:function(data, type, row, meta){
+
+                            const date = new Date(data);
+                            const formatter = new Intl.DateTimeFormat('en-US', { day: '2-digit', month: '2-digit', year: 'numeric',hour: '2-digit', minute: '2-digit', second: '2-digit' });
+                            const formattedDate = formatter.format(date);
+                            return formattedDate;
+
+
+                        }
 
 
                     }
@@ -374,7 +383,7 @@
                         render: function(data, type, row, meta) {
                             if (data === '1') {
                                 return `
-                                
+
                                 <div data-v-54016b1c="" class="van-col van-col--16">
                                     <div data-v-54016b1c="" class="Trend__C-body2-Num">
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item">0</div>
@@ -392,7 +401,7 @@
                                         `;
                             } else if (data === '2') {
                                 return `
-                              
+
                                 <div data-v-54016b1c="" class="van-col van-col--16">
                                     <div data-v-54016b1c="" class="Trend__C-body2-Num">
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item">0</div>
@@ -411,7 +420,7 @@
 
                             } else if (data === '3') {
                                 return `
-                               
+
                                 <div data-v-54016b1c="" class="van-col van-col--16">
                                     <div data-v-54016b1c="" class="Trend__C-body2-Num">
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item">0</div>
@@ -426,12 +435,12 @@
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item">9</div>
                                     </div>
                                 </div>
-                                
+
                                 `;
 
                             } else if (data === '4') {
                                 return `
-                               
+
                                 <div data-v-54016b1c="" class="van-col van-col--16">
                                     <div data-v-54016b1c="" class="Trend__C-body2-Num">
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item">0</div>
@@ -446,11 +455,11 @@
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item">9</div>
                                     </div>
                                 </div>
-                                
+
                                 `;
                             } else if (data === '5') {
                                 return `
-                               
+
                                 <div data-v-54016b1c="" class="van-col van-col--16">
                                     <div data-v-54016b1c="" class="Trend__C-body2-Num">
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item">0</div>
@@ -465,11 +474,11 @@
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item">9</div>
                                     </div>
                                 </div>
-                                
+
                                 `;
                             } else if (data === '6') {
                                 return `
-                               
+
                                 <div data-v-54016b1c="" class="van-col van-col--16">
                                     <div data-v-54016b1c="" class="Trend__C-body2-Num">
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item">0</div>
@@ -484,11 +493,11 @@
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item">9</div>
                                     </div>
                                 </div>
-                                
+
                                 `;
                             } else if (data === '7') {
                                 return `
-                               
+
                                 <div data-v-54016b1c="" class="van-col van-col--16">
                                     <div data-v-54016b1c="" class="Trend__C-body2-Num">
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item">0</div>
@@ -503,11 +512,11 @@
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item">9</div>
                                     </div>
                                 </div>
-                                
+
                                 `;
                             } else if (data === '8') {
                                 return `
-                               
+
                                 <div data-v-54016b1c="" class="van-col van-col--16">
                                     <div data-v-54016b1c="" class="Trend__C-body2-Num">
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item">0</div>
@@ -522,11 +531,11 @@
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item">9</div>
                                     </div>
                                 </div>
-                                
+
                                 `;
                             } else if (data === '9') {
                                 return `
-                               
+
                                 <div data-v-54016b1c="" class="van-col van-col--16">
                                     <div data-v-54016b1c="" class="Trend__C-body2-Num">
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item">0</div>
@@ -541,11 +550,11 @@
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item action9">9</div>
                                     </div>
                                 </div>
-                                
+
                                 `;
                             } else if (data === '0') {
                                 return `
-                               
+
                                 <div data-v-54016b1c="" class="van-col van-col--16">
                                     <div data-v-54016b1c="" class="Trend__C-body2-Num">
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item action0">0</div>
@@ -560,7 +569,7 @@
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item">9</div>
                                     </div>
                                 </div>
-                                
+
                                 `;
                             } else {
                                 return '';
