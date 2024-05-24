@@ -70,25 +70,79 @@ class FrontendController extends Controller
 
         Win3minBetRecord::create([
             'period' => $gameId->id,
-            'ans' => rand(1111, 9999) . $num,
+            'ans' => rand(1000, 9999) . $num,
             'num' => $num,
             'clo' => $col,
 
         ]);
+
+
+
+        $price = rand(1000, 9999) . $num;
+
+        if ($col == 'G' || $col == 'GV') {
+            $colors = 'green';
+        }
+        if ($col == 'R' || $col == 'RV') {
+            $colors = 'red';
+        }
+        if ($col == 'GV' || $col == 'RV') {
+            $colors = 'violet';
+        }
+
+        $updateResult = Win3minBetting::where('period', $gameId->id)->get();
+
+        foreach ($updateResult as $data) {
+
+            if ($data->ans == $num || $data->ans == $colors) {
+
+                if ($data->ans == 'red' || $data->ans == 'green') {
+                    $multiply = $data->amount * 2;
+                }
+                if ($data->ans == 'violet') {
+                    $multiply = $data->amount * 4.5;
+                }
+                if (
+                    $data->ans == '1' || $data->ans == '2' || $data->ans == '3' ||
+                    $data->ans == '4' || $data->ans == '5' || $data->ans == '6' ||
+                    $data->ans == '7' || $data->ans == '8' || $data->ans == '9' ||
+                    $data->ans == '0'
+                ) {
+                    $multiply = $data->amount * 9;
+                }
+
+                $finalbalance = $multiply + auth()->user()->balance;
+                User::where('username', auth()->user()->username)->update([
+                    'balance' => $finalbalance
+                ]);
+
+
+                Transaction::create([
+                    'username' => auth()->user()->username,
+                    'particular' => 'win1',
+                    'credit' =>  $multiply,
+
+                ]);
+
+                $data->res = 'success';
+            } else {
+                $data->res = 'fail';
+            }
+            $data->status = 'successful';
+            $data->price = $price;
+            $data->number = $num;
+            $data->color = $col;
+            $data->save();
+        }
+
+
+
 
         $game = new Win3minBet();
         $game->save();
         $gameId2 = Win3minBet::latest('created_at')->first();
         return response()->json($gameId2);
     }
-
-
-    public function getGameId1()
-    {
-        $gameId = Win1minBet::lastInsertId();
-        return response()->json($gameId->id);
-    }
-
 
     public function getgameId1min()
     {
@@ -128,7 +182,7 @@ class FrontendController extends Controller
         }
 
 
-        $price = rand(1111, 9999) . $num;
+        $price = rand(1000, 9999) . $num;
 
         Win1minBetRecord::create([
             'period' => $gameId->id,
@@ -148,8 +202,6 @@ class FrontendController extends Controller
         if ($col == 'GV' || $col == 'RV') {
             $colors = 'violet';
         }
-
-
 
         $updateResult = Win1minBetting::where('period', $gameId->id)->get();
 
@@ -177,6 +229,13 @@ class FrontendController extends Controller
                     'balance' => $finalbalance
                 ]);
 
+
+                Transaction::create([
+                    'username' => auth()->user()->username,
+                    'particular' => 'win1',
+                    'credit' =>  $multiply,
+
+                ]);
 
                 $data->res = 'success';
             } else {
@@ -235,11 +294,75 @@ class FrontendController extends Controller
 
         Win5minBetRecord::create([
             'period' => $gameId->id,
-            'ans' => rand(1111, 9999) . $num,
+            'ans' => rand(1000, 9999) . $num,
             'num' => $num,
             'clo' => $col,
 
         ]);
+
+
+
+        $price = rand(1000, 9999) . $num;
+
+        if ($col == 'G' || $col == 'GV') {
+            $colors = 'green';
+        }
+        if ($col == 'R' || $col == 'RV') {
+            $colors = 'red';
+        }
+        if ($col == 'GV' || $col == 'RV') {
+            $colors = 'violet';
+        }
+
+        $updateResult = Win5minBetting::where('period', $gameId->id)->get();
+
+        foreach ($updateResult as $data) {
+
+            if ($data->ans == $num || $data->ans == $colors) {
+
+                if ($data->ans == 'red' || $data->ans == 'green') {
+                    $multiply = $data->amount * 2;
+                }
+                if ($data->ans == 'violet') {
+                    $multiply = $data->amount * 4.5;
+                }
+                if (
+                    $data->ans == '1' || $data->ans == '2' || $data->ans == '3' ||
+                    $data->ans == '4' || $data->ans == '5' || $data->ans == '6' ||
+                    $data->ans == '7' || $data->ans == '8' || $data->ans == '9' ||
+                    $data->ans == '0'
+                ) {
+                    $multiply = $data->amount * 9;
+                }
+
+                $finalbalance = $multiply + auth()->user()->balance;
+                User::where('username', auth()->user()->username)->update([
+                    'balance' => $finalbalance
+                ]);
+
+
+                Transaction::create([
+                    'username' => auth()->user()->username,
+                    'particular' => 'win1',
+                    'credit' =>  $multiply,
+
+                ]);
+
+                $data->res = 'success';
+            } else {
+                $data->res = 'fail';
+            }
+            $data->status = 'successful';
+            $data->price = $price;
+            $data->number = $num;
+            $data->color = $col;
+            $data->save();
+        }
+
+
+
+
+
 
         $game = new Win5minBet();
         $game->save();
@@ -250,10 +373,6 @@ class FrontendController extends Controller
 
     public function setColorBet(Request $request)
     {
-
-        
-       
-
         $totalbetAmount = auth()->user()->balance + auth()->user()->bonus + auth()->user()->deposit + auth()->user()->refbalance;
         if ($request->amount <= $totalbetAmount) {
             if ($request->game == 'win1') {
@@ -618,20 +737,23 @@ class FrontendController extends Controller
         }
     }
 
-    public function getBeting(Request $request){
-        $beting=Win1minBetting::where('username',$request->username)->orderBy('id','desc')->get();
+    public function getBeting(Request $request)
+    {
+        $beting = Win1minBetting::where('username', $request->username)->orderBy('id', 'desc')->get();
 
 
         return response()->json($beting);
     }
-    public function getBeting3(Request $request){
-        $beting=Win3minBetting::where('username',$request->username)->orderBy('id','desc')->get();
+    public function getBeting3(Request $request)
+    {
+        $beting = Win3minBetting::where('username', $request->username)->orderBy('id', 'desc')->get();
 
 
         return response()->json($beting);
     }
-    public function getBeting5(Request $request){
-        $beting=Win5minBetting::where('username',$request->username)->orderBy('id','desc')->get();
+    public function getBeting5(Request $request)
+    {
+        $beting = Win5minBetting::where('username', $request->username)->orderBy('id', 'desc')->get();
 
 
         return response()->json($beting);

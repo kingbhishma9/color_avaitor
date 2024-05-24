@@ -178,13 +178,16 @@
                 $('#colorNumber').empty();
 
                 $('#game_histroy').DataTable().ajax.reload();
+                $('#chartdata').DataTable().ajax.reload();
+                $('#my_history').DataTable().ajax.reload();
 
             }
             if (diff == 300) {
 
                 $('#colorNumber').empty();
-
+                $('#chartdata').DataTable().ajax.reload();
                 $('#game_histroy').DataTable().ajax.reload();
+                $('#my_history').DataTable().ajax.reload();
             }
 
 
@@ -268,7 +271,21 @@
                     {
                         data: 'created_at',
 
+                        render: function(data, type, row, meta) {
 
+                            const date = new Date(data);
+                            const formatter = new Intl.DateTimeFormat('en-US', {
+                                day: '2-digit',
+                                month: '2-digit',
+                                year: 'numeric',
+                                hour: '2-digit',
+                                minute: '2-digit'
+                            });
+                            const formattedDate = formatter.format(date);
+                            return formattedDate;
+
+
+                        }
                     }
                 ],
             });

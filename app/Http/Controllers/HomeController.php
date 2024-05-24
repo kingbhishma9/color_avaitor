@@ -212,8 +212,8 @@ class HomeController extends Controller
         if ($request->ajax()) {
             return response()->json($game_record);
         }
+        
         return view('games.color.win1min', compact('Setting', 'game_record'));
-        // return view('games.color.samipwin', compact('Setting', 'game_record', 'last5'));
     }
 
     public function win3(Request $request)
