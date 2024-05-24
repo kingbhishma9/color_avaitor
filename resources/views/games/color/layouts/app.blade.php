@@ -946,7 +946,7 @@
                         class="inner">
                         <span
                             style="font-family: MulticoloreFont; color: #d37116; font-size: .75rem; line-height: .5rem; position: absolute; width: 100%; text-align: center; font-weight: 600; top: 0.60rem; left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%);"
-                            data-v-78027f36="">₹ 0</span>
+                            data-v-78027f36="">₹ {{$totabetting}}</span>
                     </div>
                 </div>
             </div>

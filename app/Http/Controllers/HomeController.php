@@ -14,6 +14,9 @@ use App\Models\Gameresult;
 use App\Models\GiftRecord;
 use Illuminate\Http\Request;
 use App\Models\RechargeRecord;
+use App\Models\Win1minBetting;
+use App\Models\Win3minBetting;
+use App\Models\Win5minBetting;
 use App\Models\ReferralLevel_1;
 use App\Models\ReferralLevel_2;
 use App\Models\Win1minBetRecord;
@@ -209,33 +212,36 @@ class HomeController extends Controller
     {
         $Setting = AppSetting::where('id', 1)->first();
         $game_record = Win1minBetRecord::orderBy('id', 'desc')->get();
+
+        $totabetting=  Win1minBetting::where('username', auth()->user()->username)->sum('amount');
         if ($request->ajax()) {
             return response()->json($game_record);
         }
         
-        return view('games.color.win1min', compact('Setting', 'game_record'));
+        return view('games.color.win1min', compact('Setting', 'game_record','totabetting'));
     }
 
     public function win3(Request $request)
     {
         $Setting = AppSetting::where('id', 1)->first();
         $game_record = Win3minBetRecord::orderBy('id', 'desc')->get();
-        $last5 = Win3minBetRecord::orderBy('id', 'desc')->limit(5)->get();
+        $totabetting=  Win3minBetting::where('username', auth()->user()->username)->sum('amount');
         if ($request->ajax()) {
             return response()->json($game_record);
         }
-        return view('games.color.win3min', compact('Setting', 'game_record', 'last5'));
+        return view('games.color.win3min', compact('Setting', 'game_record','totabetting'));
     }
 
     public function win5(Request $request)
     {
         $Setting = AppSetting::where('id', 1)->first();
         $game_record = Win5minBetRecord::orderBy('id', 'desc')->get();
-        $last5 = Win5minBetRecord::orderBy('id', 'desc')->limit(5)->get();
+        $totabetting=  Win5minBetting::where('username', auth()->user()->username)->sum('amount');
+
         if ($request->ajax()) {
             return response()->json($game_record);
         }
-        return view('games.color.win5min', compact('Setting', 'game_record', 'last5'));
+        return view('games.color.win5min', compact('Setting', 'game_record', 'totabetting'));
     }
 
     public function aviator()

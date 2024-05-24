@@ -195,7 +195,7 @@
                     url: "{{ route('showResult') }}",
                     method: 'GET',
                     data: {
-                        url: {{ Route::currentRouteName() }}
+                        url: '{{ Route::currentRouteName() }}'
                     },
                     success: function(response) {
                         if (response.id != null) {
@@ -315,21 +315,29 @@
                 },
                 columns: [{
 
-                        data: 'ans'
-                    },
-                    {
-                        data: 'period'
-                    },
-                    {
-                        data: 'res',
+                        data: 'ans',
                         render: function(data, type, row, meta) {
-                            if (data === 'fail') {
+
+                            return ` <div style=" text-align:center">`+data+`</div>`
+                          
+                        }
+                    },
+                    {
+                        data: 'period',
+                        render: function(data, type, row, meta) {
+                            return ` <div style=" text-align:center">`+data+`</div>`
+                        }
+                    },
+                    {
+                        data: {res : "res", amount : "amount"},
+                        render: function(data, type, row, meta) {
+                            if (data.res === 'fail') {
                                 return `
-                                <div style="color:red">fail</div>`;
-                            } else if (data === 'success') {
-                                return ` <div style="color:green">success</div>`;
+                                <div style="color:red; text-align:center;">`+data.amount+`</div>`;
+                            } else if (data.res === 'success') {
+                                return ` <div style="color:green; text-align:center ">`+data.amount+`</div>`;
                             } else {
-                                return ` <div style="color:orange">waiting</div>`;
+                                return ` <div style="color:orange; text-align:center">waiting</div>`;
                             }
                         }
                     },
@@ -457,7 +465,6 @@
                         render: function(data, type, row, meta) {
                             if (data === '1') {
                                 return `
-                                
                                 <div data-v-54016b1c="" class="van-col van-col--16">
                                     <div data-v-54016b1c="" class="Trend__C-body2-Num">
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item">0</div>

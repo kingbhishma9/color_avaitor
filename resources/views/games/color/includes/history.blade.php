@@ -5,7 +5,7 @@
                 <th>Selected</th>
                 <th>Period</th>
                 <th>Status</th>
-                <th>Date</th>
+                <th>Amount</th>
             </tr>
         </thead>
         <tbody>
