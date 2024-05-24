@@ -86,7 +86,7 @@
                                     modelmodifiers="[object Object]">
                                     <div class="van-cell__value van-field__value">
                                         <div class="van-field__body">
-                                            <input type="tel" maxlength="5" autocomplete="off" id="amount"
+                                            <input type="tel" maxlength="5" autocomplete="off" id="amount" required
                                                 class="van-field__control" placeholder="Please enter the amount">
                                         </div>
                                     </div>

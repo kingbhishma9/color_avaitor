@@ -238,7 +238,7 @@
                         <div class="van-badge__wrapper van-sidebar-item__text">
                             <div data-v-6c5117cd="" class="">
                                 <div data-v-6c5117cd=""
-                                    style="background-image: url(&quot;https://ossimg.91admin123admin.com/91club/gamecategory/gamecategory_20230714010214yxxq.png&quot;);">
+                                    style="background-image: url({{ asset('assets/png/gamecategory_20230714010214yxxq.png') }});">
                                 </div> Lottery
                             </div>
                         </div>
@@ -248,61 +248,12 @@
                         <div class="van-badge__wrapper van-sidebar-item__text">
                             <div data-v-6c5117cd="" class="">
                                 <div data-v-6c5117cd=""
-                                    style="background-image: url(&quot;https://ossimg.91admin123admin.com/91club/gamecategory/gamecategory_20230714010207qmfa.png&quot;);">
+                                    style="background-image: url({{ asset('assets/png/gamecategory_20230714010207qmfa.png') }});">
                                 </div> Mini games
                             </div>
                         </div>
                     </div>
-                    <div data-v-6c5117cd="" role="tab" class="van-sidebar-item" tabindex="0"
-                        aria-selected="false" id="gameType-popular">
-                        <div class="van-badge__wrapper van-sidebar-item__text">
-                            <div data-v-6c5117cd="" class="">
-                                <div data-v-6c5117cd=""
-                                    style="background-image: url(&quot;https://ossimg.91admin123admin.com/91club/gamecategory/gamecategory_20230714010159ynyu.png&quot;);">
-                                </div> Popular
-                            </div>
-                        </div>
-                    </div>
-                    <div data-v-6c5117cd="" role="tab" class="van-sidebar-item" tabindex="0"
-                        aria-selected="false" id="gameType-slot">
-                        <div class="van-badge__wrapper van-sidebar-item__text">
-                            <div data-v-6c5117cd="" class="">
-                                <div data-v-6c5117cd=""
-                                    style="background-image: url(&quot;https://ossimg.91admin123admin.com/91club/gamecategory/gamecategory_20230714010153317n.png&quot;);">
-                                </div> Slots
-                            </div>
-                        </div>
-                    </div>
-                    <div data-v-6c5117cd="" role="tab" class="van-sidebar-item" tabindex="0"
-                        aria-selected="false" id="gameType-fish">
-                        <div class="van-badge__wrapper van-sidebar-item__text">
-                            <div data-v-6c5117cd="" class="">
-                                <div data-v-6c5117cd=""
-                                    style="background-image: url(&quot;https://ossimg.91admin123admin.com/91club/gamecategory/gamecategory_20230714010147x2cr.png&quot;);">
-                                </div> Fishing
-                            </div>
-                        </div>
-                    </div>
-                    <div data-v-6c5117cd="" role="tab" class="van-sidebar-item" tabindex="0"
-                        aria-selected="false" id="gameType-video">
-                        <div class="van-badge__wrapper van-sidebar-item__text">
-                            <div data-v-6c5117cd="" class="">
-                                <div data-v-6c5117cd=""
-                                    style="background-image: url(&quot;https://ossimg.91admin123admin.com/91club/gamecategory/gamecategory_20230714010141v76m.png&quot;);">
-                                </div> Casino
-                            </div>
-                        </div>
-                    </div>
-                    <div data-v-6c5117cd="" role="tab" class="van-sidebar-item" tabindex="0"
-                        aria-selected="false" id="gameType-sport">
-                        <div class="van-badge__wrapper van-sidebar-item__text">
-                            <div data-v-6c5117cd="" class="">
-                                <div data-v-6c5117cd=""
-                                    style="background-image: url(&quot;https://ossimg.91admin123admin.com/91club/gamecategory/gamecategory_20230714010123ddo4.png&quot;);">
-                                </div> Sports
-                            </div>
-                        </div>
-                    </div>
+                  
                 </div>
                 <div data-v-906ddf09="" data-v-6c5117cd="" class="gameListGrid__container" style="">
 
@@ -310,37 +261,31 @@
                         <div data-v-785ec202="" onclick="window.location.href='{{ route('win1') }}';"
                             class="lotterySlotItem">
                             <img data-v-785ec202="" class=""
-                                src="https://ossimg.91admin123admin.com/91club/lotterycategory/lotterycategory_202307140102511fow.png"
-                                src="https://ossimg.91admin123admin.com/91club/lotterycategory/lotterycategory_202307140102511fow.png">
-                                <span
-                                data-v-785ec202="">Win 1 Min Go</span>
+                                src="{{asset('assets/png/lotterycategory_202307140102511fow.png')}}">
+                            <span data-v-785ec202="">Win 1 Min Go</span>
                             <h4 data-v-785ec202="">
-                                <div data-v-785ec202="">   </div>
+                                <div data-v-785ec202=""> </div>
                                 <div data-v-785ec202=""> </div>
                             </h4>
                         </div>
                         <div data-v-785ec202="" onclick="window.location.href='{{ route('win3') }}/';"
                             class="lotterySlotItem">
                             <img data-v-785ec202="" class=""
-                                src="https://ossimg.91admin123admin.com/91club/lotterycategory/lotterycategory_20230714010246lyuc.png"
-                                src="https://ossimg.91admin123admin.com/91club/lotterycategory/lotterycategory_20230714010246lyuc.png">
-                                <span
-                                data-v-785ec202="">Trx 3Min Win</span>
+                                src="{{asset('assets/png/lotterycategory_20230714010246lyuc.png')}}">
+                            <span data-v-785ec202="">Trx 3Min Win</span>
                             <h4 data-v-785ec202="">
-                                <div data-v-785ec202="">  </div>
+                                <div data-v-785ec202=""> </div>
                                 <div data-v-785ec202=""> </div>
                             </h4>
                         </div>
                         <div data-v-785ec202="" onclick="window.location.href='{{ route('win5') }}';"
                             class="lotterySlotItem">
                             <img data-v-785ec202="" class=""
-                                src="https://ossimg.91admin123admin.com/91club/lotterycategory/lotterycategory_20230714010227swu2.png"
-                                src="https://ossimg.91admin123admin.com/91club/lotterycategory/lotterycategory_20230714010227swu2.png">
-                                <span
-                                data-v-785ec202="">K3 5Min Win</span>
+                                src="{{asset('assets/png/lotterycategory_20230714010227swu2.png')}}">
+                            <span data-v-785ec202="">K3 5Min Win</span>
                             <h4 data-v-785ec202="">
                                 <div data-v-785ec202=""> </div>
-                                <div data-v-785ec202="">    </div>
+                                <div data-v-785ec202=""> </div>
                             </h4>
                         </div>
                     </div>
@@ -350,97 +295,27 @@
                 <h1 data-v-f477932f="">Winning information</h1>
                 <div data-v-f477932f="" class="luckyWinners__container-wrapper">
                     <div data-v-f477932f="" style="position: relative;">
-                        <div data-v-f477932f="" class="luckyWinners__container-wrapper__item">
-                            <div data-v-f477932f="" class="luckyWinners__container-wrapper__item-img"><img
-                                    data-v-f477932f="" data-img="https://91clubin.in/assets/png/avatar-ea3b8ee9.png"
-                                    class="ar-lazyload" src="https://91clubin.in/assets/png/1-a6662edb.png"></div>
-                            <div data-v-f477932f="" class="luckyWinners__container-wrapper__item-info">
-                                <h1 data-v-f477932f="">Mem***<?php echo rand(100, 999); ?></h1>
+
+                        @foreach ([1, 2, 3, 4, 5, 6] as $item)
+                            <div data-v-f477932f="" class="luckyWinners__container-wrapper__item">
+                                <div data-v-f477932f="" class="luckyWinners__container-wrapper__item-img">
+                                    <img data-v-f477932f="" class="ar-lazyload"
+                                        src="images/avtar/av-@php echo rand(1, 72) @endphp.png">
+                                </div>
+                                <div data-v-f477932f="" class="luckyWinners__container-wrapper__item-info">
+                                    <h1 data-v-f477932f="">Mem***<?php echo rand(100, 999); ?></h1>
+                                </div>
+                                <div data-v-f477932f="" class="luckyWinners__container-wrapper__item-winType"><img
+                                        data-v-f477932f="" class="ar-lazyload"
+                                        src="{{ asset('assets/png/WinGo-35d04760.png') }}"></div>
+                                <div data-v-f477932f="" class="luckyWinners__container-wrapper__item-winAmount">
+                                    <h1 data-v-f477932f="">Receive ₹<?php echo rand(100, 9999); ?>.00</h1><span
+                                        data-v-f477932f="">Winning
+                                        amount</span>
+                                </div>
                             </div>
-                            <div data-v-f477932f="" class="luckyWinners__container-wrapper__item-winType"><img
-                                    data-v-f477932f="" class="ar-lazyload"
-                                    src="https://91clubin.in/assets/png/WinGo-35d04760.png"></div>
-                            <div data-v-f477932f="" class="luckyWinners__container-wrapper__item-winAmount">
-                                <h1 data-v-f477932f="">Receive ₹<?php echo rand(100, 999); ?>.00</h1><span
-                                    data-v-f477932f="">Winning amount</span>
-                            </div>
-                        </div>
-                        <div data-v-f477932f="" class="luckyWinners__container-wrapper__item">
-                            <div data-v-f477932f="" class="luckyWinners__container-wrapper__item-img"><img
-                                    data-v-f477932f="" data-img="https://91clubin.in/assets/png/avatar-ea3b8ee9.png"
-                                    class="ar-lazyload" src="https://91clubin.in/assets/png/1-a6662edb.png"></div>
-                            <div data-v-f477932f="" class="luckyWinners__container-wrapper__item-info">
-                                <h1 data-v-f477932f="">Mem***<?php echo rand(100, 999); ?></h1>
-                            </div>
-                            <div data-v-f477932f="" class="luckyWinners__container-wrapper__item-winType"><img
-                                    data-v-f477932f="" class="ar-lazyload"
-                                    src="https://91clubin.in/assets/png/WinGo-35d04760.png">
-                            </div>
-                            <div data-v-f477932f="" class="luckyWinners__container-wrapper__item-winAmount">
-                                <h1 data-v-f477932f="">Receive ₹<?php echo rand(100, 9999); ?>.00</h1><span
-                                    data-v-f477932f="">Winning amount</span>
-                            </div>
-                        </div>
-                        <div data-v-f477932f="" class="luckyWinners__container-wrapper__item">
-                            <div data-v-f477932f="" class="luckyWinners__container-wrapper__item-img"><img
-                                    data-v-f477932f="" data-img="https://91clubin.in/assets/png/avatar-ea3b8ee9.png"
-                                    class="ar-lazyload" src="https://91clubin.in/assets/png/1-a6662edb.png"></div>
-                            <div data-v-f477932f="" class="luckyWinners__container-wrapper__item-info">
-                                <h1 data-v-f477932f="">Mem***<?php echo rand(100, 999); ?></h1>
-                            </div>
-                            <div data-v-f477932f="" class="luckyWinners__container-wrapper__item-winType"><img
-                                    data-v-f477932f="" class="ar-lazyload"
-                                    src="https://91clubin.in/assets/png/WinGo-35d04760.png"></div>
-                            <div data-v-f477932f="" class="luckyWinners__container-wrapper__item-winAmount">
-                                <h1 data-v-f477932f="">Receive ₹<?php echo rand(10, 9999); ?>.00</h1><span
-                                    data-v-f477932f="">Winning amount</span>
-                            </div>
-                        </div>
-                        <div data-v-f477932f="" class="luckyWinners__container-wrapper__item">
-                            <div data-v-f477932f="" class="luckyWinners__container-wrapper__item-img"><img
-                                    data-v-f477932f="" data-img="https://91clubin.in/assets/png/avatar-ea3b8ee9.png"
-                                    class="ar-lazyload" src="https://91clubin.in/assets/png/1-a6662edb.png"></div>
-                            <div data-v-f477932f="" class="luckyWinners__container-wrapper__item-info">
-                                <h1 data-v-f477932f="">Mem***<?php echo rand(100, 999); ?></h1>
-                            </div>
-                            <div data-v-f477932f="" class="luckyWinners__container-wrapper__item-winType"><img
-                                    data-v-f477932f="" class="ar-lazyload"
-                                    src="https://91clubin.in/assets/png/WinGo-35d04760.png"></div>
-                            <div data-v-f477932f="" class="luckyWinners__container-wrapper__item-winAmount">
-                                <h1 data-v-f477932f="">Receive ₹<?php echo rand(10, 999); ?>.00</h1><span
-                                    data-v-f477932f="">Winning amount</span>
-                            </div>
-                        </div>
-                        <div data-v-f477932f="" class="luckyWinners__container-wrapper__item">
-                            <div data-v-f477932f="" class="luckyWinners__container-wrapper__item-img"><img
-                                    data-v-f477932f="" data-img="https://91clubin.in/assets/png/avatar-ea3b8ee9.png"
-                                    class="ar-lazyload" src="https://91clubin.in/assets/png/1-a6662edb.png"></div>
-                            <div data-v-f477932f="" class="luckyWinners__container-wrapper__item-info">
-                                <h1 data-v-f477932f="">Mem***<?php echo rand(100, 999); ?></h1>
-                            </div>
-                            <div data-v-f477932f="" class="luckyWinners__container-wrapper__item-winType"><img
-                                    data-v-f477932f="" class="ar-lazyload"
-                                    src="https://91clubin.in/assets/png/WinGo-35d04760.png"></div>
-                            <div data-v-f477932f="" class="luckyWinners__container-wrapper__item-winAmount">
-                                <h1 data-v-f477932f="">Receive ₹<?php echo rand(100, 9999); ?>.00</h1><span
-                                    data-v-f477932f="">Winning amount</span>
-                            </div>
-                        </div>
-                        <div data-v-f477932f="" class="luckyWinners__container-wrapper__item">
-                            <div data-v-f477932f="" class="luckyWinners__container-wrapper__item-img"><img
-                                    data-v-f477932f="" data-img="https://91clubin.in/assets/png/avatar-ea3b8ee9.png"
-                                    class="ar-lazyload" src="https://91clubin.in/assets/png/2-58c8a9bc.png"></div>
-                            <div data-v-f477932f="" class="luckyWinners__container-wrapper__item-info">
-                                <h1 data-v-f477932f="">Mem***<?php echo rand(100, 999); ?></h1>
-                            </div>
-                            <div data-v-f477932f="" class="luckyWinners__container-wrapper__item-winType"><img
-                                    data-v-f477932f="" class="ar-lazyload"
-                                    src="https://91clubin.in/assets/png/WinGo-35d04760.png"></div>
-                            <div data-v-f477932f="" class="luckyWinners__container-wrapper__item-winAmount">
-                                <h1 data-v-f477932f="">Receive ₹<?php echo rand(10, 999); ?>.00</h1><span
-                                    data-v-f477932f="">Winning amount</span>
-                            </div>
-                        </div>
+                        @endforeach
+
                     </div>
                 </div>
             </div>
@@ -451,110 +326,63 @@
                         <div data-v-643c1a0c="" class="dailyProfitRank__content-topThree__item"
                             style="order: 2; top: -45px;">
                             <div data-v-643c1a0c=""
-                                style="background: url(&quot;https://91clubin.in/assets/png/border1-3b6518ec.png&quot;) center center / 100% 100% no-repeat;">
-                                <img data-v-643c1a0c="" data-img="https://91clubin.in/assets/png/avatar-ea3b8ee9.png"
-                                    class="" src="https://91clubin.in/assets/png/1-a6662edb.png"
-                                    src="https://91clubin.in/assets/png/1-a6662edb.png">
+                                style="background: url({{ asset('assets/png/border1-3b6518ec.png') }}) center center / 100% 100% no-repeat;">
+                                <img data-v-643c1a0c="" src="images/avtar/av-@php echo rand(1, 72) @endphp.png">
                             </div>
-                            <div data-v-643c1a0c=""><img data-v-643c1a0c="" class=""
-                                    src="https://91clubin.in/assets/png/crown1-3912fd85.png"
-                                    src="https://91clubin.in/assets/png/crown1-3912fd85.png"><img data-v-643c1a0c=""
-                                    class="" src="https://91clubin.in/assets/png/place1-fe39c3f3.png"
-                                    src="https://91clubin.in/assets/png/place1-fe39c3f3.png"></div><span
-                                data-v-643c1a0c="">Mem***<?php echo rand(100, 999); ?></span><span
-                                data-v-643c1a0c="">₹<?php echo rand(1, 9); ?>,<?php echo rand(100, 999); ?>,<?php echo rand(100, 999); ?>.00</span>
+                            <div data-v-643c1a0c="">
+                                <img data-v-643c1a0c="" src="{{ asset('assets/png/crown1-3912fd85.png') }}">
+                                <img data-v-643c1a0c="" src="{{ asset('assets/png/place1-fe39c3f3.png') }}">
+                            </div>
+                            <span data-v-643c1a0c="">Mem***<?php echo rand(100, 999); ?></span>
+                            <span data-v-643c1a0c="">₹<?php echo rand(1, 9); ?>,<?php echo rand(100, 999); ?>,
+                                <?php echo rand(100, 999); ?>.00</span>
                         </div>
                         <div data-v-643c1a0c="" class="dailyProfitRank__content-topThree__item"
                             style="order: 1; top: -30px;">
                             <div data-v-643c1a0c=""
-                                style="background: url(&quot;https://91clubin.in/assets/png/border2-7a806be7.png&quot;) center center / 100% 100% no-repeat;">
-                                <img data-v-643c1a0c="" data-img="https://91clubin.in/assets/png/avatar-ea3b8ee9.png"
-                                    class="" src="https://91clubin.in/assets/png/1-a6662edb.png">
+                                style="background: url({{ asset('assets/png/border2-7a806be7.png') }}) center center / 100% 100% no-repeat;">
+                                <img data-v-643c1a0c="" src="images/avtar/av-@php echo rand(1, 72) @endphp.png">
                             </div>
-                            <div data-v-643c1a0c=""><img data-v-643c1a0c="" class=""
-                                    src="https://91clubin.in/assets/png/crown2-c8aced52.png"
-                                    src="https://91clubin.in/assets/png/crown2-c8aced52.png"><img data-v-643c1a0c=""
-                                    class="" src="https://91clubin.in/assets/png/place2-8189be28.png"
-                                    src="https://91clubin.in/assets/png/place2-8189be28.png"></div><span
-                                data-v-643c1a0c="">Mem***<?php echo rand(100, 999); ?></span><span
-                                data-v-643c1a0c="">₹<?php echo rand(100, 999); ?>,<?php echo rand(100, 999); ?>.00</span>
+                            <div data-v-643c1a0c="">
+                                <img data-v-643c1a0c="" src="{{ asset('assets/png/crown2-c8aced52.png') }}">
+                                <img data-v-643c1a0c="" class=""
+                                    src="{{ asset('assets/png/place2-8189be28.png') }}"
+                                    src="{{ asset('assets/png/place2-8189be28.png') }}">
+                            </div>
+                            <span data-v-643c1a0c="">Mem***<?php echo rand(100, 999); ?></span>
+                            <span data-v-643c1a0c="">₹<?php echo rand(100, 999); ?>,<?php echo rand(100, 999); ?>.00</span>
                         </div>
                         <div data-v-643c1a0c="" class="dailyProfitRank__content-topThree__item"
                             style="order: 3; top: -30px;">
                             <div data-v-643c1a0c=""
-                                style="background: url(&quot;https://91clubin.in/assets/png/border3-cfec4a7d.png&quot;) center center / 100% 100% no-repeat;">
-                                <img data-v-643c1a0c="" data-img="https://91clubin.in/assets/png/avatar-ea3b8ee9.png"
-                                    class="" src="https://91clubin.in/assets/png/1-a6662edb.png">
+                                style="background: url({{ asset('assets/png/border3-cfec4a7d.png') }}) center center / 100% 100% no-repeat;">
+                                <img data-v-643c1a0c="" src="images/avtar/av-@php echo rand(1, 72) @endphp.png">
                             </div>
-                            <div data-v-643c1a0c=""><img data-v-643c1a0c="" class=""
-                                    src="https://91clubin.in/assets/png/crown3-2ca02146.png"
-                                    src="https://91clubin.in/assets/png/crown3-2ca02146.png"><img data-v-643c1a0c=""
-                                    class="" src="https://91clubin.in/assets/png/place3-d9b0be38.png"
-                                    src="https://91clubin.in/assets/png/place3-d9b0be38.png"></div><span
-                                data-v-643c1a0c="">Mem***<?php echo rand(100, 999); ?></span><span
-                                data-v-643c1a0c="">₹<?php echo rand(100, 999); ?>,<?php echo rand(100, 999); ?>.00</span>
+                            <div data-v-643c1a0c=""><img data-v-643c1a0c=""
+                                    src="{{ asset('assets/png/crown3-2ca02146.png') }}">
+
+                                <img data-v-643c1a0c="" src="{{ asset('assets/png/place3-d9b0be38.png') }}">
+                            </div>
+                            <span data-v-643c1a0c="">Mem***<?php echo rand(100, 999); ?></span>
+                            <span data-v-643c1a0c="">₹<?php echo rand(100, 999); ?>,<?php echo rand(100, 999); ?>.00</span>
                         </div>
                     </div>
                     <div data-v-643c1a0c="" class="dailyProfitRank__content-list">
-                        <div data-v-643c1a0c="" class="dailyProfitRank__content-list__item"><span data-v-643c1a0c=""
-                                class="left-rank">4</span><img data-v-643c1a0c=""
-                                data-img="https://91clubin.in/assets/png/avatar-ea3b8ee9.png" class=""
-                                src="https://91clubin.in/assets/png/1-a6662edb.png"
-                                src="https://91clubin.in/assets/png/1-a6662edb.png"><span data-v-643c1a0c=""
-                                class="middle-name">Mem***<?php echo rand(100, 999); ?></span><span data-v-643c1a0c=""
-                                class="right-box">₹<?php echo rand(100, 999); ?>,<?php echo rand(100, 999); ?>.00</span></div>
-                        <div data-v-643c1a0c="" class="dailyProfitRank__content-list__item"><span data-v-643c1a0c=""
-                                class="left-rank">5</span><img data-v-643c1a0c=""
-                                data-img="https://91clubin.in/assets/png/avatar-ea3b8ee9.png" class=""
-                                src="https://91clubin.in/assets/png/1-a6662edb.png"
-                                src="https://91clubin.in/assets/png/1-a6662edb.png"><span data-v-643c1a0c=""
-                                class="middle-name">Mem***<?php echo rand(100, 999); ?></span><span data-v-643c1a0c=""
-                                class="right-box">₹<?php echo rand(100, 999); ?>,<?php echo rand(100, 999); ?>.00</span></div>
-                        <div data-v-643c1a0c="" class="dailyProfitRank__content-list__item"><span data-v-643c1a0c=""
-                                class="left-rank">6</span><img data-v-643c1a0c=""
-                                data-img="https://91clubin.in/assets/png/avatar-ea3b8ee9.png" class=""
-                                src="https://91clubin.in/assets/png/1-a6662edb.png"
-                                src="https://91clubin.in/assets/png/1-a6662edb.png"><span data-v-643c1a0c=""
-                                class="middle-name">Mem***<?php echo rand(100, 999); ?></span><span data-v-643c1a0c=""
-                                class="right-box">₹<?php echo rand(100, 999); ?>,<?php echo rand(100, 999); ?>.00</span></div>
-                        <div data-v-643c1a0c="" class="dailyProfitRank__content-list__item"><span data-v-643c1a0c=""
-                                class="left-rank">7</span><img data-v-643c1a0c=""
-                                data-img="https://91clubin.in/assets/png/avatar-ea3b8ee9.png" class=""
-                                src="https://91clubin.in/assets/png/1-a6662edb.png"
-                                src="https://91clubin.in/assets/png/1-a6662edb.png"><span data-v-643c1a0c=""
-                                class="middle-name">Mem***<?php echo rand(100, 999); ?></span><span data-v-643c1a0c=""
-                                class="right-box">₹<?php echo rand(100, 999); ?>,<?php echo rand(100, 999); ?>.00</span></div>
-                        <div data-v-643c1a0c="" class="dailyProfitRank__content-list__item"><span data-v-643c1a0c=""
-                                class="left-rank">8</span><img data-v-643c1a0c=""
-                                data-img="https://91clubin.in/assets/png/avatar-ea3b8ee9.png" class=""
-                                src="https://91clubin.in/assets/png/1-a6662edb.png"><span data-v-643c1a0c=""
-                                class="middle-name">Mem***<?php echo rand(100, 999); ?></span>
-                            <span data-v-643c1a0c=""
-                                class="right-box">₹<?php echo rand(100, 999); ?>,<?php echo rand(100, 999); ?>.00</span>
-                        </div>
+                        @foreach ([4, 5, 6, 7, 8, 9, 10] as $item)
+                            <div data-v-643c1a0c="" class="dailyProfitRank__content-list__item">
+                                <span data-v-643c1a0c="" class="left-rank">{{ $item }}</span>
+                                <img data-v-643c1a0c="" src="images/avtar/av-@php echo rand(1, 72) @endphp.png">
+                                <span data-v-643c1a0c="" class="middle-name">Mem***<?php echo rand(100, 999); ?></span>
+                                <span data-v-643c1a0c=""
+                                    class="right-box">₹<?php echo rand(100, 999); ?>,<?php echo rand(100, 999); ?>.00</span>
+                            </div>
+                        @endforeach
+
+
                     </div>
                 </div>
             </div>
-            <div data-v-8a2fbe28="" data-v-94f8731b="" class=""></div>
-            <div data-v-0e007999="" data-v-94f8731b="" class="dialog inactive">
-                <div data-v-0e007999="" class="dialog__container" role="dialog" tabindex="0">
-                    <div data-v-0e007999="" class="dialog__container-img"><img data-v-0e007999="" alt=""
-                            class="" src="https://91clubin.in/assets/png/superjackpotHome-72bbeb43.png"
-                            src="https://91clubin.in/assets/png/superjackpotHome-72bbeb43.png"></div>
-                    <div data-v-0e007999="" class="dialog__container-title">
-                        <h1 data-v-0e007999="">Congratulation</h1>
-                    </div>
-                    <div data-v-0e007999="" class="dialog__container-content">
-                        <div data-v-94f8731b="" class="Laundry-Con">
-                            <div data-v-94f8731b="" class="Laundry-Con_tip">Get 【Super Jackpot】!</div>
-                            <div data-v-94f8731b="" class="Landty-Con-tips">Visit the [Super Jackpot] page to claim your
-                                reward</div>
-                        </div>
-                    </div>
-                    <div data-v-0e007999="" class="dialog__container-footer"><button data-v-0e007999="">OK</button></div>
-                </div>
-                <div data-v-0e007999="" class="dialog__outside"></div>
-            </div>
+           
         </div>
 
 

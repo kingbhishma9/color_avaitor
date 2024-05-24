@@ -826,14 +826,7 @@
 
             </div>
         </div>
-        <div class="customer" id="customerId"
-            style="--36a344b0: 'Roboto', 'Inter', sans-serif; --17a7a9f6: bahnschrift;">
-            <img class="" onclick="window.location.href='/keFuMenu#/';"
-                src="https://91clubin.in/assets/png/icon_sevice-9f0c8455.png"
-                src="https://91clubin.in/assets/png/icon_sevice-9f0c8455.png">
-        </div>
-    </div>
-    </div>
+       
     </div>
     <style>
         .van-toast {

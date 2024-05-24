@@ -815,8 +815,8 @@
 }
 
 .gameListGrid__container[data-v-906ddf09] {
-    position: -webkit-sticky;
-    position: sticky;
+    /* position: -webkit-sticky; */
+    /* position: sticky; */
     top: 2.45333rem;
     display: -webkit-inline-box;
     display: -webkit-inline-flex;
@@ -1028,7 +1028,7 @@
     display: -webkit-box;
     display: -webkit-flex;
     display: flex;
-    height: 15.68rem;
+    /* height: 15.68rem;00 */
     margin-top: .4rem
 }
 
