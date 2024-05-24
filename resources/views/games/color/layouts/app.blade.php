@@ -61,7 +61,6 @@
             display: -webkit-flex;
             display: flex;
         }
-        
     </style>
 
     <script>
@@ -867,7 +866,7 @@
                 <div data-v-ed6673b8="" class="Wallet__C-balance">
                     <div data-v-ed6673b8="" class="Wallet__C-balance-l1">
                         <div onclick="location.reload()" data-v-ed6673b8="">₹<span
-                                id="saprebalancetop">{{ auth()->user()->balance + auth()->user()->deposit + auth()->user()->bonus+  auth()->user()->refbalance}}</span>
+                                id="saprebalancetop">{{ auth()->user()->balance + auth()->user()->deposit + auth()->user()->bonus + auth()->user()->refbalance }}</span>
                         </div>
                     </div>
                     <div data-v-ed6673b8="" class="Wallet__C-balance-l2">
@@ -1747,7 +1746,7 @@
                      win3
                      @elseif(Route::currentRouteName() == 'win5')
                      win5 @endif">
-                       
+
                     <input type="hidden" name="ans" value="3">
                     <input type="hidden" type="text" id="saprefamount3" name="amount" value="10">
                 </form>
@@ -2409,12 +2408,168 @@
         </uni-view>
     </uni-view>
 
+    <style>
+        .WinningTip__C[data-v-646d4ebc] {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: 99;
+            background-color: #000000b3;
+            top: 0;
+            left: 0;
+        }
 
+        .WinningTip__C-body.isL[data-v-646d4ebc] {
+            background-image: url(/assets/png/loss.png);
+        }
 
+        .WinningTip__C-body.isW[data-v-646d4ebc] {
+            background-image: url(/assets/png/winning.png);
+        }
+
+        .WinningTip__C-body[data-v-646d4ebc] {
+            position: absolute;
+            width: 7.73333rem;
+            height: 10.93333rem;
+            background-image: url(/assets/png/winning.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            left: 50%;
+            top: 50%;
+            -webkit-transform: translateX(-50%) translateY(-50%);
+            transform: translate(-50%) translateY(-50%);
+            padding-top: 3.33333rem;
+        }
+
+        .WinningTip__C-body-l1[data-v-646d4ebc] {
+            font-weight: 700;
+            font-size: .64rem;
+            text-align: center;
+            color: #fff;
+            height: .77333rem;
+            line-height: .77333rem;
+            margin-bottom: .90667rem;
+        }
+
+        .WinningTip__C-body-l2[data-v-646d4ebc] {
+            height: .58667rem;
+            line-height: .58667rem;
+            display: -webkit-box;
+            display: -webkit-flex;
+            color: #fff;
+            font-size: .29333rem;
+            -webkit-padding-start: .72rem;
+            padding-inline-start: .72rem;
+            display: flex;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+            margin-bottom: .90667rem;
+        }
+
+        .WinningTip__C-body-l2.typegreen>div[data-v-646d4ebc]{
+            background-color: green;
+        }
+        .WinningTip__C-body-l2.typered>div[data-v-646d4ebc]{
+            background-color: red;
+        }
+        .WinningTip__C-body-l2.typerv>div[data-v-646d4ebc]{
+            background-image: linear-gradient(red,violet);
+        }
+        .WinningTip__C-body-l2.typegv>div[data-v-646d4ebc]{
+            background-image: linear-gradient(green,violet);
+        }
+
+        .WinningTip__C-body-l2>div[data-v-646d4ebc]:first-child {
+            -webkit-margin-start: .32rem;
+            margin-inline-start: .32rem;
+        }
+
+        .WinningTip__C-body-l2>div[data-v-646d4ebc] {
+            height: .58667rem;
+            background: #40ad72;
+            border-radius: .13333rem;
+            padding: 0 .32rem;
+        }
+
+        .WinningTip__C-body-l2>div.WinningNum[data-v-646d4ebc] {
+            width: .53333rem;
+            height: .53333rem;
+            line-height: .53333rem;
+            margin: 0 .18667rem;
+            padding: 0;
+            text-align: center;
+            border-radius: 50%;
+        }
+
+        .WinningTip__C-body-l2>div[data-v-646d4ebc] {
+            height: .58667rem;
+            background: #40ad72;
+            border-radius: .13333rem;
+            padding: 0 .32rem;
+        }
+
+        .WinningTip__C-body-l3[data-v-646d4ebc] {
+            height: 1.73333rem;
+        }
+
+        .WinningTip__C-body-l3 .isLose[data-v-646d4ebc] {
+            font-weight: 700;
+            font-size: .64rem;
+            line-height: .77333rem;
+            color: #587ba4;
+            text-align: center;
+            margin-bottom: .34667rem;
+            padding-top: .4rem;
+        }
+
+        .WinningTip__C-body-l3 .gameDetail[data-v-646d4ebc] {
+            height: .37333rem;
+            line-height: .37333rem;
+            font-size: .29333rem;
+            text-align: center;
+            color: #6b6b6b;
+        }
+
+        .WinningTip__C .closeBtn[data-v-646d4ebc] {
+            width: .8rem;
+            height: .8rem;
+            background-image: url(/assets/png/close-84ce5e6a.png);
+            background-repeat: no-repeat;
+            background-size: .8rem;
+            background-position: center;
+            position: absolute;
+            left: 50%;
+            -webkit-transform: translateX(-50%) translateY(100%);
+            transform: translate(-50%) translateY(100%);
+            bottom: -.26667rem;
+        }
+    </style>
+
+    <div data-v-646d4ebc="" data-v-40958d9a="" id="winningtippopup" class="WinningTip__C" style="display: none">
+        <div data-v-646d4ebc="" id="backgroundImage" class="WinningTip__C-body">
+            <div data-v-646d4ebc="" id="resultMessage" class="WinningTip__C-body-l1 is"></div>
+            <div data-v-646d4ebc="" id="result_color" class="WinningTip__C-body-l2">Lottery results 
+                <div data-v-646d4ebc="" > </div>
+                <div data-v-646d4ebc="" id="result_number" class="WinningNum"></div>
+            </div>
+            <div data-v-646d4ebc="" class="WinningTip__C-body-l3">
+                <div data-v-646d4ebc="" id="result" class="isLose"></div>
+                <div data-v-646d4ebc="" id="resultDetails" class="gameDetail"></div>
+            </div>
+            <div data-v-646d4ebc="" id="closepopup" class="closeBtn"></div>
+        </div>
+    </div>
 
 
 
     <script>
+        document.getElementById("closepopup").onclick = function() {
+            document.getElementById("winningtippopup").style.display = "none";
+        }
+
+
         var interval = setInterval(func, 1000);
         var sapremodal = document.getElementById("sapregreenbox");
         var saprespan = document.getElementById("sapreclose");

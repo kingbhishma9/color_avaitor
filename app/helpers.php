@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Win1minBet;
+use App\Models\Win1minBetting;
 use App\Models\Win3minBet;
 use App\Models\Win5minBet;
 
@@ -60,3 +61,4 @@ if (!function_exists('renderGameId5')) {
         }
     }
 }
+

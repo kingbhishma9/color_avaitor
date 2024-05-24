@@ -80,51 +80,44 @@ class FrontendController extends Controller
 
         $price = rand(1000, 9999) . $num;
 
-        if ($col == 'G' || $col == 'GV') {
-            $colors = 'green';
-        }
-        if ($col == 'R' || $col == 'RV') {
-            $colors = 'red';
-        }
-        if ($col == 'GV' || $col == 'RV') {
-            $colors = 'violet';
-        }
+       
 
         $updateResult = Win3minBetting::where('period', $gameId->id)->get();
 
+     
         foreach ($updateResult as $data) {
 
-            if ($data->ans == $num || $data->ans == $colors) {
+            if ($data->ans == $num) {
 
-                if ($data->ans == 'red' || $data->ans == 'green') {
-                    $multiply = $data->amount * 2;
-                }
-                if ($data->ans == 'violet') {
-                    $multiply = $data->amount * 4.5;
-                }
-                if (
-                    $data->ans == '1' || $data->ans == '2' || $data->ans == '3' ||
-                    $data->ans == '4' || $data->ans == '5' || $data->ans == '6' ||
-                    $data->ans == '7' || $data->ans == '8' || $data->ans == '9' ||
-                    $data->ans == '0'
-                ) {
-                    $multiply = $data->amount * 9;
-                }
-
-                $finalbalance = $multiply + auth()->user()->balance;
-                User::where('username', auth()->user()->username)->update([
-                    'balance' => $finalbalance
-                ]);
-
-
-                Transaction::create([
-                    'username' => auth()->user()->username,
-                    'particular' => 'win1',
-                    'credit' =>  $multiply,
-
-                ]);
+                $this->validateSubclass($data->ans, $data->amount, $num);
 
                 $data->res = 'success';
+            } else if ($data->ans == 'green') {
+                if ($col == 'G' || $col == 'GV') {
+
+                    $this->validateSubclass($data->ans, $data->amount, $num);
+                    $data->res = 'success';
+                } else {
+                    $data->res = 'fail';
+                }
+            } else if ($data->ans == 'red') {
+                if ($col == 'R' || $col == 'RV') {
+
+                    $this->validateSubclass($data->ans, $data->amount, $num);
+                    $data->res = 'success';
+                } else {
+                    $data->res = 'fail';
+                }
+            } else if ($data->ans == 'violet') {
+                if ($col == 'RV' || $col == 'GV') {
+
+
+                    $this->validateSubclass($data->ans, $data->amount, $num);
+
+                    $data->res = 'success';
+                } else {
+                    $data->res = 'fail';
+                }
             } else {
                 $data->res = 'fail';
             }
@@ -134,7 +127,6 @@ class FrontendController extends Controller
             $data->color = $col;
             $data->save();
         }
-
 
 
 
@@ -193,51 +185,43 @@ class FrontendController extends Controller
         ]);
 
 
-        if ($col == 'G' || $col == 'GV') {
-            $colors = 'green';
-        }
-        if ($col == 'R' || $col == 'RV') {
-            $colors = 'red';
-        }
-        if ($col == 'GV' || $col == 'RV') {
-            $colors = 'violet';
-        }
+
 
         $updateResult = Win1minBetting::where('period', $gameId->id)->get();
 
         foreach ($updateResult as $data) {
 
-            if ($data->ans == $num || $data->ans == $colors) {
+            if ($data->ans == $num) {
 
-                if ($data->ans == 'red' || $data->ans == 'green') {
-                    $multiply = $data->amount * 2;
-                }
-                if ($data->ans == 'violet') {
-                    $multiply = $data->amount * 4.5;
-                }
-                if (
-                    $data->ans == '1' || $data->ans == '2' || $data->ans == '3' ||
-                    $data->ans == '4' || $data->ans == '5' || $data->ans == '6' ||
-                    $data->ans == '7' || $data->ans == '8' || $data->ans == '9' ||
-                    $data->ans == '0'
-                ) {
-                    $multiply = $data->amount * 9;
-                }
-
-                $finalbalance = $multiply + auth()->user()->balance;
-                User::where('username', auth()->user()->username)->update([
-                    'balance' => $finalbalance
-                ]);
-
-
-                Transaction::create([
-                    'username' => auth()->user()->username,
-                    'particular' => 'win1',
-                    'credit' =>  $multiply,
-
-                ]);
+                $this->validateSubclass($data->ans, $data->amount, $num);
 
                 $data->res = 'success';
+            } else if ($data->ans == 'green') {
+                if ($col == 'G' || $col == 'GV') {
+
+                    $this->validateSubclass($data->ans, $data->amount, $num);
+                    $data->res = 'success';
+                } else {
+                    $data->res = 'fail';
+                }
+            } else if ($data->ans == 'red') {
+                if ($col == 'R' || $col == 'RV') {
+
+                    $this->validateSubclass($data->ans, $data->amount, $num);
+                    $data->res = 'success';
+                } else {
+                    $data->res = 'fail';
+                }
+            } else if ($data->ans == 'violet') {
+                if ($col == 'RV' || $col == 'GV') {
+
+
+                    $this->validateSubclass($data->ans, $data->amount, $num);
+
+                    $data->res = 'success';
+                } else {
+                    $data->res = 'fail';
+                }
             } else {
                 $data->res = 'fail';
             }
@@ -255,6 +239,55 @@ class FrontendController extends Controller
         $gameId2 = Win1minBet::latest('created_at')->first();
         return response()->json($gameId2);
     }
+
+
+    public function validateSubclass($ans, $amount, $num)
+    {
+
+        if ($ans == 'red' || $ans == 'green') {
+            $multiply = $amount * 2;
+        }
+        if ($ans == 'violet') {
+            $multiply = $amount * 4.5;
+        }
+        if (
+            $ans == '1' || $ans == '2' || $ans == '3' ||
+            $ans == '4' || $ans == '6' ||
+            $ans == '7' || $ans == '8' || $ans == '9'
+        ) {
+            $multiply = $amount * 9;
+        }
+        if ($ans == '5') {
+            if ($num == '5') {
+                $multiply = $amount * 9;
+            } else {
+                $multiply = $amount * 1.5;
+            }
+        }
+        if ($ans == '0') {
+            if ($num == '0') {
+                $multiply = $amount * 9;
+            } else {
+                $multiply = $amount * 1.5;
+            }
+        }
+
+        $finalbalance = $multiply + auth()->user()->balance;
+        User::where('username', auth()->user()->username)->update([
+            'balance' => $finalbalance
+        ]);
+
+
+        Transaction::create([
+            'username' => auth()->user()->username,
+            'particular' => 'win1',
+            'credit' =>  $multiply,
+
+        ]);
+    }
+
+
+
     public function getgameId5min()
     {
         $gameId = Win5minBet::latest('created_at')->first();
@@ -304,51 +337,44 @@ class FrontendController extends Controller
 
         $price = rand(1000, 9999) . $num;
 
-        if ($col == 'G' || $col == 'GV') {
-            $colors = 'green';
-        }
-        if ($col == 'R' || $col == 'RV') {
-            $colors = 'red';
-        }
-        if ($col == 'GV' || $col == 'RV') {
-            $colors = 'violet';
-        }
+     
 
         $updateResult = Win5minBetting::where('period', $gameId->id)->get();
 
+      
         foreach ($updateResult as $data) {
 
-            if ($data->ans == $num || $data->ans == $colors) {
+            if ($data->ans == $num) {
 
-                if ($data->ans == 'red' || $data->ans == 'green') {
-                    $multiply = $data->amount * 2;
-                }
-                if ($data->ans == 'violet') {
-                    $multiply = $data->amount * 4.5;
-                }
-                if (
-                    $data->ans == '1' || $data->ans == '2' || $data->ans == '3' ||
-                    $data->ans == '4' || $data->ans == '5' || $data->ans == '6' ||
-                    $data->ans == '7' || $data->ans == '8' || $data->ans == '9' ||
-                    $data->ans == '0'
-                ) {
-                    $multiply = $data->amount * 9;
-                }
-
-                $finalbalance = $multiply + auth()->user()->balance;
-                User::where('username', auth()->user()->username)->update([
-                    'balance' => $finalbalance
-                ]);
-
-
-                Transaction::create([
-                    'username' => auth()->user()->username,
-                    'particular' => 'win1',
-                    'credit' =>  $multiply,
-
-                ]);
+                $this->validateSubclass($data->ans, $data->amount, $num);
 
                 $data->res = 'success';
+            } else if ($data->ans == 'green') {
+                if ($col == 'G' || $col == 'GV') {
+
+                    $this->validateSubclass($data->ans, $data->amount, $num);
+                    $data->res = 'success';
+                } else {
+                    $data->res = 'fail';
+                }
+            } else if ($data->ans == 'red') {
+                if ($col == 'R' || $col == 'RV') {
+
+                    $this->validateSubclass($data->ans, $data->amount, $num);
+                    $data->res = 'success';
+                } else {
+                    $data->res = 'fail';
+                }
+            } else if ($data->ans == 'violet') {
+                if ($col == 'RV' || $col == 'GV') {
+
+
+                    $this->validateSubclass($data->ans, $data->amount, $num);
+
+                    $data->res = 'success';
+                } else {
+                    $data->res = 'fail';
+                }
             } else {
                 $data->res = 'fail';
             }
@@ -757,5 +783,33 @@ class FrontendController extends Controller
 
 
         return response()->json($beting);
+    }
+    public   function showResult(Request $request)
+    {
+
+
+        if($request->url=='win1'){
+
+            $id = Win1minBet::latest('created_at')->first()->id - 1;
+            $userdata = Win1minBetting::where('period', $id)->where('username', auth()->user()->username)->first();
+            return response()->json($userdata);
+        }
+        if($request->url=='win3'){
+
+            $id = Win3minBet::latest('created_at')->first()->id - 1;
+            $userdata = Win3minBetting::where('period', $id)->where('username', auth()->user()->username)->first();
+            return response()->json($userdata);
+        }
+        if($request->url=='win5'){
+
+            $id = Win5minBet::latest('created_at')->first()->id - 1;
+            $userdata = Win5minBetting::where('period', $id)->where('username', auth()->user()->username)->first();
+            return response()->json($userdata);
+        }
+        
+
+
+
+       
     }
 }

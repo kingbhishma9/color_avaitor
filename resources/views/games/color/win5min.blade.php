@@ -189,7 +189,69 @@
                 $('#game_histroy').DataTable().ajax.reload();
                 $('#my_history').DataTable().ajax.reload();
             }
+            if (diff == 298) {
+                $.ajax({
+                    url: "{{ route('showResult') }}",
+                    method: 'GET',
+                    data: {
+                        url: {{ Route::currentRouteName() }}
+                    },
+                    success: function(response) {
+                        if (response.id != null) {
+                            document.getElementById("winningtippopup").style.display = "";
+                            document.getElementById("result_number").innerHTML = response.number;
+                            document.getElementById("resultDetails").innerHTML = 'Period:Win 1 minute '+response.period;
+                            if (response.res == 'fail') {
+                                document.getElementById("resultMessage").innerHTML = "Sorry";
+                                document.getElementById("result").innerHTML = "Lose";
+                                document.getElementById("backgroundImage").classList.add("isL");
 
+                                if (response.color == 'R') {
+                                    document.getElementById("result_color").classList.add("typered");
+                                }
+                                if (response.color == 'G') {
+                                    document.getElementById("result_color").classList.add("typegreen");
+                                }
+                                if (response.color == 'GV') {
+                                    document.getElementById("result_color").classList.add("typegv");
+                                }
+                                if (response.color == 'RV') {
+                                    document.getElementById("result_color").classList.add("typerv");
+                                }
+
+                                
+                            }
+                            if (response.res == 'success') {
+                                document.getElementById("result").innerHTML = "You Won";
+                                document.getElementById("backgroundImage").classList.add("isW");
+                                document.getElementById("resultMessage").innerHTML = "Congratulations";
+                                if (response.color == 'R') {
+                                    document.getElementById("result_color").classList.add("typered");
+                                }
+                                if (response.color == 'G') {
+                                    document.getElementById("result_color").classList.add("typegreen");
+                                }
+                                if (response.color == 'GV') {
+                                    document.getElementById("result_color").classList.add("typegv");
+                                }
+                                if (response.color == 'RV') {
+                                    document.getElementById("result_color").classList.add("typerv");
+                                }
+                               
+                            }
+                            
+
+                        } else {
+                            document.getElementById("winningtippopup").style.display = "none";
+                        }
+
+                    },
+                    error: function(error) {
+
+                    }
+                });
+
+            }
 
         }
 

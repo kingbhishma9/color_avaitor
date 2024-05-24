@@ -19,6 +19,8 @@ Route::any('getBeting', [FrontendController::class, 'getBeting'])->name('getBeti
 Route::any('getBeting3', [FrontendController::class, 'getBeting3'])->name('getBeting3');
 Route::any('getBeting5', [FrontendController::class, 'getBeting5'])->name('getBeting5');
 
+Route::any('showResult', [FrontendController::class, 'showResult'])->name('showResult');
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/activity', [App\Http\Controllers\HomeController::class, 'activity'])->name('activity');
 Route::get('/promotion', [App\Http\Controllers\HomeController::class, 'promotion'])->name('promotion');
@@ -29,7 +31,6 @@ Route::get('/win1', [App\Http\Controllers\HomeController::class, 'win1'])->name(
 Route::get('/win3', [App\Http\Controllers\HomeController::class, 'win3'])->name('win3');
 Route::get('/win5', [App\Http\Controllers\HomeController::class, 'win5'])->name('win5');
 
-// Route::get('/win1', [App\Http\Controllers\HomeController::class, 'index'])->name('win1');
 Route::get('/recharge', [App\Http\Controllers\HomeController::class, 'recharge'])->name('recharge');
 Route::get('/withdrawal', [App\Http\Controllers\HomeController::class, 'withdrawal'])->name('withdrawal');
 Route::get('/withdrawal', [App\Http\Controllers\HomeController::class, 'withdrawal'])->name('withdrawal');
