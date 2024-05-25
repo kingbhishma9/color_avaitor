@@ -171,7 +171,6 @@
                 $('#colorNumber').empty();
                 $('#game_histroy').DataTable().ajax.reload();
                 $('#chartdata').DataTable().ajax.reload();
-                $('#my_history').DataTable().ajax.reload();
 
 
 
@@ -184,7 +183,6 @@
                 $('#colorNumber').empty();
                 $('#chartdata').DataTable().ajax.reload();
                 $('#game_histroy').DataTable().ajax.reload();
-                $('#my_history').DataTable().ajax.reload();
 
 
             }
@@ -283,89 +281,7 @@
         }
 
 
-        //user history
-        $(document).ready(function() {
-            var selectedId = {{ auth()->user()->username }};
-
-
-            $('#my_history').DataTable({
-                searching: false,
-                paging: true,
-                info: false,
-                ordering: false,
-                dom: 'rtip',
-                ajax: {
-                    url: "{{ route('getBeting') }}",
-                    data: {
-                        'username': selectedId
-                    },
-
-
-                    dataSrc: function(response) {
-                        if (response && Array.isArray(response)) {
-                            return response;
-                        } else {
-                            toastr.error("No data found or invalid response. Please try again.");
-                            return [];
-                        }
-                    },
-                    error: function(xhr, error, thrown) {
-                        toastr.error("No data found or invalid response. Please try again.");
-                    }
-                },
-                columns: [{
-
-                        data: 'ans',
-                        render: function(data, type, row, meta) {
-
-                            return ` <div style=" text-align:center">`+data+`</div>`
-                          
-                        }
-                    },
-                    {
-                        data: 'period',
-                        render: function(data, type, row, meta) {
-                            return ` <div style=" text-align:center">`+data+`</div>`
-                        }
-                    },
-                    {
-                        data: {res : "res", amount : "amount"},
-                        render: function(data, type, row, meta) {
-                            if (data.res === 'fail') {
-                                return `
-                                <div style="color:red; text-align:center;">`+data.amount+`</div>`;
-                            } else if (data.res === 'success') {
-                                return ` <div style="color:green; text-align:center ">`+data.amount+`</div>`;
-                            } else {
-                                return ` <div style="color:orange; text-align:center">waiting</div>`;
-                            }
-                        }
-                    },
-                    {
-                        data: 'created_at',
-                        render: function(data, type, row, meta) {
-
-                            const date = new Date(data);
-                            const formatter = new Intl.DateTimeFormat('en-US', {
-                                day: '2-digit',
-                                month: '2-digit',
-                                year: 'numeric',
-                                hour: '2-digit',
-                                minute: '2-digit'
-                            });
-                            const formattedDate = formatter.format(date);
-                            return formattedDate;
-
-
-                        }
-
-                    }
-                ],
-            });
-
-
-        });
-
+      
 
         //game history
         $(document).ready(function() {
