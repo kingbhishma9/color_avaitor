@@ -93,41 +93,55 @@
 
 
 <script>
-    $(document).ready(function() {
-        var selectedId = "{{ auth()->user()->username }}";
+$(document).ready(function() {
+    var selectedId = "{{ auth()->user()->username }}";
 
-        $.ajax({
-            url: "{{ route('getBeting3') }}",
-            type: "GET",
-            data: {
-                'username': selectedId
-            },
-            success: function(response) {
-                if (response && Array.isArray(response)) {
-                    console.log(response)
-                    response.forEach(function(item) {
-                        var recordHtml = `
-                            <div data-v-373b3197="" class="MyGameRecordList__C-item" id="design">
-                                <div data-v-373b3197="" class="MyGameRecordList__C-item-l MyGameRecordList__C-item-l-green"></div>
-                                <div data-v-373b3197="" class="MyGameRecordList__C-item-m">
-                                    <div data-v-373b3197="" class="MyGameRecordList__C-item-m-top">${item.number}</div>
-                                    <div data-v-373b3197="" class="MyGameRecordList__C-item-m-bottom">${item.created_at}</div>
-                                </div>
-                                <div data-v-373b3197="" class="MyGameRecordList__C-item-r success">
-                                    <div data-v-373b3197="" class="success">${item.color}</div><span data-v-373b3197="">${item.amount}</span>
-                                </div>
+    $.ajax({
+        url: "{{ route('getBeting') }}",
+        type: "GET",
+        data: {
+            'username': selectedId
+        },
+        success: function(response) {
+            if (response && Array.isArray(response)) {
+                response.forEach(function(item) {
+                    var recordHtml = `
+                        <div data-v-373b3197="" class="MyGameRecordList__C-item" id="design">
+                            <div data-v-373b3197="" class="MyGameRecordList__C-item-l MyGameRecordList__C-item-l-green"></div>
+                            <div data-v-373b3197="" class="MyGameRecordList__C-item-m">
+                                <div data-v-373b3197="" class="MyGameRecordList__C-item-m-top">${item.number}</div>
+                                <div data-v-373b3197="" class="MyGameRecordList__C-item-m-bottom">${item.created_at}</div>
+                            </div>
+                    `;
+
+                    if (item.res === 'success') {
+                        recordHtml += `
+                            <div data-v-373b3197="" class="MyGameRecordList__C-item-r success">
+                                <div data-v-373b3197="" class="success">${item.res}</div>
+                                <span data-v-373b3197="">${item.amount}</span>
                             </div>
                         `;
-                        $('#my_history').append(recordHtml);
-                        
-                    });
-                } else {
-                    toastr.error("No data found or invalid response. Please try again.");
-                }
-            },
-            error: function(xhr, error, thrown) {
+                    } else if (item.res === 'fail') {
+                        recordHtml += `
+                            <div data-v-373b3197="" class="MyGameRecordList__C-item-r">
+                                <div data-v-373b3197="" class="">Failed</div>
+                                <span data-v-373b3197="">-${item.amount}</span>
+                            </div>
+                        `;
+                    }
+
+                    recordHtml += `</div>`;
+
+                    $('#my_history').append(recordHtml);
+                });
+            } else {
                 toastr.error("No data found or invalid response. Please try again.");
             }
-        });
+        },
+        error: function(xhr, error, thrown) {
+            toastr.error("No data found or invalid response. Please try again.");
+        }
     });
+});
+
 </script>
