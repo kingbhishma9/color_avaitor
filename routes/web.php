@@ -46,11 +46,12 @@ Route::get('/withdrawalrecord', [App\Http\Controllers\HomeController::class, 'wi
 Route::get('/mission', [App\Http\Controllers\HomeController::class, 'mission'])->name('mission');
 Route::get('/myTeam', [App\Http\Controllers\HomeController::class, 'myTeam'])->name('myTeam');
 
-Route::get('/crash', [App\Http\Controllers\HomeController::class, 'aviator'])->name('crash');
-Route::get('/get_user_details', [App\Http\Controllers\HomeController::class, 'get_user_details'])->name('get_user_details');
-Route::post('/game/new_game_generated', [App\Http\Controllers\HomeController::class, 'new_game_generated'])->name('new_game_generated');
-Route::post('/game/currentlybet', [App\Http\Controllers\HomeController::class, 'currentlybet'])->name('currentlybet');
-Route::post('/game/increamentor', [App\Http\Controllers\HomeController::class, 'increamentor'])->name('increamentor');
+Route::get('/crash', [App\Http\Controllers\AviatorController::class, 'aviator'])->name('crash');
+Route::get('/get_user_details', [App\Http\Controllers\AviatorController::class, 'get_user_details'])->name('get_user_details');
+Route::post('/game/new_game_generated', [App\Http\Controllers\AviatorController::class, 'new_game_generated'])->name('new_game_generated');
+Route::any('/game/currentlybet', [App\Http\Controllers\AviatorController::class, 'currentlybet'])->name('currentlybet');
+Route::post('/game/increamentor', [App\Http\Controllers\AviatorController::class, 'increamentor'])->name('increamentor');
+Route::post('game/add_bet', [App\Http\Controllers\AviatorController::class, 'betNow'])->name('betNow');
 
 Route::post('change_name', [App\Http\Controllers\HomeController::class, 'change_name'])->name('change_name');
 Route::post('recive_gift', [App\Http\Controllers\HomeController::class, 'recive_gift'])->name('recive_gift');
