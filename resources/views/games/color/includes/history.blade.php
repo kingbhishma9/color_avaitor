@@ -106,11 +106,45 @@ $(document).ready(function() {
             if (response && Array.isArray(response)) {
                 response.forEach(function(item) {
                     var recordHtml = `
-                        <div data-v-373b3197="" class="MyGameRecordList__C-item" id="design">
+                        <div data-v-373b3197="" class="MyGameRecordList__C-item">
                             <div data-v-373b3197="" class="MyGameRecordList__C-item-l MyGameRecordList__C-item-l-green"></div>
                             <div data-v-373b3197="" class="MyGameRecordList__C-item-m">
                                 <div data-v-373b3197="" class="MyGameRecordList__C-item-m-top">${item.number}</div>
                                 <div data-v-373b3197="" class="MyGameRecordList__C-item-m-bottom">${item.created_at}</div>
+                            </div>
+                            <div data-v-373b3197="" class="MyGameRecordList__C-detail">
+                                <div data-v-373b3197="" class="MyGameRecordList__C-detail-text">Details</div>
+                                <div data-v-373b3197="" class="MyGameRecordList__C-detail-line">Order number
+                                    <div data-v-373b3197="">
+                                        WG2024052522204237339365c
+                                        <img data-v-373b3197="" src="{{ asset('assets/png/copy.png') }}">
+                                    </div>
+                                </div>
+                                <div data-v-373b3197="" class="MyGameRecordList__C-detail-line">Period <div data-v-373b3197="">20240525040135</div>
+                                </div>
+                                <div data-v-373b3197="" class="MyGameRecordList__C-detail-line">Purchase amount <div data-v-373b3197="">₹1.00</div>
+                                </div>
+                                <div data-v-373b3197="" class="MyGameRecordList__C-detail-line">Quantity <div data-v-373b3197="">1</div>
+                                </div>
+                                <div data-v-373b3197="" class="MyGameRecordList__C-detail-line">Amount after tax <div data-v-373b3197="" class="red">₹0.98</div>
+                                </div>
+                                <div data-v-373b3197="" class="MyGameRecordList__C-detail-line">Tax <div data-v-373b3197="">₹0.02</div>
+                                </div>
+                                <div data-v-373b3197="" class="MyGameRecordList__C-detail-line">Result <div data-v-373b3197="">
+                                    <div data-v-373b3197="" class="MyGameRecordList__C-inlineB">4</div>
+                                    <div data-v-373b3197="" class="MyGameRecordList__C-inlineB redColor">Red</div>
+                                    <div data-v-373b3197="" class="MyGameRecordList__C-inlineB small">Small</div>
+                                </div>
+                                </div>
+                                <div data-v-373b3197="" class="MyGameRecordList__C-detail-line">Select <div data-v-373b3197="">Red</div>
+                                </div>
+                                <div data-v-373b3197="" class="MyGameRecordList__C-detail-line">Status <div data-v-373b3197="" class="green">
+                                    Succeed</div>
+                                </div>
+                                <div data-v-373b3197="" class="MyGameRecordList__C-detail-line">Win/lose <div data-v-373b3197="" class="green">+₹1.96</div>
+                                </div>
+                                <div data-v-373b3197="" class="MyGameRecordList__C-detail-line">Order time <div data-v-373b3197="">2024-05-25 22:20:42</div>
+                                </div>
                             </div>
                     `;
 
@@ -134,6 +168,11 @@ $(document).ready(function() {
 
                     $('#my_history').append(recordHtml);
                 });
+
+                // Add click event to toggle expansion
+                $('.MyGameRecordList__C-item').on('click', function() {
+                    $(this).toggleClass('expanded');
+                });
             } else {
                 toastr.error("No data found or invalid response. Please try again.");
             }
@@ -143,5 +182,5 @@ $(document).ready(function() {
         }
     });
 });
-
 </script>
+
