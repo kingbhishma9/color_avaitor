@@ -169,7 +169,6 @@ $(document).ready(function() {
                     $('#my_history').append(recordHtml);
                 });
 
-                // Add click event to toggle expansion
                 $('.MyGameRecordList__C-item').on('click', function() {
                     $(this).toggleClass('expanded');
                 });
