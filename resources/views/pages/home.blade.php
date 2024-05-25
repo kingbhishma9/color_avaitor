@@ -253,12 +253,13 @@
                             </div>
                         </div>
                     </div>
-                  
+
                 </div>
                 <div data-v-906ddf09="" data-v-6c5117cd="" class="gameListGrid__container" style="">
 
                     <div data-v-785ec202="" data-v-906ddf09="" class="lottery_container">
-                        <div data-v-785ec202="" onclick="window.location.href='{{ route('win1') }}';"
+                        <a href="{{ route('win1') }}">
+                        <div data-v-785ec202=""
                             class="lotterySlotItem">
                             <img data-v-785ec202="" class=""
                                 src="{{asset('assets/png/lotterycategory_202307140102511fow.png')}}">
@@ -268,7 +269,9 @@
                                 <div data-v-785ec202=""> </div>
                             </h4>
                         </div>
-                        <div data-v-785ec202="" onclick="window.location.href='{{ route('win3') }}/';"
+                        </a>
+                        <a href="{{route('win3')}}">
+                        <div data-v-785ec202=""
                             class="lotterySlotItem">
                             <img data-v-785ec202="" class=""
                                 src="{{asset('assets/png/lotterycategory_20230714010246lyuc.png')}}">
@@ -278,6 +281,7 @@
                                 <div data-v-785ec202=""> </div>
                             </h4>
                         </div>
+                        </a>
                         <div data-v-785ec202="" onclick="window.location.href='{{ route('win5') }}';"
                             class="lotterySlotItem">
                             <img data-v-785ec202="" class=""
@@ -382,7 +386,7 @@
                     </div>
                 </div>
             </div>
-           
+
         </div>
 
 

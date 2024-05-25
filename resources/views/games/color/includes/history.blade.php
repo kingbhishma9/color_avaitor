@@ -3,30 +3,7 @@
 
 
 <div data-v-c74f4bba="" id="div_my_history" data-v-f31474c6="" class="History__C display">
-    <div id="my_history" class="" style="width:100%">
-
-        <div data-v-373b3197="" class="MyGameRecordList__C-item" id="design">
-            <div data-v-373b3197="" class="MyGameRecordList__C-item-l MyGameRecordList__C-item-l-green"></div>
-            <div data-v-373b3197="" class="MyGameRecordList__C-item-m">
-                <div data-v-373b3197="" class="MyGameRecordList__C-item-m-top">20240524010798</div>
-                <div data-v-373b3197="" class="MyGameRecordList__C-item-m-bottom">2024-05-24 13:17:07</div>
-            </div>
-            <div data-v-373b3197="" class="MyGameRecordList__C-item-r success">
-                <div data-v-373b3197="" class="success">Succeed</div><span data-v-373b3197="">+₹1.96</span>
-            </div>
-        </div>
-        <div data-v-373b3197="" class="MyGameRecordList__C-item" id="design">
-            <div data-v-373b3197="" class="MyGameRecordList__C-item-l MyGameRecordList__C-item-l-green"></div>
-            <div data-v-373b3197="" class="MyGameRecordList__C-item-m">
-                <div data-v-373b3197="" class="MyGameRecordList__C-item-m-top">20240524010798</div>
-                <div data-v-373b3197="" class="MyGameRecordList__C-item-m-bottom">2024-05-24 13:17:07</div>
-            </div>
-            <div data-v-373b3197="" class="MyGameRecordList__C-item-r success">
-                <div data-v-373b3197="" class="success">Succeed</div><span data-v-373b3197="">+₹1.96</span>
-            </div>
-        </div>
-
-    </div>
+    <div id="my_history" class="" style="width:100%"></div>
 </div>
 
 
@@ -116,34 +93,41 @@
 
 
 <script>
-    //user history
-
-
-    function htmlReturn(){
-        $('#')
-    }
     $(document).ready(function() {
-        var selectedId = {{ auth()->user()->username }};
+        var selectedId = "{{ auth()->user()->username }}";
 
-        $ajax( {
-                url: "{{ route('getBeting3') }}",
-                data: {
-                    'username': selectedId
-                },
-                dataSrc: function(response) {
-                    if (response && Array.isArray(response)) {
-
-                        return response;
-                    } else {
-                        toastr.error("No data found or invalid response. Please try again.");
-                        return [];
-                    }
-                },
-                error: function(xhr, error, thrown) {
+        $.ajax({
+            url: "{{ route('getBeting3') }}",
+            type: "GET",
+            data: {
+                'username': selectedId
+            },
+            success: function(response) {
+                if (response && Array.isArray(response)) {
+                    console.log(response)
+                    response.forEach(function(item) {
+                        var recordHtml = `
+                            <div data-v-373b3197="" class="MyGameRecordList__C-item" id="design">
+                                <div data-v-373b3197="" class="MyGameRecordList__C-item-l MyGameRecordList__C-item-l-green"></div>
+                                <div data-v-373b3197="" class="MyGameRecordList__C-item-m">
+                                    <div data-v-373b3197="" class="MyGameRecordList__C-item-m-top">${item.number}</div>
+                                    <div data-v-373b3197="" class="MyGameRecordList__C-item-m-bottom">${item.created_at}</div>
+                                </div>
+                                <div data-v-373b3197="" class="MyGameRecordList__C-item-r success">
+                                    <div data-v-373b3197="" class="success">${item.color}</div><span data-v-373b3197="">${item.amount}</span>
+                                </div>
+                            </div>
+                        `;
+                        $('#my_history').append(recordHtml);
+                        
+                    });
+                } else {
                     toastr.error("No data found or invalid response. Please try again.");
                 }
-            }),
-           
+            },
+            error: function(xhr, error, thrown) {
+                toastr.error("No data found or invalid response. Please try again.");
+            }
         });
-
+    });
 </script>
