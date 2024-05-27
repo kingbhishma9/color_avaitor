@@ -19,6 +19,8 @@ return new class extends Migration
             $table->double('amount')->notNull();
             $table->string('status', 255)->default('pending')->notNull();
             $table->string('res', 255)->default('wait')->notNull();
+            $table->string('quantity', 255);
+            $table->string('tax', 255);
             $table->string('price', 211)->default('wait')->notNull();
             $table->string('number', 255)->default('wait')->notNull();
             $table->text('color')->nullable();

@@ -216,7 +216,13 @@ class HomeController extends Controller
         $betting1=  Win1minBetting::where('username', auth()->user()->username)->sum('amount');
         $betting3=  Win3minBetting::where('username', auth()->user()->username)->sum('amount');
         $betting5=  Win5minBetting::where('username', auth()->user()->username)->sum('amount');
-        $totabetting=$betting1+$betting3+$betting5;
+
+        $tax1=  Win1minBetting::where('username', auth()->user()->username)->sum('tax');
+        $tax3=  Win3minBetting::where('username', auth()->user()->username)->sum('tax');
+        $tax5=  Win5minBetting::where('username', auth()->user()->username)->sum('tax');
+
+
+        $totabetting=$betting1+$betting3+$betting5+$tax1+$tax3+$tax5;
         if ($request->ajax()) {
             return response()->json($game_record);
         }
@@ -231,7 +237,12 @@ class HomeController extends Controller
         $betting1=  Win1minBetting::where('username', auth()->user()->username)->sum('amount');
         $betting3=  Win3minBetting::where('username', auth()->user()->username)->sum('amount');
         $betting5=  Win5minBetting::where('username', auth()->user()->username)->sum('amount');
-        $totabetting=$betting1+$betting3+$betting5;
+        $tax1=  Win1minBetting::where('username', auth()->user()->username)->sum('tax');
+        $tax3=  Win3minBetting::where('username', auth()->user()->username)->sum('tax');
+        $tax5=  Win5minBetting::where('username', auth()->user()->username)->sum('tax');
+
+
+        $totabetting=$betting1+$betting3+$betting5+$tax1+$tax3+$tax5;
         if ($request->ajax()) {
             return response()->json($game_record);
         }
@@ -245,7 +256,12 @@ class HomeController extends Controller
         $betting1=  Win1minBetting::where('username', auth()->user()->username)->sum('amount');
         $betting3=  Win3minBetting::where('username', auth()->user()->username)->sum('amount');
         $betting5=  Win5minBetting::where('username', auth()->user()->username)->sum('amount');
-        $totabetting=$betting1+$betting3+$betting5;
+        $tax1=  Win1minBetting::where('username', auth()->user()->username)->sum('tax');
+        $tax3=  Win3minBetting::where('username', auth()->user()->username)->sum('tax');
+        $tax5=  Win5minBetting::where('username', auth()->user()->username)->sum('tax');
+
+
+        $totabetting=$betting1+$betting3+$betting5+$tax1+$tax3+$tax5;
 
 
         if ($request->ajax()) {

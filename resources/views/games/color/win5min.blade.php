@@ -114,13 +114,7 @@
 
             var diff = distance;
 
-            if (diff < 2) {
-                setTimeout(function() {
-
-                    triggerAjaxCall()
-                }, 1000);
-
-            }
+           
             if (diff < 30) {
 
                 document.getElementById('disable_button').style.display = 'none';
@@ -179,7 +173,6 @@
 
                 $('#game_histroy').DataTable().ajax.reload();
                 $('#chartdata').DataTable().ajax.reload();
-                $('#my_history').DataTable().ajax.reload();
 
             }
             if (diff == 300) {
@@ -187,7 +180,6 @@
                 $('#colorNumber').empty();
                 $('#chartdata').DataTable().ajax.reload();
                 $('#game_histroy').DataTable().ajax.reload();
-                $('#my_history').DataTable().ajax.reload();
             }
             if (diff == 298) {
                 $.ajax({
@@ -225,6 +217,7 @@
                                 document.getElementById("result").innerHTML = "You Won";
                                 document.getElementById("backgroundImage").classList.add("isW");
                                 document.getElementById("resultMessage").innerHTML = "Congratulations";
+                                document.getElementById("bonus").innerHTML = "₹"+response.am;
                                 if (response.color == 'R') {
                                     document.getElementById("result_color").classList.add("typered");
                                 }
@@ -255,19 +248,7 @@
 
         }
 
-        function triggerAjaxCall() {
-            $.ajax({
-                url: "{{ route('get.gameId5min') }}",
-                method: 'GET',
-                success: function(response) {
-                    console.log("AJAX response:", response);
-                    $('#period').text(response.id + 1);
-                },
-                error: function(error) {
-                    console.error("AJAX error:", error);
-                }
-            });
-        }
+  
 
         func();
 
@@ -283,79 +264,7 @@
 
 
 
-        //user history
-        $(document).ready(function() {
-            var selectedId = {{ auth()->user()->username }};
-
-            $('#my_history').DataTable({
-                searching: false,
-                paging: true,
-                info: false,
-                ordering: false,
-                dom: 'rtip',
-                ajax: {
-                    url: "{{ route('getBeting5') }}",
-                    data: {
-                        'username': selectedId
-                    },
-
-
-                    dataSrc: function(response) {
-                        if (response && Array.isArray(response)) {
-                            return response;
-                        } else {
-                            toastr.error("No data found or invalid response. Please try again.");
-                            return [];
-                        }
-                    },
-                    error: function(xhr, error, thrown) {
-                        toastr.error("No data found or invalid response. Please try again.");
-                    }
-                },
-                columns: [{
-
-                        data: 'ans'
-                    },
-                    {
-                        data: 'period'
-                    },
-                    {
-                        data: {res : "res", amount : "amount"},
-                        render: function(data, type, row, meta) {
-                            if (data.res === 'fail') {
-                                return `
-                                <div style="color:red; text-align:center;">`+data.amount+`</div>`;
-                            } else if (data.res === 'success') {
-                                return ` <div style="color:green; text-align:center ">`+data.amount+`</div>`;
-                            } else {
-                                return ` <div style="color:orange; text-align:center">waiting</div>`;
-                            }
-                        }
-                    },
-                    {
-                        data: 'created_at',
-
-                        render: function(data, type, row, meta) {
-
-                            const date = new Date(data);
-                            const formatter = new Intl.DateTimeFormat('en-US', {
-                                day: '2-digit',
-                                month: '2-digit',
-                                year: 'numeric',
-                                hour: '2-digit',
-                                minute: '2-digit'
-                            });
-                            const formattedDate = formatter.format(date);
-                            return formattedDate;
-
-
-                        }
-                    }
-                ],
-            });
-
-
-        });
+      
 
 
         //game history
@@ -655,4 +564,156 @@
 
         });
     </script>
+
+
+<script>
+    $(document).ready(function() {
+
+        $.ajax({
+            url: "{{ route('getBeting5') }}",
+            type: "GET",
+            data: {
+                'username': {{ auth()->user()->username }}
+            },
+            success: function(response) {
+                if (response && Array.isArray(response)) {
+                    response.forEach(function(item, i) {
+                        var recordHtml = `
+                        <div data-v-373b3197="" class="MyGameRecordList__C-item" id="design">
+                        <div data-v-373b3197="" class="MyGameRecordList__C-item-l MyGameRecordList__C-item-l-green"></div>
+                        <div data-v-373b3197="" class="MyGameRecordList__C-item-m">
+                            <div data-v-373b3197="" class="MyGameRecordList__C-item-m-top">${item.period}</div>
+                            <div data-v-373b3197="" class="MyGameRecordList__C-item-m-bottom">`
+                        const date = new Date(item.created_at);
+                        const formatter = new Intl.DateTimeFormat('en-US', {
+                            day: '2-digit',
+                            month: '2-digit',
+                            year: 'numeric',
+                            hour: '2-digit',
+                            minute: '2-digit'
+                        });
+                        const formattedDate = formatter.format(date);
+                        recordHtml += `${formattedDate}</div></div>`;
+                        if (item.res === 'success') {
+                            recordHtml += `
+                            <div data-v-373b3197="" class="MyGameRecordList__C-item-r success">
+                                <div data-v-373b3197="" class="success">${item.res}</div>
+                                <span data-v-373b3197="">+₹${item.am}</span>
+                                </div>
+                                `;
+                        } else if (item.res === 'fail') {
+                            recordHtml += `
+                                <div data-v-373b3197="" class="MyGameRecordList__C-item-r">
+                                    <div data-v-373b3197="" class="">Failed</div>
+                                    <span data-v-373b3197="">-₹`;
+                                            var upamount = parseFloat(item.amount) + parseFloat(item.tax);
+                                            recordHtml += `${upamount}</span>
+                                        </div>
+                                        `;
+                        }
+                        recordHtml +=
+                            `
+                                </diV>
+                                <div data-v-373b3197="" class="MyGameRecordList__C-detail" id="designs" >
+                                    <div data-v-373b3197="" class="MyGameRecordList__C-detail-text">Details</div>
+                                    <div data-v-373b3197="" class="MyGameRecordList__C-detail-line">Period <div data-v-373b3197="">${item.period}</div>
+                                    </div>
+                                    <div data-v-373b3197="" class="MyGameRecordList__C-detail-line">Purchase amount <div data-v-373b3197="">₹`;
+                        var amount = parseFloat(item.amount) + parseFloat(item.tax);
+                        recordHtml += `${amount}</div></div>
+                                        <div data-v-373b3197="" class="MyGameRecordList__C-detail-line">Quantity <div data-v-373b3197="">${item.quantity}</div>
+                                        </div>
+                                        <div data-v-373b3197="" class="MyGameRecordList__C-detail-line">Amount after tax <div data-v-373b3197="" class="red">₹${item.amount}</div>
+                                        </div>
+                                        <div data-v-373b3197="" class="MyGameRecordList__C-detail-line">Tax <div data-v-373b3197="">₹${item.tax}</div>
+                                        </div>
+                                        <div data-v-373b3197="" class="MyGameRecordList__C-detail-line">Result <div data-v-373b3197="">
+                                            <div data-v-373b3197="" class="MyGameRecordList__C-inlineB">${item.number}</div>
+                                            <div data-v-373b3197="" class="MyGameRecordList__C-inlineB ">`;
+                        if (item.color == 'G') {
+                            var color = 'Green';
+                        } else if (item.color == 'R') {
+                            var color = 'Red';
+                        } else if (item.color == 'RV') {
+                            var color = 'Red Violet';
+                        } else if (item.color == 'GV') {
+                            var color = 'Green Violet';
+                        } else {
+                            var color = '';
+                        }
+
+
+
+                        recordHtml +=
+                            ` ${color}  </div>
+                            </div>
+                            </div>
+                            <div data-v-373b3197="" class="MyGameRecordList__C-detail-line">Select <div data-v-373b3197="">`;
+
+                        if (item.ans == 'violet') {
+                            var ans = "Violet";
+                        } else if (item.ans == 'red') {
+                            var ans = "Red";
+                        } else if (item.ans == 'green') {
+                            var ans = "Green";
+                        } else {
+                            var ans = item.ans;
+                        }
+
+                        recordHtml += ` ${ans}</div>
+                            </div>
+                            <div data-v-373b3197="" class="MyGameRecordList__C-detail-line">Status <div data-v-373b3197="" class="green">
+                                Succeed</div>
+                            </div>`;
+
+
+                        if (item.res == 'fail') {
+                            var downamount = parseFloat(item.amount) + parseFloat(item.tax);
+                                var win_loss = '-₹' + downamount;
+                            recordHtml +=
+                                `<div data-v-373b3197="" class="MyGameRecordList__C-detail-line">Win/lose <div data-v-373b3197="" class="red">`;
+                        } else if (item.res == 'success') {
+                            var win_loss = '+₹' + item.am;
+                            recordHtml +=
+                                `<div data-v-373b3197="" class="MyGameRecordList__C-detail-line">Win/lose <div data-v-373b3197="" class="green">`;
+                        } else {
+                            var win_loss = item.res;
+                            recordHtml +=
+                                `<div data-v-373b3197="" class="MyGameRecordList__C-detail-line">Win/lose <div data-v-373b3197="" class="">`;
+                        }
+
+                        recordHtml += `${win_loss} </div>
+                            </div>
+                            <div data-v-373b3197="" class="MyGameRecordList__C-detail-line">Order time <div data-v-373b3197="">${formattedDate}</div>
+                            </div>
+                        </div>
+                        
+                  
+                `;
+
+
+                        var first = "design";
+                        var second = "designs";
+                        0
+                        $(first).click(function() {
+                            $(second).toggle();
+                        });
+
+                        $('#my_history').append(recordHtml);
+
+
+                    });
+
+
+                } else {
+                    toastr.error("No data found or invalid response. Please try again.");
+                }
+            },
+            error: function(xhr, error, thrown) {
+                toastr.error("No data found or invalid response. Please try again.");
+            }
+        });
+
+    });
+</script>
 @endsection

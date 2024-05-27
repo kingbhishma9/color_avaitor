@@ -1,7 +1,3 @@
-
-
-
-
 <div data-v-c74f4bba="" id="div_my_history" data-v-f31474c6="" class="History__C display">
     <div id="my_history" class="" style="width:100%"></div>
 </div>
@@ -11,6 +7,12 @@
 
 <style>
     #design {
+        margin-top: 10px;
+        padding: 20px;
+        box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    }
+
+    #designs {
         margin-top: 10px;
         padding: 20px;
         box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
@@ -89,98 +91,5 @@
     }
 </style>
 
-
-
-
-<script>
-$(document).ready(function() {
-    var selectedId = "{{ auth()->user()->username }}";
-
-    $.ajax({
-        url: "{{ route('getBeting') }}",
-        type: "GET",
-        data: {
-            'username': selectedId
-        },
-        success: function(response) {
-            if (response && Array.isArray(response)) {
-                response.forEach(function(item) {
-                    var recordHtml = `
-                        <div data-v-373b3197="" class="MyGameRecordList__C-item">
-                            <div data-v-373b3197="" class="MyGameRecordList__C-item-l MyGameRecordList__C-item-l-green"></div>
-                            <div data-v-373b3197="" class="MyGameRecordList__C-item-m">
-                                <div data-v-373b3197="" class="MyGameRecordList__C-item-m-top">${item.number}</div>
-                                <div data-v-373b3197="" class="MyGameRecordList__C-item-m-bottom">${item.created_at}</div>
-                            </div>
-                            <div data-v-373b3197="" class="MyGameRecordList__C-detail">
-                                <div data-v-373b3197="" class="MyGameRecordList__C-detail-text">Details</div>
-                                <div data-v-373b3197="" class="MyGameRecordList__C-detail-line">Order number
-                                    <div data-v-373b3197="">
-                                        WG2024052522204237339365c
-                                        <img data-v-373b3197="" src="{{ asset('assets/png/copy.png') }}">
-                                    </div>
-                                </div>
-                                <div data-v-373b3197="" class="MyGameRecordList__C-detail-line">Period <div data-v-373b3197="">20240525040135</div>
-                                </div>
-                                <div data-v-373b3197="" class="MyGameRecordList__C-detail-line">Purchase amount <div data-v-373b3197="">₹1.00</div>
-                                </div>
-                                <div data-v-373b3197="" class="MyGameRecordList__C-detail-line">Quantity <div data-v-373b3197="">1</div>
-                                </div>
-                                <div data-v-373b3197="" class="MyGameRecordList__C-detail-line">Amount after tax <div data-v-373b3197="" class="red">₹0.98</div>
-                                </div>
-                                <div data-v-373b3197="" class="MyGameRecordList__C-detail-line">Tax <div data-v-373b3197="">₹0.02</div>
-                                </div>
-                                <div data-v-373b3197="" class="MyGameRecordList__C-detail-line">Result <div data-v-373b3197="">
-                                    <div data-v-373b3197="" class="MyGameRecordList__C-inlineB">4</div>
-                                    <div data-v-373b3197="" class="MyGameRecordList__C-inlineB redColor">Red</div>
-                                    <div data-v-373b3197="" class="MyGameRecordList__C-inlineB small">Small</div>
-                                </div>
-                                </div>
-                                <div data-v-373b3197="" class="MyGameRecordList__C-detail-line">Select <div data-v-373b3197="">Red</div>
-                                </div>
-                                <div data-v-373b3197="" class="MyGameRecordList__C-detail-line">Status <div data-v-373b3197="" class="green">
-                                    Succeed</div>
-                                </div>
-                                <div data-v-373b3197="" class="MyGameRecordList__C-detail-line">Win/lose <div data-v-373b3197="" class="green">+₹1.96</div>
-                                </div>
-                                <div data-v-373b3197="" class="MyGameRecordList__C-detail-line">Order time <div data-v-373b3197="">2024-05-25 22:20:42</div>
-                                </div>
-                            </div>
-                    `;
-
-                    if (item.res === 'success') {
-                        recordHtml += `
-                            <div data-v-373b3197="" class="MyGameRecordList__C-item-r success">
-                                <div data-v-373b3197="" class="success">${item.res}</div>
-                                <span data-v-373b3197="">${item.amount}</span>
-                            </div>
-                        `;
-                    } else if (item.res === 'fail') {
-                        recordHtml += `
-                            <div data-v-373b3197="" class="MyGameRecordList__C-item-r">
-                                <div data-v-373b3197="" class="">Failed</div>
-                                <span data-v-373b3197="">-${item.amount}</span>
-                            </div>
-                        `;
-                    }
-
-                    recordHtml += `</div>`;
-
-                    $('#my_history').append(recordHtml);
-                });
-
-                $('.MyGameRecordList__C-item').on('click', function() {
-                    $(this).toggleClass('expanded');
-                });
-            } else {
-                toastr.error("No data found or invalid response. Please try again.");
-            }
-        },
-        error: function(xhr, error, thrown) {
-            toastr.error("No data found or invalid response. Please try again.");
-        }
-    });
-});
-</script>
 
 

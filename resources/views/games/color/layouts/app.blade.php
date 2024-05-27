@@ -18,9 +18,9 @@
     <link rel="stylesheet" href="{{ asset('assets/css/index-08abe1f5.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/colorprediction/css/style.css') }}">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 
     <!-- Datatable plugin CSS file -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" />
@@ -78,11 +78,13 @@
                     .value * m;
                 document.getElementById("sapregfamount").value = document.getElementById("sapregin").value *
                     m;
+                document.getElementById("quantity_g").value = document.getElementById("sapregin").value;
                 if (typeof n == 'undefined') {
                     n = 1;
                 }
                 document.getElementById("saprertotal").innerHTML = document.getElementById("saprerin")
                     .value * n;
+                document.getElementById("quantity_r").value = document.getElementById("saprerin").value;
                 document.getElementById("saprerfamount").value = document.getElementById("saprerin").value *
                     n;
                 if (typeof o == 'undefined') {
@@ -90,6 +92,7 @@
                 }
                 document.getElementById("saprevtotal").innerHTML = document.getElementById("saprevin")
                     .value * o;
+                document.getElementById("quantity_v").value = document.getElementById("saprevin").value;
                 document.getElementById("saprevfamount").value = document.getElementById("saprevin").value *
                     o;
 
@@ -98,6 +101,7 @@
                 }
                 document.getElementById("sapre0total").innerHTML = document.getElementById("saprein0")
                     .value * p;
+                document.getElementById("quantity_0").value = document.getElementById("saprein0").value;
                 document.getElementById("saprefamount0").value = document.getElementById("saprein0").value *
                     p;
 
@@ -108,6 +112,8 @@
                     .value * q;
                 document.getElementById("saprefamount1").value = document.getElementById("saprein1").value *
                     q;
+                document.getElementById("quantity_1").value = document.getElementById("saprein1").value;
+
 
                 if (typeof r == 'undefined') {
                     r = 10;
@@ -116,12 +122,14 @@
                     .value * r;
                 document.getElementById("saprefamount2").value = document.getElementById("saprein2").value *
                     r;
+                document.getElementById("quantity_2").value = document.getElementById("saprein2").value;
 
                 if (typeof s == 'undefined') {
                     s = 10;
                 }
                 document.getElementById("sapre3total").innerHTML = document.getElementById("saprein3")
                     .value * s;
+                document.getElementById("quantity_3").value = document.getElementById("saprein3").value;
                 document.getElementById("saprefamount3").value = document.getElementById("saprein3").value *
                     s;
 
@@ -130,6 +138,7 @@
                 }
                 document.getElementById("sapre4total").innerHTML = document.getElementById("saprein4")
                     .value * t;
+                document.getElementById("quantity_4").value = document.getElementById("saprein4").value;
                 document.getElementById("saprefamount4").value = document.getElementById("saprein4").value *
                     t;
 
@@ -138,6 +147,7 @@
                 }
                 document.getElementById("sapre5total").innerHTML = document.getElementById("saprein5")
                     .value * u;
+                document.getElementById("quantity_5").value = document.getElementById("saprein5").value;
                 document.getElementById("saprefamount5").value = document.getElementById("saprein5").value *
                     u;
 
@@ -149,12 +159,14 @@
                     .value * v;
                 document.getElementById("saprefamount6").value = document.getElementById("saprein6").value *
                     v;
+                document.getElementById("quantity_6").value = document.getElementById("saprein6").value;
 
                 if (typeof w == 'undefined') {
                     w = 10;
                 }
                 document.getElementById("sapre7total").innerHTML = document.getElementById("saprein7")
                     .value * w;
+                document.getElementById("quantity_7").value = document.getElementById("saprein7").value;
                 document.getElementById("saprefamount7").value = document.getElementById("saprein7").value *
                     w;
 
@@ -163,6 +175,7 @@
                 }
                 document.getElementById("sapre8total").innerHTML = document.getElementById("saprein8")
                     .value * z;
+                document.getElementById("quantity_8").value = document.getElementById("saprein8").value;
                 document.getElementById("saprefamount8").value = document.getElementById("saprein8").value *
                     z;
 
@@ -171,6 +184,7 @@
                 }
                 document.getElementById("sapre9total").innerHTML = document.getElementById("saprein9")
                     .value * y;
+                document.getElementById("quantity_9").value = document.getElementById("saprein9").value;
                 document.getElementById("saprefamount9").value = document.getElementById("saprein9").value *
                     y;
             }, 100);
@@ -946,7 +960,7 @@
                         class="inner">
                         <span
                             style="font-family: MulticoloreFont; color: #d37116; font-size: .75rem; line-height: .5rem; position: absolute; width: 100%; text-align: center; font-weight: 600; top: 0.60rem; left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%);"
-                            data-v-78027f36="">₹ {{$totabetting}}</span>
+                            data-v-78027f36="">₹ {{ $totabetting }}</span>
                     </div>
                 </div>
             </div>
@@ -1032,7 +1046,14 @@
                     font-size: .48rem; 
                     text-align: center; 
                     color: #fff;">Win
-                    Go 3Min
+                    Go
+                    @if (Route::currentRouteName() == 'win1')
+                        1Min
+                    @elseif(Route::currentRouteName() == 'win3')
+                        3Min
+                    @elseif(Route::currentRouteName() == 'win5')
+                        5Min
+                    @endif
                     <div data-v-15f0cefa=""
                         style="width: 7.46667rem; 
                         height: 0.66667rem; 
@@ -1128,6 +1149,7 @@
                      @elseif(Route::currentRouteName() == 'win5')
                      win5 @endif">
                     <input type="hidden" name="ans" value="green">
+                    <input type="hidden" id="quantity_g" name="quantity" value="1">
                     <input type="hidden" type="text" id="sapregfamount" name="amount" value="10">
                 </form>
                 <uni-text data-v-1a01b218="" class="sm margin-left">
@@ -1155,7 +1177,15 @@
                 style="background:linear-gradient(90deg,#fd565c 0%,#fd565c 100%);height: 2.53333rem;position: relative;padding-top: 0.4rem;">
                 <uni-view data-v-1a01b218="" class="content"
                     style="height: 0.58667rem;font-weight: 700;font-size: .48rem;text-align: center;color: #fff;"
-                    style="font-weight: bold;">Win Go 3Min<div data-v-15f0cefa=""
+                    style="font-weight: bold;">Win Go
+                    @if (Route::currentRouteName() == 'win1')
+                        1Min
+                    @elseif(Route::currentRouteName() == 'win3')
+                        3Min
+                    @elseif(Route::currentRouteName() == 'win5')
+                        5Min
+                    @endif
+                    <div data-v-15f0cefa=""
                         style="width: 7.46667rem; 
                         height: 0.66667rem; 
                         margin: 0.21333rem auto 0; 
@@ -1238,7 +1268,7 @@
                      @elseif(Route::currentRouteName() == 'win5')
                      {{ renderGameId5() }} @endif
                      ">
-
+                    <input type="hidden" id="quantity_r" name="quantity" value="1">
                     <input type="hidden" name="game"
                         value=" @if (Route::currentRouteName() == 'win1') win1
                      @elseif(Route::currentRouteName() == 'win3')
@@ -1256,10 +1286,10 @@
             </uni-view>
             <uni-view data-v-1a01b218="" class="cu-bar justify-end solids-top margin-top">
                 <uni-view data-v-1a01b218="" class="action">
-                    <uni-button style="background: #25253c;color: #7d7d9d;" data-v-1a01b218="" id="sapreclose3"
+                    <uni-button style="color: #7d7d9d;" data-v-1a01b218="" id="sapreclose3"
                         class="cu-btn text-gray border">CLOSE
                     </uni-button>
-                    <uni-button style="background-color: #fd565c;color:#fff;" data-v-1a01b218=""
+                    <uni-button style="color:#fd565c;" data-v-1a01b218=""
                         onclick="rsapreproceed()" class="cu-btn text-blue border margin-left">
                         Total amount ₹<span id="saprertotal">1</span></span>.00</uni-button>
                 </uni-view>
@@ -1274,7 +1304,15 @@
                 class="cu-bar justify-end bg-purple">
                 <uni-view data-v-1a01b218="" class="content"
                     style="height: 0.58667rem;font-weight: 700;font-size: .48rem;text-align: center;color: #fff;"
-                    style="font-weight: bold;">Win Go 3Min<div data-v-15f0cefa=""
+                    style="font-weight: bold;">Win Go
+                    @if (Route::currentRouteName() == 'win1')
+                        1Min
+                    @elseif(Route::currentRouteName() == 'win3')
+                        3Min
+                    @elseif(Route::currentRouteName() == 'win5')
+                        5Min
+                    @endif
+                    <div data-v-15f0cefa=""
                         style="width: 7.46667rem;
                         height: 0.66667rem;
                         margin: 0.21333rem auto 0;
@@ -1357,6 +1395,7 @@
                      win3
                      @elseif(Route::currentRouteName() == 'win5')
                      win5 @endif">
+                    <input type="hidden" id="quantity_v" name="quantity" value="1">
                     <input type="hidden" name="ans" value="violet">
                     <input type="hidden" type="text" id="saprevfamount" name="amount" value="10">
                 </form>
@@ -1368,10 +1407,10 @@
             </uni-view>
             <uni-view data-v-1a01b218="" class="cu-bar justify-end solids-top margin-top">
                 <uni-view data-v-1a01b218="" class="action">
-                    <uni-button style="background: #25253c;color: #7d7d9d;" data-v-1a01b218="" id="sapreclose1"
+                    <uni-button style="color: #7d7d9d;" data-v-1a01b218="" id="sapreclose1"
                         class="cu-btn text-gray border">CLOSE
                     </uni-button>
-                    <uni-button style="background-color: #b658fe;color:#fff;" data-v-1a01b218=""
+                    <uni-button style="color:#b658fe;" data-v-1a01b218=""
                         onclick="vsapreproceed()" class="cu-btn text-blue border margin-left">
                         Total amount ₹<span id="saprevtotal">1</span></span>.00</uni-button>
                 </uni-view>
@@ -1452,6 +1491,7 @@
                      win3
                      @elseif(Route::currentRouteName() == 'win5')
                      win5 @endif">
+                    <input type="hidden" id="quantity_0" name="quantity" value="1">
                     <input type="hidden" name="ans" value="0">
                     <input type="hidden" type="text" id="saprefamount0" name="amount" value="10">
                 </form>
@@ -1550,6 +1590,7 @@
                      win3
                      @elseif(Route::currentRouteName() == 'win5')
                      win5 @endif">
+                    <input type="hidden" id="quantity_1" name="quantity" value="1">
                     <input type="hidden" name="ans" value="1">
                     <input type="hidden" type="text" id="saprefamount1" name="amount" value="10">
                 </form>
@@ -1648,6 +1689,7 @@
                      win3
                      @elseif(Route::currentRouteName() == 'win5')
                      win5 @endif">
+                    <input type="hidden" id="quantity_2" name="quantity" value="1">
                     <input type="hidden" name="ans" value="2">
                     <input type="hidden" type="text" id="saprefamount2" name="amount" value="10">
                 </form>
@@ -1747,11 +1789,13 @@
                      @elseif(Route::currentRouteName() == 'win5')
                      win5 @endif">
 
+                    <input type="hidden" id="quantity_3" name="quantity" value="1">
                     <input type="hidden" name="ans" value="3">
                     <input type="hidden" type="text" id="saprefamount3" name="amount" value="10">
                 </form>
                 <uni-view data-v-1a01b218="" class=" margin-bottom">
-                    <uni-text data-v-1a01b218=""><span>Total contract money is <span id="sapre3total">10</span></span>
+                    <uni-text data-v-1a01b218=""><span>Total contract money is <span
+                                id="sapre3total">10</span></span>
                     </uni-text>
                 </uni-view>
 
@@ -1847,6 +1891,7 @@
                      win3
                      @elseif(Route::currentRouteName() == 'win5')
                      win5 @endif">
+                    <input type="hidden" id="quantity_4" name="quantity" value="1">
                     <input type="hidden" name="ans" value="4">
                     <input type="hidden" type="text" id="saprefamount4" name="amount" value="10">
                 </form>
@@ -1951,6 +1996,7 @@
                      win3
                      @elseif(Route::currentRouteName() == 'win5')
                      win5 @endif">
+                    <input type="hidden" id="quantity_5" name="quantity" value="1">
                     <input type="hidden" name="ans" value="5">
                     <input type="hidden" type="text" id="saprefamount5" name="amount" value="10">
                 </form>
@@ -2058,6 +2104,7 @@
                      win3
                      @elseif(Route::currentRouteName() == 'win5')
                      win5 @endif">
+                    <input type="hidden" id="quantity_6" name="quantity" value="1">
                     <input type="hidden" name="ans" value="6">
                     <input type="hidden" type="text" id="saprefamount6" name="amount" value="10">
                 </form>
@@ -2165,6 +2212,7 @@
                      win3
                      @elseif(Route::currentRouteName() == 'win5')
                      win5 @endif">
+                    <input type="hidden" id="quantity_7" name="quantity" value="1">
                     <input type="hidden" name="ans" value="7">
                     <input type="hidden" type="text" id="saprefamount7" name="amount" value="10">
                 </form>
@@ -2272,6 +2320,7 @@
                      win3
                      @elseif(Route::currentRouteName() == 'win5')
                      win5 @endif">
+                    <input type="hidden" id="quantity_8" name="quantity" value="1">
                     <input type="hidden" name="ans" value="8">
                     <input type="hidden" type="text" id="saprefamount8" name="amount" value="10">
                 </form>
@@ -2380,6 +2429,7 @@
                      win3
                      @elseif(Route::currentRouteName() == 'win5')
                      win5 @endif">
+                    <input type="hidden" id="quantity_9" name="quantity" value="1">
                     <input type="hidden" name="ans" value="9">
                     <input type="hidden" type="text" id="saprefamount9" name="amount" value="10">
                 </form>
@@ -2407,6 +2457,7 @@
             </uni-view>
         </uni-view>
     </uni-view>
+
 
     <style>
         .WinningTip__C[data-v-646d4ebc] {
@@ -2468,17 +2519,20 @@
             margin-bottom: .90667rem;
         }
 
-        .WinningTip__C-body-l2.typegreen>div[data-v-646d4ebc]{
+        .WinningTip__C-body-l2.typegreen>div[data-v-646d4ebc] {
             background-color: green;
         }
-        .WinningTip__C-body-l2.typered>div[data-v-646d4ebc]{
+
+        .WinningTip__C-body-l2.typered>div[data-v-646d4ebc] {
             background-color: red;
         }
-        .WinningTip__C-body-l2.typerv>div[data-v-646d4ebc]{
-            background-image: linear-gradient(red,violet);
+
+        .WinningTip__C-body-l2.typerv>div[data-v-646d4ebc] {
+            background-image: linear-gradient(red, violet);
         }
-        .WinningTip__C-body-l2.typegv>div[data-v-646d4ebc]{
-            background-image: linear-gradient(green,violet);
+
+        .WinningTip__C-body-l2.typegv>div[data-v-646d4ebc] {
+            background-image: linear-gradient(green, violet);
         }
 
         .WinningTip__C-body-l2>div[data-v-646d4ebc]:first-child {
@@ -2517,11 +2571,8 @@
         .WinningTip__C-body-l3 .isLose[data-v-646d4ebc] {
             font-weight: 700;
             font-size: .64rem;
-            line-height: .77333rem;
             color: #587ba4;
             text-align: center;
-            margin-bottom: .34667rem;
-            padding-top: .4rem;
         }
 
         .WinningTip__C-body-l3 .gameDetail[data-v-646d4ebc] {
@@ -2545,17 +2596,28 @@
             transform: translate(-50%) translateY(100%);
             bottom: -.26667rem;
         }
+
+        .WinningTip__C-body-l3 .bonus[data-v-646d4ebc] {
+            height: .64rem;
+            line-height: .64rem;
+            font-weight: 700;
+            font-size: .53333rem;
+            color: #f54a32;
+            text-align: center;
+        }
     </style>
 
-    <div data-v-646d4ebc="" data-v-40958d9a="" id="winningtippopup" class="WinningTip__C" style="display: none">
+    <div data-v-646d4ebc="" data-v-40958d9a="" id="winningtippopup" class="WinningTip__C"
+        style="display: none">
         <div data-v-646d4ebc="" id="backgroundImage" class="WinningTip__C-body">
             <div data-v-646d4ebc="" id="resultMessage" class="WinningTip__C-body-l1 is"></div>
-            <div data-v-646d4ebc="" id="result_color" class="WinningTip__C-body-l2">Lottery results 
-                <div data-v-646d4ebc="" > </div>
+            <div data-v-646d4ebc="" id="result_color" class="WinningTip__C-body-l2">Lottery results
+                <div data-v-646d4ebc=""> </div>
                 <div data-v-646d4ebc="" id="result_number" class="WinningNum"></div>
             </div>
             <div data-v-646d4ebc="" class="WinningTip__C-body-l3">
                 <div data-v-646d4ebc="" id="result" class="isLose"></div>
+                <div data-v-646d4ebc="" id="bonus" class="bonus"></div>
                 <div data-v-646d4ebc="" id="resultDetails" class="gameDetail"></div>
             </div>
             <div data-v-646d4ebc="" id="closepopup" class="closeBtn"></div>
@@ -2593,6 +2655,7 @@
             document.getElementById("rule").className = "cu-modal";
         }
     </script>
+
     @if ($errors->any())
         <div id="snackbar" class="van-toast van-toast--middle van-toast--text"
             style="z-index: 2009;display:none ">
