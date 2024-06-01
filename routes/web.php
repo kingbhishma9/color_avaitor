@@ -12,6 +12,7 @@ Auth::routes();
 
 Route::any('get-gameId', [FrontendController::class, 'getGameId'])->name('get.gameId');
 Route::any('get-gameId1min', [FrontendController::class, 'getgameId1min'])->name('get.gameId1min');
+Route::any('show/game/id', [FrontendController::class, 'showGameId'])->name('show.gameId1min');
 Route::any('get-gameId5min', [FrontendController::class, 'getgameId5min'])->name('get.gameId5min');
 Route::any('updateUserGame3', [FrontendController::class, 'updateUserGame3'])->name('updateUserGame3');
 Route::any('updateUserGame1', [FrontendController::class, 'updateUserGame1'])->name('updateUserGame1');

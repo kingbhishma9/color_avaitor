@@ -65,8 +65,8 @@ class FrontendController extends Controller
         $num = $gameId->num;
         $col = $gameId->col;
         $id = $gameId->id - 1;
-        
-        
+
+
 
 
 
@@ -227,23 +227,23 @@ class FrontendController extends Controller
         $num = $gameId->num;
         $col = $gameId->col;
         $id = $gameId->period;
-        
-       
+
+
 
 
 
         $price = rand(1000, 9999) . $num;
-        
-        
-        
+
+
+
 
         $updateResult = Win1minBetting::where('period', $id)->get();
-        
-       
+
+
 
         foreach ($updateResult as $data) {
-            
-          
+
+
             if ($data->ans == $num) {
                 $am = $data->amount * 9;
 
@@ -295,7 +295,7 @@ class FrontendController extends Controller
 
                     $res = 'success';
                 } else {
-                    
+
                     $am = 'wait';
                     $res = 'fail';
                 }
@@ -403,7 +403,7 @@ class FrontendController extends Controller
 
         $price = rand(1000, 9999) . $num;
 
-    
+
         Win1minBetRecord::create([
             'period' => $gameId->id,
             'ans' => $price,
@@ -413,6 +413,12 @@ class FrontendController extends Controller
 
         $game = new Win1minBet();
         $game->save();
+    }
+
+    public function showGameId()
+    {
+        $gameId = Win1minBet::latest('created_at')->first();
+        return response()->json($gameId);
     }
 
     public function getgameId5min()

@@ -65,7 +65,7 @@
     @include('games.color.includes.history')
 
     <script>
-        
+
         $(document).ready(function() {
 
             $('.display').hide();
@@ -95,6 +95,7 @@
                 }, 1200);
 
         });
+        var triggerCalled = false;
 
 
         function func() {
@@ -114,7 +115,7 @@
 
             var diff = distance;
 
-          
+
             if (diff < 5) {
                 document.getElementById('disable_button').style.display = 'none';
 
@@ -174,6 +175,11 @@
                 $('#chartdata').DataTable().ajax.reload();
                 $('#game_histroy').DataTable().ajax.reload();
             }
+    if (diff < 3) {
+        triggerAjaxCall();
+    }
+
+
 
 
             if (diff == 57) {
@@ -240,9 +246,27 @@
 
         }
 
-     
+
+        function triggerAjaxCall() {
+            $.ajax({
+                url: "{{ route('show.gameId1min') }}",
+                method: 'GET',
+                success: function(response) {
+                    setTimeout(function(){
+                    $('#period').text(response.id);
+
+                    },6000)
+                    console.log("triggerAjaxCall success:", response);
+                },
+                error: function(error) {
+                    console.error("An error occurred:", error);
+                }
+            });
+        }
 
         func();
+
+
 
         function getAllIndices(data) {
             data.forEach(element => {
@@ -368,7 +392,7 @@
                                         `;
                             } else if (data === '2') {
                                 return `
-                              
+
                                 <div data-v-54016b1c="" class="van-col van-col--16">
                                     <div data-v-54016b1c="" class="Trend__C-body2-Num">
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item">0</div>
@@ -387,7 +411,7 @@
 
                             } else if (data === '3') {
                                 return `
-                               
+
                                 <div data-v-54016b1c="" class="van-col van-col--16">
                                     <div data-v-54016b1c="" class="Trend__C-body2-Num">
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item">0</div>
@@ -402,12 +426,12 @@
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item">9</div>
                                     </div>
                                 </div>
-                                
+
                                 `;
 
                             } else if (data === '4') {
                                 return `
-                               
+
                                 <div data-v-54016b1c="" class="van-col van-col--16">
                                     <div data-v-54016b1c="" class="Trend__C-body2-Num">
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item">0</div>
@@ -422,11 +446,11 @@
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item">9</div>
                                     </div>
                                 </div>
-                                
+
                                 `;
                             } else if (data === '5') {
                                 return `
-                               
+
                                 <div data-v-54016b1c="" class="van-col van-col--16">
                                     <div data-v-54016b1c="" class="Trend__C-body2-Num">
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item">0</div>
@@ -441,11 +465,11 @@
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item">9</div>
                                     </div>
                                 </div>
-                                
+
                                 `;
                             } else if (data === '6') {
                                 return `
-                               
+
                                 <div data-v-54016b1c="" class="van-col van-col--16">
                                     <div data-v-54016b1c="" class="Trend__C-body2-Num">
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item">0</div>
@@ -460,11 +484,11 @@
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item">9</div>
                                     </div>
                                 </div>
-                                
+
                                 `;
                             } else if (data === '7') {
                                 return `
-                               
+
                                 <div data-v-54016b1c="" class="van-col van-col--16">
                                     <div data-v-54016b1c="" class="Trend__C-body2-Num">
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item">0</div>
@@ -479,11 +503,11 @@
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item">9</div>
                                     </div>
                                 </div>
-                                
+
                                 `;
                             } else if (data === '8') {
                                 return `
-                               
+
                                 <div data-v-54016b1c="" class="van-col van-col--16">
                                     <div data-v-54016b1c="" class="Trend__C-body2-Num">
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item">0</div>
@@ -498,11 +522,11 @@
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item">9</div>
                                     </div>
                                 </div>
-                                
+
                                 `;
                             } else if (data === '9') {
                                 return `
-                               
+
                                 <div data-v-54016b1c="" class="van-col van-col--16">
                                     <div data-v-54016b1c="" class="Trend__C-body2-Num">
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item">0</div>
@@ -517,11 +541,11 @@
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item action9">9</div>
                                     </div>
                                 </div>
-                                
+
                                 `;
                             } else if (data === '0') {
                                 return `
-                               
+
                                 <div data-v-54016b1c="" class="van-col van-col--16">
                                     <div data-v-54016b1c="" class="Trend__C-body2-Num">
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item action0">0</div>
@@ -536,7 +560,7 @@
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item">9</div>
                                     </div>
                                 </div>
-                                
+
                                 `;
                             } else {
                                 return '';
@@ -557,9 +581,6 @@
             $.ajax({
                 url: "{{ route('getBeting') }}",
                 type: "GET",
-                data: {
-                    'username': {{ auth()->user()->username }}
-                },
                 success: function(response) {
                     if (response && Array.isArray(response)) {
                         response.forEach(function(item, i) {
@@ -672,11 +693,11 @@
                                 <div data-v-373b3197="" class="MyGameRecordList__C-detail-line">Order time <div data-v-373b3197="">${formattedDate}</div>
                                 </div>
                             </div>
-                            
+
                     `;
                             var first = "design";
                             var second = "designs";
-                            0
+                            
                             $(first).click(function() {
                                 $(second).toggle();
                             });
