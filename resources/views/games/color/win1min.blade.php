@@ -65,6 +65,7 @@
     @include('games.color.includes.history')
 
     <script>
+        
         $(document).ready(function() {
 
             $('.display').hide();
