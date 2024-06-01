@@ -415,12 +415,6 @@ class FrontendController extends Controller
         $game->save();
     }
 
-    public function showGameId()
-    {
-        $gameId = Win1minBet::latest('created_at')->first();
-        return response()->json($gameId);
-    }
-
     public function getgameId5min()
     {
         $gameId = Win5minBet::latest('created_at')->first();
@@ -1068,5 +1062,11 @@ class FrontendController extends Controller
             $userdata = Win5minBetting::where('period', $id)->where('username', auth()->user()->username)->first();
             return response()->json($userdata);
         }
+    }
+
+    public function showGameId()
+    {
+        $gameId = Win1minBet::latest('created_at')->first();
+        return response()->json($gameId);
     }
 }
