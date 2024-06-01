@@ -165,6 +165,7 @@
                 $('#colorNumber').empty();
                 $('#game_histroy').DataTable().ajax.reload();
                 $('#chartdata').DataTable().ajax.reload();
+                triggerAjaxCall();
 
             }
             if (diff == 58) {
@@ -172,6 +173,7 @@
                 $('#colorNumber').empty();
                 $('#chartdata').DataTable().ajax.reload();
                 $('#game_histroy').DataTable().ajax.reload();
+                triggerAjaxCall();
             }
 
 
@@ -237,9 +239,7 @@
 
             }
 
-            if(diff >=57){
-                triggerAjaxCall();
-            }
+           
 
         }
 
