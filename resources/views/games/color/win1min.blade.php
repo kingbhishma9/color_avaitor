@@ -162,6 +162,7 @@
                 document.getElementById("saprenum9").removeAttribute('disabled');
             }
             if (diff == 60) {
+                gameHistory();
                 $('#colorNumber').empty();
                 $('#game_histroy').DataTable().ajax.reload();
                 $('#chartdata').DataTable().ajax.reload();
@@ -169,7 +170,7 @@
 
             }
             if (diff == 58) {
-
+                gameHistory();
                 $('#colorNumber').empty();
                 $('#chartdata').DataTable().ajax.reload();
                 $('#game_histroy').DataTable().ajax.reload();
@@ -178,6 +179,7 @@
 
 
             if (diff == 57) {
+                      gameHistory();
                 $.ajax({
                     url: "{{ route('showResult') }}",
                     method: 'GET',
@@ -239,7 +241,7 @@
 
             }
 
-           
+
 
         }
 
@@ -257,7 +259,6 @@
         }
 
 
-        
         function triggerAjaxCall() {
             $.ajax({
                 url: "{{ route('show.gameId1min') }}",
@@ -387,7 +388,7 @@
                                         `;
                             } else if (data === '2') {
                                 return `
-                              
+
                                 <div data-v-54016b1c="" class="van-col van-col--16">
                                     <div data-v-54016b1c="" class="Trend__C-body2-Num">
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item">0</div>
@@ -406,7 +407,7 @@
 
                             } else if (data === '3') {
                                 return `
-                               
+
                                 <div data-v-54016b1c="" class="van-col van-col--16">
                                     <div data-v-54016b1c="" class="Trend__C-body2-Num">
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item">0</div>
@@ -421,12 +422,12 @@
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item">9</div>
                                     </div>
                                 </div>
-                                
+
                                 `;
 
                             } else if (data === '4') {
                                 return `
-                               
+
                                 <div data-v-54016b1c="" class="van-col van-col--16">
                                     <div data-v-54016b1c="" class="Trend__C-body2-Num">
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item">0</div>
@@ -441,11 +442,11 @@
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item">9</div>
                                     </div>
                                 </div>
-                                
+
                                 `;
                             } else if (data === '5') {
                                 return `
-                               
+
                                 <div data-v-54016b1c="" class="van-col van-col--16">
                                     <div data-v-54016b1c="" class="Trend__C-body2-Num">
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item">0</div>
@@ -460,11 +461,11 @@
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item">9</div>
                                     </div>
                                 </div>
-                                
+
                                 `;
                             } else if (data === '6') {
                                 return `
-                               
+
                                 <div data-v-54016b1c="" class="van-col van-col--16">
                                     <div data-v-54016b1c="" class="Trend__C-body2-Num">
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item">0</div>
@@ -479,11 +480,11 @@
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item">9</div>
                                     </div>
                                 </div>
-                                
+
                                 `;
                             } else if (data === '7') {
                                 return `
-                               
+
                                 <div data-v-54016b1c="" class="van-col van-col--16">
                                     <div data-v-54016b1c="" class="Trend__C-body2-Num">
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item">0</div>
@@ -498,11 +499,11 @@
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item">9</div>
                                     </div>
                                 </div>
-                                
+
                                 `;
                             } else if (data === '8') {
                                 return `
-                               
+
                                 <div data-v-54016b1c="" class="van-col van-col--16">
                                     <div data-v-54016b1c="" class="Trend__C-body2-Num">
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item">0</div>
@@ -517,11 +518,11 @@
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item">9</div>
                                     </div>
                                 </div>
-                                
+
                                 `;
                             } else if (data === '9') {
                                 return `
-                               
+
                                 <div data-v-54016b1c="" class="van-col van-col--16">
                                     <div data-v-54016b1c="" class="Trend__C-body2-Num">
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item">0</div>
@@ -536,11 +537,11 @@
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item action9">9</div>
                                     </div>
                                 </div>
-                                
+
                                 `;
                             } else if (data === '0') {
                                 return `
-                               
+
                                 <div data-v-54016b1c="" class="van-col van-col--16">
                                     <div data-v-54016b1c="" class="Trend__C-body2-Num">
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item action0">0</div>
@@ -555,7 +556,7 @@
                                         <div data-v-54016b1c="" class="Trend__C-body2-Num-item">9</div>
                                     </div>
                                 </div>
-                                
+
                                 `;
                             } else {
                                 return '';
@@ -567,13 +568,10 @@
 
 
         });
-    </script>
 
+                    function gameHistory(){
 
-    <script>
-        $(document).ready(function() {
-
-            $.ajax({
+                            $.ajax({
                 url: "{{ route('getBeting') }}",
                 type: "GET",
                 data: {
@@ -691,7 +689,7 @@
                                 <div data-v-373b3197="" class="MyGameRecordList__C-detail-line">Order time <div data-v-373b3197="">${formattedDate}</div>
                                 </div>
                             </div>
-                            
+
                     `;
                             var first = "design";
                             var second = "designs";
@@ -711,7 +709,9 @@
                     toastr.error("No data found or invalid response. Please try again.");
                 }
             });
-
-        });
+            }
     </script>
+
+
+
 @endsection
