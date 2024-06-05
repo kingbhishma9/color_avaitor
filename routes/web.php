@@ -5,17 +5,15 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
 
-Route::get('/', [App\Http\Controllers\FrontendController::class, 'welcome'])->name('welcome');
-Route::get('/keFuMenu', [App\Http\Controllers\FrontendController::class, 'support'])->name('support');
+Route::get('/', [FrontendController::class, 'welcome'])->name('welcome');
+Route::get('/keFuMenu', [FrontendController::class, 'support'])->name('support');
 
 Auth::routes();
 
-Route::any('get-gameId', [FrontendController::class, 'getGameId'])->name('get.gameId');
-Route::any('get-gameId1min', [FrontendController::class, 'getgameId1min'])->name('get.gameId1min');
+Route::any('get-game3Id', [FrontendController::class, 'getGame3Id'])->name('get.game3Id');
+Route::any('getGameId1min', [FrontendController::class, 'getGameId1min'])->name('getGameId1min');
 Route::any('show/game/id', [FrontendController::class, 'showGameId'])->name('show.gameId1min');
 Route::any('get-gameId5min', [FrontendController::class, 'getgameId5min'])->name('get.gameId5min');
-Route::any('updateUserGame3', [FrontendController::class, 'updateUserGame3'])->name('updateUserGame3');
-Route::any('updateUserGame1', [FrontendController::class, 'updateUserGame1'])->name('updateUserGame1');
 
 Route::any('set-colorBet', [FrontendController::class, 'setColorBet'])->name('set.colorBet');
 Route::any('getBeting', [FrontendController::class, 'getBeting'])->name('getBeting');

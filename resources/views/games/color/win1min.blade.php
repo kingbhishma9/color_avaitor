@@ -162,7 +162,7 @@
                 document.getElementById("saprenum9").removeAttribute('disabled');
             }
             if (diff == 60) {
-                gameHistory();
+                userHistory();
                 $('#colorNumber').empty();
                 $('#game_histroy').DataTable().ajax.reload();
                 $('#chartdata').DataTable().ajax.reload();
@@ -170,7 +170,7 @@
 
             }
             if (diff == 58) {
-                gameHistory();
+                userHistory();
                 $('#colorNumber').empty();
                 $('#chartdata').DataTable().ajax.reload();
                 $('#game_histroy').DataTable().ajax.reload();
@@ -179,7 +179,7 @@
 
 
             if (diff == 57) {
-                      gameHistory();
+                userHistory();
                 $.ajax({
                     url: "{{ route('showResult') }}",
                     method: 'GET',
@@ -247,13 +247,13 @@
 
 
         func();
+        userHistory();
 
         function getAllIndices(data) {
             data.forEach(element => {
                 var className = "n" + element.num;
                 var newSpan = $('<div data-v-c0d1aac6=""></div>').addClass(className);
                 $('#colorNumber').append(newSpan);
-
             });
 
         }
@@ -264,13 +264,9 @@
                 url: "{{ route('show.gameId1min') }}",
                 method: 'GET',
                 success: function(response) {
-
                     $('#period').text(response.id);
-
-
                 },
                 error: function(error) {
-
                 }
             });
         }
@@ -569,9 +565,9 @@
 
         });
 
-                    function gameHistory(){
+        function userHistory() {
 
-                            $.ajax({
+            $.ajax({
                 url: "{{ route('getBeting') }}",
                 type: "GET",
                 data: {
@@ -709,9 +705,6 @@
                     toastr.error("No data found or invalid response. Please try again.");
                 }
             });
-            }
+        }
     </script>
-
-
-
 @endsection
