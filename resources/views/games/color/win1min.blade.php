@@ -266,8 +266,7 @@
                 success: function(response) {
                     $('#period').text(response.id);
                 },
-                error: function(error) {
-                }
+                error: function(error) {}
             });
         }
 
@@ -577,9 +576,64 @@
                     if (response && Array.isArray(response)) {
                         response.forEach(function(item, i) {
                             var recordHtml = `
-                            <div data-v-373b3197="" class="MyGameRecordList__C-item" id="design">
-                            <div data-v-373b3197="" class="MyGameRecordList__C-item-l MyGameRecordList__C-item-l-green"></div>
-                            <div data-v-373b3197="" class="MyGameRecordList__C-item-m">
+                            <div data-v-373b3197="" class="MyGameRecordList__C-item" id="design">`;
+
+                            if (item.ans == 'green') {
+                                recordHtml +=
+                                    ` <div data-v-373b3197="" class="MyGameRecordList__C-item-l MyGameRecordList__C-item-l-green"></div>`;
+                            }
+                            if (item.ans == 'red') {
+                                recordHtml +=
+                                    ` <div data-v-373b3197="" class="MyGameRecordList__C-item-l MyGameRecordList__C-item-l-red"></div>`;
+                            }
+                            if (item.ans == 'violet') {
+                                recordHtml +=
+                                    ` <div data-v-373b3197="" class="MyGameRecordList__C-item-l MyGameRecordList__C-item-l-violet"></div>`;
+                            }
+                            if (item.ans == '0') {
+                                recordHtml +=
+                                    ` <div data-v-373b3197="" class="MyGameRecordList__C-item-l MyGameRecordList__C-item-l-0">0</div>`;
+                            }
+                            if (item.ans == '1') {
+                                recordHtml +=
+                                    ` <div data-v-373b3197="" class="MyGameRecordList__C-item-l MyGameRecordList__C-item-l-1">1</div>`;
+                            }
+                            if (item.ans == '2') {
+                                recordHtml +=
+                                    ` <div data-v-373b3197="" class="MyGameRecordList__C-item-l MyGameRecordList__C-item-l-2">2</div>`;
+                            }
+                            if (item.ans == '3') {
+                                recordHtml +=
+                                    ` <div data-v-373b3197="" class="MyGameRecordList__C-item-l MyGameRecordList__C-item-l-3">3</div>`;
+                            }
+                            if (item.ans == '4') {
+                                recordHtml +=
+                                    ` <div data-v-373b3197="" class="MyGameRecordList__C-item-l MyGameRecordList__C-item-l-4">4</div>`;
+                            }
+                            if (item.ans == '5') {
+                                recordHtml +=
+                                    ` <div data-v-373b3197="" class="MyGameRecordList__C-item-l MyGameRecordList__C-item-l-5">5</div>`;
+                            }
+                            if (item.ans == '6') {
+                                recordHtml +=
+                                    ` <div data-v-373b3197="" class="MyGameRecordList__C-item-l MyGameRecordList__C-item-l-6">6</div>`;
+                            }
+                            if (item.ans == '7') {
+                                recordHtml +=
+                                    ` <div data-v-373b3197="" class="MyGameRecordList__C-item-l MyGameRecordList__C-item-l-7">7</div>`;
+                            }
+                            if (item.ans == '8') {
+                                recordHtml +=
+                                    ` <div data-v-373b3197="" class="MyGameRecordList__C-item-l MyGameRecordList__C-item-l-8">8</div>`;
+                            }
+                            if (item.ans == '9') {
+                                recordHtml +=
+                                    ` <div data-v-373b3197="" class="MyGameRecordList__C-item-l MyGameRecordList__C-item-l-9">9</div>`;
+                            }
+                           
+
+
+                            recordHtml += ` <div data-v-373b3197="" class="MyGameRecordList__C-item-m">
                                 <div data-v-373b3197="" class="MyGameRecordList__C-item-m-top">${item.period}</div>
                                 <div data-v-373b3197="" class="MyGameRecordList__C-item-m-bottom">`
                             const date = new Date(item.created_at);

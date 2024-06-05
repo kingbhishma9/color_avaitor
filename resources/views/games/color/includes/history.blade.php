@@ -22,7 +22,6 @@
 
 
 
-
     .MyGameRecordList__C-item[data-v-373b3197] {
         height: 1.81333rem;
         padding: .37333rem 0;
@@ -90,6 +89,3 @@
         word-break: break-all;
     }
 </style>
-
-
-
