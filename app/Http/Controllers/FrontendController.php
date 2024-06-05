@@ -26,7 +26,7 @@ class FrontendController extends Controller
         $Setting = AppSetting::where('id', 1)->first();
         return view('pages.support', compact('Setting'));
     }
-    
+
     public function welcome()
     {
         $Setting = AppSetting::where('id', 1)->first();
@@ -193,7 +193,7 @@ class FrontendController extends Controller
         $game->save();
     }
 
-   
+
 
     public function getGameId1min()
     {
@@ -203,205 +203,74 @@ class FrontendController extends Controller
         $col = $colors[$num];
         $price = rand(1000, 9999) . $num;
         $updateResult = Win1minBetting::where('period', $gameId->id)->get();
-        
-   
+
         foreach ($updateResult as $data) {
-            $user=User::where('username',$data->username)->first();
+            $user = User::where('username', $data->username)->first();
+            $res = 'fail';
+            $am = 'wait';
+
             if ($data->ans == $num) {
                 $am = $data->amount * 9;
+                $res = 'success';
+            } elseif ($data->ans == 'green') {
+                if ($col == 'G') {
+                    $am = $data->amount * 2;
+                    $res = 'success';
+                } elseif ($col == 'GV') {
+                    $am = $data->amount * 1.5;
+                    $res = 'success';
+                }
+            } elseif ($data->ans == 'red') {
+                if ($col == 'R') {
+                    $am = $data->amount * 2;
+                    $res = 'success';
+                } elseif ($col == 'RV') {
+                    $am = $data->amount * 1.5;
+                    $res = 'success';
+                }
+            } elseif ($data->ans == 'violet') {
+                if ($col == 'RV' || $col == 'GV') {
+                    $am = $data->amount * 4.5;
+                    $res = 'success';
+                }
+            }
+
+            if ($res == 'success') {
                 $finalbalance = $am + $user->balance;
                 User::where('username', $user->username)->update([
                     'balance' => $finalbalance
                 ]);
+
                 Transaction::create([
                     'username' => $user->username,
                     'particular' => 'win1',
-                    'credit' =>  $am,
+                    'credit' => $am,
                 ]);
-                 Win1minBetting::where('period', $gameId->id)->update([
-                'status' => 'successful',
-                'price' => $price,
-                'number' => $num,
-                'color' => $col,
-                'am' => $am,
-                'res' => 'success',
-            ]);
-            } else if ($data->ans == 'green') {
-                if ($col == 'G') {
-                    $am = $data->amount * 2;
-                    $finalbalance = $am + $user->balance;
-                    User::where('username', $user->username)->update([
-                        'balance' => $finalbalance
-                    ]);
-                    Transaction::create([
-                        'username' => $user->username,
-                        'particular' => 'win1',
-                        'credit' =>  $am,
-                    ]);
-                     Win1minBetting::where('period', $gameId->id)->update([
-                'status' => 'successful',
-                'price' => $price,
-                'number' => $num,
-                'color' => $col,
-                'am' => $am,
-                'res' => 'success',
-            ]);
-                } else if ($col == 'GV') {
-                    $am = $data->amount * 1.5;
-                    $finalbalance = $am + $user->balance;
-                    User::where('username', $user->username)->update([
-                        'balance' => $finalbalance
-                    ]);
-                    Transaction::create([
-                        'username' => $user->username,
-                        'particular' => 'win1',
-                        'credit' =>  $am,
-                    ]);
-                     Win1minBetting::where('period', $gameId->id)->update([
-                'status' => 'successful',
-                'price' => $price,
-                'number' => $num,
-                'color' => $col,
-                'am' => $am,
-                'res' => 'success',
-            ]);
-                } else {
-                  Win1minBetting::where('period', $gameId->id)->update([
-                'status' => 'successful',
-                'price' => $price,
-                'number' => $num,
-                'color' => $col,
-                'am' => 'wait',
-                'res' => 'fail',
-            ]);
-                }
-            } else if ($data->ans == 'red') {
-                if ($col == 'R') {
-                    $am = $data->amount * 2;
-                    $finalbalance = $am + $user->balance;
-                    User::where('username', $user->username)->update([
-                        'balance' => $finalbalance
-                    ]);
-                    Transaction::create([
-                        'username' => $user->username,
-                        'particular' => 'win1',
-                        'credit' =>  $am,
-                    ]);
-                     Win1minBetting::where('period', $gameId->id)->update([
-                'status' => 'successful',
-                'price' => $price,
-                'number' => $num,
-                'color' => $col,
-                'am' => $am,
-                'res' => 'success',
-            ]);
-                } else if ($col == 'RV') {
-                    $am = $data->amount * 1.5;
-                    $finalbalance = $am + $user->balance;
-                    User::where('username', $user->username)->update([
-                        'balance' => $finalbalance
-                    ]);
-                    Transaction::create([
-                        'username' => $user->username,
-                        'particular' => 'win1',
-                        'credit' =>  $am,
-                    ]);
-                     Win1minBetting::where('period', $gameId->id)->update([
-                'status' => 'successful',
-                'price' => $price,
-                'number' => $num,
-                'color' => $col,
-                'am' => $am,
-                'res' => 'success',
-            ]);
-                } else {
-                    Win1minBetting::where('period', $gameId->id)->update([
-                'status' => 'successful',
-                'price' => $price,
-                'number' => $num,
-                'color' => $col,
-                'am' => 'wait',
-                'res' => 'fail',
-            ]);
-                }
-            } else if ($data->ans == 'violet') {
-                if ($col == 'RV') {
-                    $am = $data->amount * 4.5;
-                    $finalbalance = $am + $user->balance;
-                    User::where('username', $user->username)->update([
-                        'balance' => $finalbalance
-                    ]);
-
-                    Transaction::create([
-                        'username' => $user->username,
-                        'particular' => 'win1',
-                        'credit' =>  $am,
-
-                    ]);
-                      Win1minBetting::where('period', $gameId->id)->update([
-                'status' => 'successful',
-                'price' => $price,
-                'number' => $num,
-                'color' => $col,
-                'am' => $am,
-                'res' => 'success',
-            ]);
-                } else if ($col == 'GV') {
-                    $am = $data->amount * 4.5;
-                    $finalbalance = $am + $user->balance;
-
-                    User::where('username', $user->username)->update([
-                        'balance' => $finalbalance
-                    ]);
-
-                    Transaction::create([
-                        'username' => $user->username,
-                        'particular' => 'win1',
-                        'credit' =>  $am,
-
-                    ]);
-                     Win1minBetting::where('period', $gameId->id)->update([
-                'status' => 'successful',
-                'price' => $price,
-                'number' => $num,
-                'color' => $col,
-                'am' => $am,
-                'res' => 'success',
-            ]);
-                } else {
-                     Win1minBetting::where('period', $gameId->id)->update([
-                'status' => 'successful',
-                'price' => $price,
-                'number' => $num,
-                'color' => $col,
-                'am' => 'wait',
-                'res' => 'fail',
-            ]);
-                }
-            } else {
-                Win1minBetting::where('period', $gameId->id)->update([
-                'status' => 'successful',
-                'price' => $price,
-                'number' => $num,
-                'color' => $col,
-                'am' => 'wait',
-                'res' => 'fail',
-            ]);
             }
-           
+
+            Win1minBetting::where('id', $data->id)->update([
+                'status' => 'successful',
+                'price' => $price,
+                'number' => $num,
+                'color' => $col,
+                'am' => $am,
+                'res' => $res,
+            ]);
         }
+
         Win1minBetRecord::create([
             'period' => $gameId->id,
             'ans' => rand(1000, 9999) . $num,
             'num' => $num,
             'clo' => $col,
-
         ]);
+
         $game = new Win1minBet();
         $game->save();
     }
 
-  
+
+
 
     public function getgameId5min()
     {
@@ -562,9 +431,9 @@ class FrontendController extends Controller
         $game = new Win5minBet();
         $game->save();
     }
-  
-    
-    
+
+
+
 
     public function setColorBet(Request $request)
     {
@@ -577,7 +446,7 @@ class FrontendController extends Controller
 
 
         $totalbetAmount = auth()->user()->balance + auth()->user()->bonus + auth()->user()->deposit + auth()->user()->refbalance;
-        
+
         if ($request->amount <= $totalbetAmount) {
             if ($request->game == 'win1') {
                 $gameId = Win1minBet::latest('created_at')->first()->id;
@@ -972,7 +841,7 @@ class FrontendController extends Controller
 
         return response()->json($beting);
     }
-    
+
     public function getBeting3(Request $request)
     {
         $beting = Win3minBetting::where('username', $request->username)->orderBy('id', 'desc')->get();
@@ -980,7 +849,7 @@ class FrontendController extends Controller
 
         return response()->json($beting);
     }
-    
+
     public function getBeting5(Request $request)
     {
         $beting = Win5minBetting::where('username', $request->username)->orderBy('id', 'desc')->get();
@@ -988,7 +857,7 @@ class FrontendController extends Controller
 
         return response()->json($beting);
     }
-    
+
     public   function showResult(Request $request)
     {
 
@@ -1018,5 +887,5 @@ class FrontendController extends Controller
         $gameId = Win1minBet::latest('created_at')->first();
         return response()->json($gameId);
     }
-    
+
 }
